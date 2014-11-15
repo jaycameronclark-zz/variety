@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+/*------------------------------------*\
+    INDIAN SPRINGS APPLICATION.CSS
+\*------------------------------------*/
+
+/*
+  DO NOT EDIT BOURBON AND NEAT CORE FILES!
+  UPDATE NEAT AND BOURBON: cd /theme/assets/styles neat update
+  YOU CAN MODIFY FILES IN /BASE AND /UI
+*/
+
+@import 'bourbon/bourbon';
+@import 'base/grid-settings';
+@import 'neat/neat';
+@import 'base/base';
+
+//CUSTOM
+@import 'ui/animations';
+@import 'ui/structure';
+@import 'ui/navigation';
+@import 'ui/modules';
+@import 'ui/buttons';
+@import 'ui/forms';
+@import 'ui/modals';
+@import 'ui/shortcodes';
+
+//VIEWS
+@import 'views/front-page';

@@ -1,0 +1,38 @@
+/*------------------------------------*\
+    NAVIGATION
+\*------------------------------------*/
+
+nav{
+	&.nav--primary{
+		@include span-columns(10);
+		@include omega();
+		margin-top: 26px;
+		float: right;
+		background: url(#{$img-path}/navigation-border.gif) bottom center repeat-x;
+		ul{
+			list-style-type: none;
+			float: right;
+			li{
+				display: inline-block;
+				a{
+					color: #603813;
+					text-transform: uppercase;
+					font-size: em(14);
+					padding-bottom: 13px;
+					padding-left: 8px;
+					padding-right: 8px;
+					&:hover{
+						color: $color-orange;
+					}
+				}
+				&.current-menu-item,
+				&.current_menu_item{
+					a{
+						color: $color-orange;
+						background: url(#{$img-path}/nav_on.gif) bottom center no-repeat;
+					}
+				}
+			}
+		}
+	}
+}

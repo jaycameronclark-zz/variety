@@ -1,0 +1,131 @@
+/*------------------------------------*\
+    PRIMARY STRUCTURE
+\*------------------------------------*/
+
+body{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  @include image-rendering(optimizeSpeed);
+  background: url(#{$img-path}/back.gif) top left repeat;
+}
+
+.outer-container{
+	@include outer-container;
+}
+
+header{
+	@include span-columns(12);
+	.social--connect{
+		@include span-columns(5 of 12);
+		float: right;
+		min-height: 64px;
+		ul.social-icons{
+			list-style-type: none;
+			margin-top: 20px;
+			margin-left: 28px;
+			padding: 0;
+			display: inline-block;
+			li{
+				display: inline-block;
+				a{
+					.sprite{
+						background-image: url(#{$img-path}/social-sprite.png);
+						background-position: 0 0;
+						width: 30px;
+						height: 30px;
+
+						&.sprite--facebook{
+							background-position: -2px -3px;
+						}
+						&.sprite--twitter{
+							background-position: -31px -2px;
+						}
+						&.sprite--youtube{
+							background-position: -60px -3px;
+						}
+					}
+				}
+			}
+		}
+	}
+	a.join{
+		width: 196px;
+		height: 60px;
+		float: right;
+		text-align: center;
+		background-image: url(#{$img-path}/join-background.gif);
+		background-position: 0 0;
+		background-repeat: no-repeat;
+		padding: 10px 8px;
+		&:hover{
+			background-position: 0 -60px;
+		}
+
+		span{
+			display: block;
+			&.join-yellow{
+				color: #ffe371;
+				font-weight: bold;
+				font-size: em(16);
+				letter-spacing: -1px;
+				line-height: 1;
+			}
+			&.join-white{
+				color: #fff;
+				font-size: em(14);
+				font-family: $helvetica;
+				font-weight: bold;
+				letter-spacing: -1px;
+				line-height: 1;
+			}
+		}
+
+	}
+	.logo{
+		@include span-columns(2);
+	}
+}
+
+aside{}
+
+footer{
+	&.footer--primary{
+		@include span-columns(12);
+		background: url(#{$img-path}/border_footer.gif) top center repeat-x;
+		height: 80px;
+		padding-top: $base-line-height;	
+	}
+	p{
+		font-size: 0.8em;
+		color: $color-brown;
+		display: inline-block;
+		float: left;
+	}
+	ul.menu{
+		float: right;
+		display: inline-block;
+		list-style-type: none;
+		li{
+			display: inline-block;
+			margin-right: 8px;
+			&:last-child{
+				margin-right: 0;
+			}
+			a{
+				font-size: 0.8em;
+				color: $color-brown;
+				&:hover{
+					color: $color-orange;
+				}
+			}
+		}
+	}
+}
+
+section.main{
+	@include span-columns(12);
+	@include omega();
+	min-height: 400px;
+}

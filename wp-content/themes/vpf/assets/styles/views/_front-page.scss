@@ -1,0 +1,24 @@
+/*------------------------------------*\
+    FRONT-PAGE
+\*------------------------------------*/
+
+article{
+	&.front-page--intro{
+		@include span-columns(12);
+		padding-top: $gutter;
+		h1{
+			font-size: em(38);
+			color: $color-brown;
+			font-family: $p22;
+			font-weight: normal;
+			letter-spacing: 1px;
+			word-spacing: 3px;
+		}
+	}
+}
+
+.front-page--slider{
+	@include span-columns(12);
+	min-height: 400px;
+	background: url(#{$img-path}/home-slide-background.png) top center no-repeat;
+}
