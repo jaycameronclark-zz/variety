@@ -7,19 +7,6 @@
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
       wp_register_script('modernizr', get_template_directory_uri() . '/assets/js/modernizr-2.8.3.min.js', array(), '2.8.3');
       wp_enqueue_script('modernizr');
-
-      wp_register_script('application_plugins', get_template_directory_uri() . '/assets/build/js/plugins.min.js', array('jquery'), '1.0.0'); // Custom scripts
-      wp_enqueue_script('application_plugins');
-
-      wp_register_script('application_scripts', get_template_directory_uri() . '/assets/build/js/main.min.js', array('jquery'), '1.0.0'); // Custom scripts
-      wp_enqueue_script('application_scripts');
-    }
-  }
-  // Load conditional scripts
-  function application_conditional_scripts(){
-    if (is_page('gallery')) {//replace with page slug
-      wp_register_script('lightbox', get_template_directory_uri() . '/assets/build/js/lightbox.min.js', array('jquery'), '4.6.4'); // Conditional script(s)
-      wp_enqueue_script('lightbox');
     }
   }
 
@@ -30,18 +17,8 @@
     wp_register_style('application', get_template_directory_uri() . '/assets/build/styles/application.min.css', array(), '1.0', 'all');
     wp_enqueue_style('application');
 
-    wp_register_style('vendor', get_template_directory_uri() . '/assets/build/styles/vendor.min.css', array(), '1.0', 'all');
-    wp_enqueue_style('vendor');
-
     wp_register_style('varietypetfoods', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
     wp_enqueue_style('varietypetfoods');
-  }
-  // Load conditional scripts
-  function application_conditional_styles(){
-    if (is_page('gallery')) {
-      wp_register_style('application', get_template_directory_uri() . '/assets/build/styles/application.min.css', array(), '1.0', 'all');
-      wp_enqueue_style('application');
-    }
   }
 
 /*-------------------------------------------------------------------------------------------*/
@@ -91,9 +68,9 @@ function wp_login_image() {
 add_action("login_head", "wp_login_image");
 
 function removeHeadLinks() {
-    remove_action('wp_head', 'rsd_link');
-    remove_action('wp_head', 'wlwmanifest_link');
-  }
+  remove_action('wp_head', 'rsd_link');
+  remove_action('wp_head', 'wlwmanifest_link');
+}
 add_action('init', 'removeHeadLinks');
 
 /* Remove Admin Bar */
@@ -146,7 +123,6 @@ function cmb_initialize_cmb_meta_boxes() {
 
 /* Scripts and Styles */
 add_action('init', 'application_header_scripts');
-add_action('wp_print_scripts', 'application_conditional_scripts');
 add_action('wp_enqueue_scripts', 'application_styles');
 
 /* Meta Boxes */

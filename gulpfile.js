@@ -76,18 +76,6 @@ gulp.task('scripts', function() {
   .pipe(gulp.dest(THEMEPATH + 'build/js'))
 });
 
-gulp.task('floorplans', function() {
-  return gulp.src([
-    THEMEPATH + 'js/source/floorplans.js'
-    ])
-  .pipe(plugins.jshint('.jshintrc'))
-  .pipe(plugins.jshint.reporter('default'))
-  .pipe(plugins.concat('floorplans.js'))
-  .pipe(plugins.rename({ suffix: '.min' }))
-  .pipe(plugins.uglify())
-  .pipe(gulp.dest(THEMEPATH + 'build/js'))
-});
-
 // Images
 gulp.task('images', function() {
   return gulp.src(THEMEPATH + 'images/**/*')
@@ -112,7 +100,7 @@ gulp.task('watch', function() {
   gulp.watch(THEMEPATH + 'styles/**/*.scss', ['vendorstyles']);
 
   // Watch .js files
-  gulp.watch(THEMEPATH + 'js/**/*.js', ['plugins', 'scripts', 'floorplans']);
+  gulp.watch(THEMEPATH + 'js/**/*.js', ['plugins', 'scripts']);
 
   // Watch image files
   gulp.watch(THEMEPATH + 'images/**/*', ['images']);

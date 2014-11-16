@@ -86,6 +86,28 @@ header{
 	.logo{
 		@include span-columns(2);
 	}
+	@include media($mobile){
+		.social--connect{
+			@include span-columns(4);
+			@include omega();
+			text-align: left;
+			min-height: 0;
+			ul.social-icons{
+				margin-top: $gutter;
+				margin-left: $gutter;
+			}
+		}
+		.logo{
+			@include span-columns(4);
+			margin-top: $gutter;
+			text-align: center;
+		}
+		a.join{
+			display: none;
+			visibility: hidden;
+			padding: 0;
+		}
+	}
 }
 
 aside{}
@@ -95,7 +117,28 @@ footer{
 		@include span-columns(12);
 		background: url(#{$img-path}/border_footer.gif) top center repeat-x;
 		height: 80px;
-		padding-top: $base-line-height;	
+		padding-top: $base-line-height;
+		@include media($mobile){
+			@include span-columns(4);
+			@include omega();
+			padding-left: $gutter;
+			padding-right: $gutter;
+			margin-bottom: $gutter;
+			text-align: center;
+			p{
+				float: none;
+				text-align: center;
+				font-size: 0.6em;
+			}
+			ul.menu{
+				float: none;
+				margin: 0;
+				padding: 0;
+				li{
+					text-align: center;
+				}
+			}
+		}
 	}
 	p{
 		font-size: 0.8em;

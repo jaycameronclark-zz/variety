@@ -5,8 +5,8 @@
     </footer>
   </div>
 
-    <script src="<?= assets_url() ?>build/js/plugins.min.js"></script>
-    <script src="<?= assets_url() ?>build/js/main.min.js"></script>
+    <script src="<?= get_template_directory_uri(); ?>/assets/build/js/plugins.min.js"></script>
+    <script src="<?= get_template_directory_uri(); ?>/assets/build/js/main.min.js"></script>
     <?php wp_footer(); ?>
   </body>
 </html>

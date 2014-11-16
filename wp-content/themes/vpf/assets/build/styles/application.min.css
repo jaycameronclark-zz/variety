@@ -1184,6 +1184,40 @@ header .logo {
 header .logo:last-child {
   margin-right: 0;
 }
+@media screen and (max-width: 480px) {
+  header .social--connect {
+    float: left;
+    display: block;
+    margin-right: 2.43902%;
+    width: 100%;
+    margin-right: 0;
+    text-align: left;
+    min-height: 0;
+  }
+  header .social--connect:last-child {
+    margin-right: 0;
+  }
+  header .social--connect ul.social-icons {
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+  header .logo {
+    float: left;
+    display: block;
+    margin-right: 2.43902%;
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+  }
+  header .logo:last-child {
+    margin-right: 0;
+  }
+  header a.join {
+    display: none;
+    visibility: hidden;
+    padding: 0;
+  }
+}
 
 footer.footer--primary {
   float: left;
@@ -1196,6 +1230,35 @@ footer.footer--primary {
 }
 footer.footer--primary:last-child {
   margin-right: 0;
+}
+@media screen and (max-width: 480px) {
+  footer.footer--primary {
+    float: left;
+    display: block;
+    margin-right: 2.43902%;
+    width: 100%;
+    margin-right: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  footer.footer--primary:last-child {
+    margin-right: 0;
+  }
+  footer.footer--primary p {
+    float: none;
+    text-align: center;
+    font-size: 0.6em;
+  }
+  footer.footer--primary ul.menu {
+    float: none;
+    margin: 0;
+    padding: 0;
+  }
+  footer.footer--primary ul.menu li {
+    text-align: center;
+  }
 }
 footer p {
   font-size: 0.8em;
@@ -1273,6 +1336,116 @@ nav.nav--primary ul li.current-menu-item a, nav.nav--primary ul li.current_menu_
   color: #b7451c;
   background: url(../../images/nav_on.gif) bottom center no-repeat;
 }
+@media screen and (max-width: 480px) {
+  nav.nav--primary {
+    float: left;
+    display: block;
+    margin-right: 2.43902%;
+    width: 100%;
+    height: 10px;
+  }
+  nav.nav--primary:last-child {
+    margin-right: 0;
+  }
+  nav.nav--primary ul.menu {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+.sliding-menu-button {
+  border-radius: 0;
+  background-color: rgba(96, 56, 19, 0.4);
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  padding: 8px 8px;
+  right: 20px;
+  top: 20px;
+  outline: none;
+}
+.sliding-menu-button span {
+  width: 100%;
+  margin-bottom: 3px;
+  display: block;
+  height: 3px;
+  background-color: #603813;
+  position: relative;
+}
+.sliding-menu-button:hover, .sliding-menu-button:focus {
+  background-color: #603813;
+}
+.sliding-menu-button:hover span, .sliding-menu-button:focus span {
+  background-color: #fff;
+}
+@media screen and (min-width: 53.75em) {
+  .sliding-menu-button {
+    visibility: hidden;
+    display: none;
+  }
+}
+
+.sliding-menu-content {
+  position: fixed;
+  top: 0px;
+  right: auto;
+  bottom: 0px;
+  left: 0px;
+  height: 100%;
+  width: 220px;
+  -webkit-transform: translateX(-220px);
+  -ms-transform: translateX(-220px);
+  transform: translateX(-220px);
+  -webkit-transition: all 0.25s linear;
+  transition: all 0.25s linear;
+  background: url(../../images/back.gif) top left repeat;
+  z-index: 999999;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+.sliding-menu-content ul {
+  margin: 0;
+  padding: 0;
+}
+.sliding-menu-content li {
+  list-style-type: none;
+}
+.sliding-menu-content li a {
+  background: url(../../images/dbl-hor-border.png) bottom left repeat-x;
+  color: #603813;
+  display: block;
+  text-transform: uppercase;
+  font-weight: normal;
+  padding: 1em;
+}
+.sliding-menu-content li a:hover {
+  background-color: #b56a24;
+  color: #b7451c;
+}
+.sliding-menu-content.is-visible {
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.menu-screen {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  -webkit-transition: all 0.15s ease-out 0s;
+  transition: all 0.15s ease-out 0s;
+  background: #603813;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999998;
+}
+.menu-screen.is-visible {
+  opacity: .4;
+  visibility: visible;
+}
 
 /*------------------------------------*\
     MODULES
@@ -1309,6 +1482,17 @@ article.front-page--intro h1 {
   font-weight: normal;
   letter-spacing: 1px;
   word-spacing: 3px;
+}
+@media screen and (max-width: 480px) {
+  article.front-page--intro {
+    margin-right: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+  }
+  article.front-page--intro h1 {
+    font-size: 1.875em;
+  }
 }
 
 .front-page--slider {

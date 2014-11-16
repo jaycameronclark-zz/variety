@@ -34,5 +34,102 @@ nav{
 				}
 			}
 		}
+		@include media($mobile){
+			@include span-columns(4);
+			height: 10px;
+			ul.menu{
+				display: none;
+				visibility: hidden;
+			}
+		}
 	}
+}
+
+//Mobile menu
+$sliding-menu-border-color: #ccc;
+$sliding-menu-background: lighten($sliding-menu-border-color, 5);
+$sliding-menu-color: #fff;
+$sliding-menu-border: 1px solid $sliding-menu-border-color;
+$sliding-menu-background-hover: $base-accent-color;
+$sliding-menu-color-hover: #fff;
+
+.sliding-menu-button {
+	border-radius: 0;
+	background-color: rgba(96, 56, 19, 0.4);
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  padding: 8px 8px;
+  right: $gutter;
+  top: $gutter;
+  outline: none;
+  span{
+  	width: 100%;
+  	margin-bottom: 3px;
+  	display: block;
+  	height: 3px;
+  	background-color: $color-brown;
+  	position: relative;
+  }
+  &:hover,&:focus{
+    background-color: $color-brown;
+    span{
+      background-color: #fff;
+    }
+  }
+  @include media($large-screen){
+    visibility: hidden;
+    display: none;
+  }
+}
+
+.sliding-menu-content {
+  @include position(fixed, 0px auto 0px 0px);
+  @include size(220px 100%);
+  @include transform(translateX(-220px));
+  @include transition(all .25s linear);
+  background: url(#{$img-path}/back.gif) top left repeat;
+  z-index: 999999;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  ul{
+    margin: 0;
+    padding: 0;
+  }
+  li{
+    list-style-type: none;
+  }
+
+  li a {
+    background: url(#{$img-path}/dbl-hor-border.png) bottom left repeat-x;
+    color: $color-brown;
+    display: block;
+    text-transform: uppercase;
+    font-weight: normal;
+    padding: 1em;
+
+    &:hover {
+      background-color: lighten($color-brown, 20%);
+      color: $color-orange;
+    }
+  }
+
+  &.is-visible {
+    @include transform(translateX(0));
+  }
+}
+
+.menu-screen {
+  @include position(fixed, 0px 0px 0px 0px);
+  @include transition;
+  background: $color-brown;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999998;
+
+  &.is-visible {
+    opacity: .4;
+    visibility: visible;
+  }
 }
