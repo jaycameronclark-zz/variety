@@ -9,7 +9,10 @@
 		</article>
 
 		<div class="front-page--slider">
-			
+			<?php 
+				$slides = get_post_meta( get_the_ID(), 'slideshow_background_image', true );
+				var_dump($slides);die;
+			?>
 		</div>
 	</div>
 </section>
