@@ -20,8 +20,7 @@ gulp.task('appstyles', function() {
   .pipe(plugins.rubySass({ 
     style: 'expanded',
     trace: false,
-    debugInfo: false,
-    'sourcemap=none':true 
+    debugInfo: false
   }))
   .pipe(plugins.rename({ suffix: '.min' }))
   .pipe(plugins.autoprefixer({

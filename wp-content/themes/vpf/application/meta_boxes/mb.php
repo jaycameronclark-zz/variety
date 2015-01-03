@@ -59,7 +59,7 @@ function application_metaboxes( array $meta_boxes ) {
           ),
           array(
             'name' => 'Static Image',
-            'id'   => 'slideshow_static_images',
+            'id'   => 'slideshow_static_image',
             'type' => 'file',
           ),
         )

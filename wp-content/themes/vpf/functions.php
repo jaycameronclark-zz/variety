@@ -33,6 +33,8 @@
   add_image_size('delta', 375, 149, true);
   add_image_size('epsilon', 250, 152, true);
 
+  add_image_size('home_slide', 260, 186, true);
+
 /* Remove hard coded sizes */
   // add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10, 3 );
   // function remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {

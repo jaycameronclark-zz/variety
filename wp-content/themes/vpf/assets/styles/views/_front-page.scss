@@ -29,5 +29,14 @@ article{
 .front-page--slider{
 	@include span-columns(12);
 	min-height: 400px;
-	background: url(#{$img-path}/home-slide-background.png) top center no-repeat;
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	position: relative;
+
+	.image-group{
+		position: absolute;
+		width: 180px;
+		height: 180px;
+		border: 1px solid red;
+	}
 }
