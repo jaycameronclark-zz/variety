@@ -38,6 +38,12 @@ function application_metaboxes( array $meta_boxes ) {
         ),
         'fields' => array(
           array(
+            'name' => 'Z-Index',
+            'id'   => 'static_z_index',
+            'type' => 'text_small',
+            'description' => 'Stack order (1-10000)'
+          ),
+          array(
             'name' => 'Position Top',
             'id'   => 'static_pos_top',
             'type' => 'text_small'
@@ -76,6 +82,12 @@ function application_metaboxes( array $meta_boxes ) {
           'sortable'      => true
         ),
         'fields' => array(
+          array(
+            'name' => 'Z-Index',
+            'id'   => 'group_z_index',
+            'type' => 'text_small',
+            'description' => 'Stack order (1-10000)'
+          ),
           array(
             'name' => 'Position Top',
             'id'   => 'group_pos_top',

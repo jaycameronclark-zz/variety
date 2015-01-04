@@ -51,9 +51,7 @@ gulp.task('plugins', function() {
   //Add Plugins in order as needed
   return gulp.src([
     THEMEPATH + 'js/source/plugins.js',
-    THEMEPATH + 'js/vendor/jquery.fancybox.js',
-    THEMEPATH + 'js/vendor/jquery.fancybox-media.js',
-    THEMEPATH + 'js/vendor/jquery.flexslider.js'
+    THEMEPATH + 'js/vendor/cycle.js',
     ])
   .pipe(plugins.concat('plugins.js'))
   .pipe(plugins.rename({ suffix: '.min' }))

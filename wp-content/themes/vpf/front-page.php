@@ -1,4 +1,27 @@
-<?php get_header(); ?>
+<?php 
+	get_header();
+	$slideshow = get_vpf_slideshow();
+?>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $(".slide-1").cycle({
+    		fx: 'fade',
+    		speed: 2000,
+    		delay: 0
+    });
+    $(".slide-2").cycle({
+    		fx: 'fade',
+    		speed: 2000,
+    		delay: 10000
+    });
+    $(".slide-3").cycle({
+    		fx: 'fade',
+    		speed: 2000,
+    		delay: 14000
+    });
+});
+</script>
 
 <section class="main">
 	<div class="outer-container">
@@ -8,45 +31,23 @@
 		<?php endwhile; endif; ?>
 		</article>
 
-		<?php
-			$slide_background = get_post_meta( get_the_ID(), 'slideshow_background_image', true );
-			$static = get_post_meta( get_the_ID(), '_cmb_slide_images_static_settings', true );
-			$group = get_post_meta( get_the_ID(), '_cmb_slide_images_group_settings', true );
-			$group_images = [];
-			$static_images = [];
-
-			foreach ($static as $item) {
-	    	$temp_static = [
-	    		'top' => $item['static_pos_top'] . 'px',
-	    		'left' => $item['static_pos_left'] . 'px',
-	    		'bottom' => $item['static_pos_bottom'] . 'px',
-	    		'right' => $item['static_pos_right'] . 'px',
-	    		'image' => $item['slideshow_static_image']
-	    	];
-	    	$static_images[] = $temp_static;
-			}
-
-			foreach ($group as $item){
-	    	$temp_group = [
-	    		'top' => $item['group_pos_top'] . 'px',
-	    		'left' => $item['group_pos_left'] . 'px',
-	    		'bottom' => $item['group_pos_bottom'] . 'px',
-	    		'right' => $item['group_pos_right'] . 'px',
-	    		'images' => $item['slideshow_group_images']
-	    	];
-	    	$group_images[] = $temp_group;
-			}
-
-		?>
-
-		<div class="front-page--slider" style="background-image: url(<?= $slide_background; ?>)">
-		<?php foreach($group_images as $group_image) : ?>
-			<div class="image-group" style="top:<?= $group_image['top']; ?>; left:<?= $group_image['left']; ?>; bottom: <?= $group_image['bottom']; ?>;right:<?= $group_image['right']; ?>;">
+		<div class="front-page--slider" style="background-image: url(<?= $slideshow['background']; ?>);">
+		<?php $index = 0; ?>
+		<?php foreach($slideshow['group_images'] as $group_image) : ?>
+			<?php $index++; ?>
+			<div class="image-group slide-<?= $index; ?>" style="z-index:<?= $group_image['z-index']; ?>;top:<?= $group_image['top']; ?>; left:<?= $group_image['left']; ?>; bottom: <?= $group_image['bottom']; ?>;right:<?= $group_image['right']; ?>;">
 			<?php foreach($group_image['images'] as $image) : ?>
 			<img src="<?= $image; ?>">
 			<?php endforeach; ?>
 			</div>
 		<?php endforeach; ?>
+
+		<?php foreach($slideshow['static_images'] as $static_image) : ?>
+			<div class="static-image" style="z-index:<?= $static_image['z-index']; ?>;top:<?= $static_image['top']; ?>; left:<?= $static_image['left']; ?>; bottom: <?= $static_image['bottom']; ?>;right:<?= $static_image['right']; ?>;">
+				<img src="<?= $static_image['image']; ?>">
+			</div>
+		<?php endforeach; ?>
+
 		</div>
 	</div>
 </section>

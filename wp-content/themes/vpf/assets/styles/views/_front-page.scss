@@ -35,8 +35,18 @@ article{
 
 	.image-group{
 		position: absolute;
-		width: 180px;
-		height: 180px;
-		border: 1px solid red;
+		width: 260px;
+		height: 186px;
+		img{
+			display: none;
+			&:first-child{
+				display: block;
+			}
+		}
+	}
+	.static-image{
+		position: absolute;
+		width: 270px;
+		height: 192px;
 	}
 }

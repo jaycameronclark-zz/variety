@@ -136,3 +136,46 @@ add_action( 'init', 'cmb_initialize_cmb_meta_boxes', 9999 );
 
 /* Theme Options */
 require get_template_directory() . '/application/options.php';
+
+/*-------------------------------------------------------------------------------------------*/
+/* CUSTOM FUNCTIONS
+/*-------------------------------------------------------------------------------------------*/
+
+function get_vpf_slideshow() {
+  global $post;
+  $view = $post;
+  
+  $static = get_post_meta( $view->ID, '_cmb_slide_images_static_settings', true );
+  $group = get_post_meta( $view->ID, '_cmb_slide_images_group_settings', true );
+  $slideshows = [];
+  $slideshows['background'] = get_post_meta( $view->ID, 'slideshow_background_image', true );
+
+  foreach ($static as $item) {
+    $temp_static = [
+      'z-index' => isset($item['static_z_index']) ? $item['static_z_index'] : '',
+      'top'     => isset($item['static_pos_top']) ? $item['static_pos_top'] : '',
+      'left'    => isset($item['static_pos_left']) ? $item['static_pos_left'] : '',
+      'bottom'  => isset($item['static_pos_bottom']) ? $item['static_pos_bottom'] : '',
+      'right'   => isset($item['static_pos_right']) ? $item['static_pos_right'] : '',
+      'image'   => isset($item['slideshow_static_image']) ? $item['slideshow_static_image'] : ''
+    ];
+    $static_images[] = $temp_static;
+  }
+
+  foreach ($group as $item){
+    $temp_group = [
+      'z-index' => isset($item['group_z_index']) ? $item['group_z_index'] : '',
+      'top'     => isset($item['group_pos_top']) ? $item['group_pos_top'] : '',
+      'left'    => isset($item['group_pos_left']) ? $item['group_pos_left'] : '',
+      'bottom'  => isset($item['group_pos_bottom']) ? $item['group_pos_bottom'] : '',
+      'right'   => isset($item['group_pos_right']) ? $item['group_pos_right'] : '',
+      'images'  => isset($item['slideshow_group_images']) ? $item['slideshow_group_images'] : []
+    ];
+    $group_images[] = $temp_group;
+  }
+  
+  $slideshows['static_images'] = $static_images;
+  $slideshows['group_images'] = $group_images;
+
+  return $slideshows;
+}
