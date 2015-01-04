@@ -10,9 +10,10 @@ article{
 			font-size: em(38);
 			color: $color-brown;
 			font-family: $p22;
-			font-weight: normal;
+			font-weight: lighter;
 			letter-spacing: 1px;
 			word-spacing: 3px;
+			opacity: 0.9;
 		}
 		@include media($mobile){
 			@include omega();

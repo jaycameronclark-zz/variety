@@ -46,22 +46,26 @@ function application_metaboxes( array $meta_boxes ) {
           array(
             'name' => 'Position Top',
             'id'   => 'static_pos_top',
-            'type' => 'text_small'
+            'type' => 'text_small',
+            'description' => '(px)'
           ),
           array(
             'name' => 'Position Left',
             'id'   => 'static_pos_left',
-            'type' => 'text_small'
+            'type' => 'text_small',
+            'description' => '(px)'
           ),
           array(
             'name' => 'Position Bottom',
             'id'   => 'static_pos_bottom',
-            'type' => 'text_small'
+            'type' => 'text_small',
+            'description' => '(px)'
           ),
           array(
             'name' => 'Position Right',
             'id'   => 'static_pos_right',
-            'type' => 'text_small'
+            'type' => 'text_small',
+            'description' => '(px)'
           ),
           array(
             'name' => 'Static Image',
@@ -89,24 +93,40 @@ function application_metaboxes( array $meta_boxes ) {
             'description' => 'Stack order (1-10000)'
           ),
           array(
+            'name' => 'Animation Speed',
+            'id'   => 'group_animation_speed',
+            'type' => 'text_small',
+            'description' => 'In milliseconds'
+          ),
+          array(
+            'name' => 'Animation Delay',
+            'id'   => 'group_animation_delay',
+            'type' => 'text_small',
+            'description' => 'In milliseconds'
+          ),
+          array(
             'name' => 'Position Top',
             'id'   => 'group_pos_top',
-            'type' => 'text_small'
+            'type' => 'text_small',
+            'description' => '(px)'
           ),
           array(
             'name' => 'Position Left',
             'id'   => 'group_pos_left',
-            'type' => 'text_small'
+            'type' => 'text_small',
+            'description' => '(px)'
           ),
           array(
             'name' => 'Position Bottom',
             'id'   => 'group_pos_bottom',
-            'type' => 'text_small'
+            'type' => 'text_small',
+            'description' => '(px)'
           ),
           array(
             'name' => 'Position Right',
             'id'   => 'group_pos_right',
-            'type' => 'text_small'
+            'type' => 'text_small',
+            'description' => '(px)'
           ),
           array(
             'name' => 'Images Group',

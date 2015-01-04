@@ -30,7 +30,7 @@ function cpt_products() {
   $args = array(
     'label' => __( 'cpt_products', 'varietypetfoods' ),
     'menu_icon' => 'dashicons-products',
-    'description' => __( 'Variety Pet Foods Products', 'varietypetfoods' ),
+    'description' => __( 'Products', 'varietypetfoods' ),
     'labels' => $labels,
     'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'page-attributes'),
     'hierarchical' => true,
