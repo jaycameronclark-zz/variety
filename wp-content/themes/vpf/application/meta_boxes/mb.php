@@ -219,5 +219,43 @@ function application_metaboxes( array $meta_boxes ) {
     )
   );
 
+  $meta_boxes['vpf_page_sidebars'] = array(
+    'id'         => 'vpf_page_sidebar_details',
+    'title'      => __( 'Sidebar Content', 'cmb' ),
+    'pages'      => array( 'page' ),
+    'context'    => 'normal',
+    'priority'   => 'high',
+    'show_names' => true,
+    'cmb_styles' => true,
+
+    'fields' => array(
+      array(
+        'name' => 'Sidebar Background',
+        'desc' => 'Background for sidebar content',
+        'id'   => $prefix . 'page_sidebar_background',
+        'type' => 'file'
+      ),
+      array(
+        'name' => __( 'Sidebar Content', 'cmb' ),
+        'desc' => __( 'Content for sidebar', 'cmb' ),
+        'id'   => $prefix . 'page_sidebar_content',
+        'type' => 'wysiwyg',
+        'options' => array(
+          'wpautop' => true, // use wpautop?
+          'media_buttons' => true, // show insert/upload button(s)
+          'textarea_name' => ['page_sidebar_content_editor'], // set the textarea name to something different, square brackets [] can be used here
+          'textarea_rows' => get_option('default_post_edit_rows', 10), // rows="..."
+          'tabindex' => '',
+          'editor_css' => '', // intended for extra styles for both visual and HTML editors buttons, needs to include the `<style>` tags, can use "scoped".
+          'editor_class' => '', // add extra class(es) to the editor textarea
+          'teeny' => true, // output the minimal editor config used in Press This
+          'dfw' => false, // replace the default fullscreen with DFW (needs specific css)
+          'tinymce' => true, // load TinyMCE, can be used to pass settings directly to TinyMCE using an array()
+          'quicktags' => true // load Quicktags, can be used to pass settings directly to Quicktags using an array()  
+        ),
+      )
+    )
+  );
+
   return $meta_boxes;
 }

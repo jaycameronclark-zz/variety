@@ -131,8 +131,6 @@ add_action('wp_enqueue_scripts', 'application_styles');
 add_filter( 'cmb_meta_boxes', 'application_metaboxes' );
 add_action( 'init', 'cmb_initialize_cmb_meta_boxes', 9999 );
 
-/* Widgets */
-//add_action( 'widgets_init', 'varietypetfoods_widgets_init' );
 
 /* Theme Options */
 require get_template_directory() . '/application/options.php';

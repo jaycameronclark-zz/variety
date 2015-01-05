@@ -1,0 +1,17 @@
+/*------------------------------------*\
+    QUALITY
+\*------------------------------------*/
+
+section.quality{
+	min-height: 400px;
+	.full-width{
+		@include span-columns(12);
+	}
+	.two-thirds{
+		@include span-columns(9);
+	}
+	aside.page-sidebar{
+		@include span-columns(3);
+		@include omega();
+	}
+}

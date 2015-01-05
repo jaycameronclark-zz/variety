@@ -1617,9 +1617,77 @@ section.featured .feature:nth-child(2n) {
 section.featured .feature:nth-child(2n+1) {
   clear: left;
 }
+section.featured .feature .content {
+  float: left;
+  display: block;
+  margin-right: 1.6129%;
+  width: 66.12903%;
+  color: #603813;
+  margin-left: 130px;
+  margin-top: 38px;
+  padding-right: 30px;
+}
+section.featured .feature .content:last-child {
+  margin-right: 0;
+}
+section.featured .feature .content h4 {
+  font-family: Georgia, Times, "Times New Roman", Times, serif;
+  font-size: 1em;
+  line-height: 1.4;
+  font-weight: 500;
+}
+section.featured .feature .content a {
+  color: #603813;
+}
+section.featured .feature .content a:hover {
+  color: #b7451c;
+}
+section.featured .feature .content p {
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-size: 0.75em;
+}
 section.featured .feature.left {
-  background: url(../../images/featured-whats-new.png) top left no-repeat;
+  background-image: url(../../images/featured-whats-new.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
 }
 section.featured .feature.right {
-  background: url(../../images/featured-why-mix.png) top left no-repeat;
+  background-image: url(../../images/featured-why-mix.png);
+  background-repeat: no-repeat;
+  background-position: 0 -6px;
+}
+
+/*------------------------------------*\
+    QUALITY
+\*------------------------------------*/
+section.quality {
+  min-height: 400px;
+}
+section.quality .full-width {
+  float: left;
+  display: block;
+  margin-right: 0.8%;
+  width: 100%;
+}
+section.quality .full-width:last-child {
+  margin-right: 0;
+}
+section.quality .two-thirds {
+  float: left;
+  display: block;
+  margin-right: 0.8%;
+  width: 74.8%;
+}
+section.quality .two-thirds:last-child {
+  margin-right: 0;
+}
+section.quality aside.page-sidebar {
+  float: left;
+  display: block;
+  margin-right: 0.8%;
+  width: 24.4%;
+  margin-right: 0;
+}
+section.quality aside.page-sidebar:last-child {
+  margin-right: 0;
 }
