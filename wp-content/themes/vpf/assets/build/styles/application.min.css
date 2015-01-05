@@ -1529,6 +1529,8 @@ article.front-page--intro {
   display: block;
   margin-right: 0.8%;
   width: 100%;
+  -webkit-animation: fadeIn 0.6s ease-in;
+  animation: fadeIn 0.6s ease-in;
   padding-top: 20px;
 }
 article.front-page--intro:last-child {
@@ -1560,6 +1562,8 @@ article.front-page--intro h1 {
   display: block;
   margin-right: 0.8%;
   width: 100%;
+  -webkit-animation: fadeIn 0.6s ease-in;
+  animation: fadeIn 0.6s ease-in;
   min-height: 400px;
   background-position: 0 0;
   background-repeat: no-repeat;
@@ -1583,4 +1587,39 @@ article.front-page--intro h1 {
   position: absolute;
   width: 270px;
   height: 192px;
+}
+
+section.featured {
+  float: left;
+  display: block;
+  margin-right: 0.8%;
+  width: 100%;
+  min-height: 200px;
+  background: url(../../images/full-width-border.gif) top center no-repeat;
+  padding-top: 60px;
+}
+section.featured:last-child {
+  margin-right: 0;
+}
+section.featured .feature {
+  float: left;
+  display: block;
+  margin-right: 0.8%;
+  width: 49.6%;
+  min-height: 180px;
+}
+section.featured .feature:last-child {
+  margin-right: 0;
+}
+section.featured .feature:nth-child(2n) {
+  margin-right: 0;
+}
+section.featured .feature:nth-child(2n+1) {
+  clear: left;
+}
+section.featured .feature.left {
+  background: url(../../images/featured-whats-new.png) top left no-repeat;
+}
+section.featured .feature.right {
+  background: url(../../images/featured-why-mix.png) top left no-repeat;
 }

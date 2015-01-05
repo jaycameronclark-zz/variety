@@ -5,6 +5,8 @@
 article{
 	&.front-page--intro{
 		@include span-columns(12);
+		@include animation(fadeIn 0.6s ease-in);
+		
 		padding-top: $gutter;
 		h1{
 			font-size: em(38);
@@ -29,6 +31,8 @@ article{
 
 .front-page--slider{
 	@include span-columns(12);
+	@include animation(fadeIn 0.6s ease-in);
+
 	min-height: 400px;
 	background-position: 0 0;
 	background-repeat: no-repeat;
@@ -49,5 +53,26 @@ article{
 		position: absolute;
 		width: 270px;
 		height: 192px;
+	}
+}
+
+section.featured{
+	@include span-columns(12);
+	min-height: 200px;
+	background: url(#{$img-path}/full-width-border.gif) top center no-repeat;
+	padding-top: 60px;
+
+	.feature{
+		@include span-columns(6 of 12);
+		@include omega(2n);
+		min-height: 180px;
+
+		&.left{
+			background: url(#{$img-path}/featured-whats-new.png) top left no-repeat;
+		}
+
+		&.right{
+			background: url(#{$img-path}/featured-why-mix.png) top left no-repeat;
+		}
 	}
 }

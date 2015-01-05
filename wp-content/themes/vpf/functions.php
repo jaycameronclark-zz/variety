@@ -165,6 +165,8 @@ function get_vpf_slideshow() {
   foreach ($group as $item){
     $temp_group = [
       'z-index' => isset($item['group_z_index']) ? $item['group_z_index'] : '',
+      'speed'   => !empty($item['group_animation_speed']) ? $item['group_animation_speed'] : '2000',
+      'delay'   => !empty($item['group_animation_delay']) ? $item['group_animation_delay'] : '200',
       'top'     => isset($item['group_pos_top']) ? $item['group_pos_top'] : '',
       'left'    => isset($item['group_pos_left']) ? $item['group_pos_left'] : '',
       'bottom'  => isset($item['group_pos_bottom']) ? $item['group_pos_bottom'] : '',

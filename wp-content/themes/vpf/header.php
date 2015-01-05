@@ -31,9 +31,9 @@
 
   		<div class="social--connect">
   			<ul class="social-icons">
-  				<li><a href=""><i class="sprite sprite--facebook"></i></a></li>
-  				<li><a href=""><i class="sprite sprite--youtube"></i></a></li>
-  				<li><a href=""><i class="sprite sprite--twitter"></i></a></li>
+  				<li><a href="<?= cmb_get_option('application_options', 'facebookurl'); ?>"><i class="sprite sprite--facebook"></i></a></li>
+  				<li><a href="<?= cmb_get_option('application_options', 'youtubeurl'); ?>"><i class="sprite sprite--youtube"></i></a></li>
+  				<li><a href="<?= cmb_get_option('application_options', 'twitterurl'); ?>"><i class="sprite sprite--twitter"></i></a></li>
   			</ul>
   			<a href="#" class="join">
   				<span class="join-yellow">Join the Variety Club</span>

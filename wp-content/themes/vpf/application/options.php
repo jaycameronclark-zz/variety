@@ -96,23 +96,65 @@ class application_Admin {
         'type' => 'text_url',
       ),
       array(
+        'name' => __( 'YouTube URL', 'cmb' ),
+        'desc' => __( '', 'cmb' ),
+        'id'   => 'youtubeurl',
+        'type' => 'text_url',
+      ),
+      array(
         'name' => __( 'Twitter URL', 'cmb' ),
         'desc' => __( '', 'cmb' ),
         'id'   => 'twitterurl',
         'type' => 'text_url',
       ),
       array(
-        'name' => __( 'Instagram URL', 'cmb' ),
+        'name' => __( 'Home Page Feature Left Background', 'cmb' ),
         'desc' => __( '', 'cmb' ),
-        'id'   => 'instagramurl',
+        'id'   => 'homepage_feature_left_background',
+        'type' => 'file',
+      ),
+      array(
+        'name' => __( 'Home Page Feature Left Link', 'cmb' ),
+        'desc' => __( '', 'cmb' ),
+        'id'   => 'homepage_feature_left_link',
         'type' => 'text_url',
       ),
       array(
-        'name' => __( 'YouTube URL', 'cmb' ),
+        'name' => __( 'Home Page Feature Left Title', 'cmb' ),
         'desc' => __( '', 'cmb' ),
-        'id'   => 'youtubeurl',
+        'id'   => 'homepage_feature_left_title',
+        'type' => 'text_medium',
+      ),
+      array(
+        'name' => __( 'Home Page Feature Left Text', 'cmb' ),
+        'desc' => __( '', 'cmb' ),
+        'id'   => 'homepage_feature_left_text',
+        'type' => 'textarea_small',
+      ),
+      array(
+        'name' => __( 'Home Page Feature Right Background', 'cmb' ),
+        'desc' => __( '', 'cmb' ),
+        'id'   => 'homepage_feature_right_background',
+        'type' => 'file',
+      ),
+      array(
+        'name' => __( 'Home Page Feature Right Link', 'cmb' ),
+        'desc' => __( '', 'cmb' ),
+        'id'   => 'homepage_feature_right_link',
         'type' => 'text_url',
-      )
+      ),
+      array(
+        'name' => __( 'Home Page Feature Right Title', 'cmb' ),
+        'desc' => __( '', 'cmb' ),
+        'id'   => 'homepage_feature_right_title',
+        'type' => 'text_medium',
+      ),
+      array(
+        'name' => __( 'Home Page Feature Right Link', 'cmb' ),
+        'desc' => __( '', 'cmb' ),
+        'id'   => 'homepage_feature_right_text',
+        'type' => 'textarea_small',
+      ),
     );
 
     $this->option_metabox = array(
