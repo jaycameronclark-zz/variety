@@ -1676,7 +1676,7 @@ section.quality .two-thirds {
   float: left;
   display: block;
   margin-right: 0.8%;
-  width: 74.8%;
+  width: 66.4%;
 }
 section.quality .two-thirds:last-child {
   margin-right: 0;
@@ -1685,9 +1685,37 @@ section.quality aside.page-sidebar {
   float: left;
   display: block;
   margin-right: 0.8%;
-  width: 24.4%;
+  width: 32.8%;
   margin-right: 0;
+  background-repeat: no-repeat;
+  background-repeat: no-repeat;
+  padding-left: 40px;
+  color: #603813;
 }
 section.quality aside.page-sidebar:last-child {
   margin-right: 0;
+}
+section.quality aside.page-sidebar h3 {
+  font-size: 1.125em;
+  padding-bottom: 18px;
+  margin-left: 14px;
+  background-image: url(../../images/border_sidebar.gif);
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  margin-bottom: 14px;
+}
+section.quality aside.page-sidebar ul {
+  padding-right: 20px;
+}
+section.quality aside.page-sidebar ul li {
+  font-size: 13px;
+  margin-bottom: 0.75em;
+}
+section.quality .content--main {
+  color: #603813;
+  font-size: 0.9375em;
+}
+section.quality .content--main p, section.quality .content--main div p {
+  font-size: 0.9375em;
+  color: #603813;
 }

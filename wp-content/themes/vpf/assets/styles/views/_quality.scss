@@ -8,10 +8,38 @@ section.quality{
 		@include span-columns(12);
 	}
 	.two-thirds{
-		@include span-columns(9);
+		@include span-columns(8);
 	}
 	aside.page-sidebar{
-		@include span-columns(3);
+		@include span-columns(4);
 		@include omega();
+		background-repeat: no-repeat;
+		background-repeat: no-repeat;
+		padding-left: 40px;
+		color: #603813;
+		h3{
+			font-size: em(18);
+			padding-bottom: 18px;
+			margin-left: 14px;
+			background-image: url(#{$img-path}/border_sidebar.gif);
+			background-repeat: no-repeat;
+			background-position: bottom left;
+			margin-bottom: 14px;
+		}
+		ul{
+			padding-right: 20px;
+			li{
+				font-size: 13px;
+				margin-bottom: $base-line-height / 2;
+			}
+		}
+	}
+	.content--main{
+		color: #603813;
+		font-size: em(15);
+		p,div p{ 
+			font-size: em(15);
+			color: #603813;
+		}
 	}
 }
