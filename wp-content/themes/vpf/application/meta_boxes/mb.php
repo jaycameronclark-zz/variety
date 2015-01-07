@@ -153,8 +153,8 @@ function application_metaboxes( array $meta_boxes ) {
         'id'   => $prefix . 'product_color_scheme',
         'type' => 'select',
         'options' => array(
-          'orange' => __( 'Orange', 'cmb2' ),
-          'blue'   => __( 'blue', 'cmb2' )
+          'orange' => __( 'Orange', 'cmb' ),
+          'blue'   => __( 'Blue', 'cmb' )
         )
       ),
       array(
@@ -169,9 +169,9 @@ function application_metaboxes( array $meta_boxes ) {
       ),
       array(
         'name' => 'Product Detail Category',
-        'desc' => 'Select product detail category',
-        'id' => $prefix . 'text_taxonomy_select',
-        'taxonomy' => 'category', //Enter Taxonomy Slug
+        'desc' => 'Select product detail category for popups',
+        'id' => $prefix . 'product_detail_category',
+        'taxonomy' => 'products_tax', //Enter Taxonomy Slug
         'type' => 'taxonomy_select',    
       ),
       array(

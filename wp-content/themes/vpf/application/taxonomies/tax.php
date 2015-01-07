@@ -7,8 +7,9 @@
  * @package WordPress
  */
 
-/* Sliders */
-function custom_sliders_taxonomy() {
+
+/* Products */
+function custom_products_taxonomy() {
   $labels = array(
     'name' => _x('Categories', ''),
     'singular_name' => _x('Category', ''),
@@ -23,7 +24,7 @@ function custom_sliders_taxonomy() {
     'menu_name' => __('Categories')
   );
   $rewrite = array(
-    'slug' => 'slideshow-category',
+    'slug' => 'products-category',
     'with_front' => true,
     'hierarchical' => false,
   );
@@ -34,7 +35,7 @@ function custom_sliders_taxonomy() {
     'show_admin_column' => true,
     'query_var' => true,
   );
-  register_taxonomy( 'slideshows_tax', array( 'cpt_slideshows' ), $args );
+  register_taxonomy( 'products_tax', array( 'cpt_products' ), $args );
 }
-/* Register Taxonomies */
-add_action( 'init', 'custom_sliders_taxonomy', 0 );
+
+add_action( 'init', 'custom_products_taxonomy', 0 );

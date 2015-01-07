@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*------------------------------------*\
-    INDIAN SPRINGS APPLICATION.CSS
+    VARIETY PET FOODS APPLICATION.CSS
 \*------------------------------------*/
 /*
   DO NOT EDIT BOURBON AND NEAT CORE FILES!
@@ -1759,7 +1759,7 @@ section.story .content--story span.headline {
   line-height: 1.2;
 }
 section.story .content--story h3, section.story .content--story h4, section.story .content--story h5 {
-  margin-top: 20px;
+  margin-top: 40px;
 }
 section.story .content--story h3.orange, section.story .content--story h4.orange, section.story .content--story h5.orange {
   color: #b7451c;
@@ -1774,4 +1774,18 @@ section.story .page-bottom {
   margin-right: auto;
   margin-bottom: 20px;
   background: url(../../images/story-paper-background.png) top left no-repeat;
+}
+
+/*------------------------------------*\
+    PRODUCTS
+\*------------------------------------*/
+section.products--slider {
+  float: left;
+  display: block;
+  margin-right: 0.8%;
+  width: 100%;
+  min-height: 200px;
+}
+section.products--slider:last-child {
+  margin-right: 0;
 }

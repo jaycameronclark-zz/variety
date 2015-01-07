@@ -24,7 +24,7 @@ section.story{
 			line-height: 1.2;
 		}
 		h3,h4,h5{
-			margin-top: $gutter;
+			margin-top: $gutter * 2;
 			&.orange{
 				color: $color-orange;
 				font-family: $jd;

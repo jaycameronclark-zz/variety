@@ -27,6 +27,10 @@ function cpt_products() {
     'not_found_in_trash'  => __( 'Not found in Trash', 'varietypetfoods' ),
   );
 
+  $rewrite = array(
+    'slug' => 'pet-food-products', 'with_front' => 'false'
+  );
+
   $args = array(
     'label' => __( 'cpt_products', 'varietypetfoods' ),
     'menu_icon' => 'dashicons-products',
@@ -44,6 +48,7 @@ function cpt_products() {
     'has_archive' => true,
     'exclude_from_search' => false,
     'publicly_queryable' => true,
+    'rewrite' => $rewrite,
     'capability_type' => 'post',
   );
   register_post_type( 'cpt_products', $args );
@@ -66,13 +71,17 @@ function cpt_products_detail() {
     'not_found_in_trash'  => __( 'Not found in Trash', 'varietypetfoods' ),
   );
 
+  $rewrite = array(
+    'slug' => 'pet-food-product-details', 'with_front' => 'false'
+  );
+
   $args = array(
     'label' => __( 'cpt_products_detail', 'varietypetfoods' ),
     'menu_icon' => 'dashicons-products',
     'description' => __( 'Variety Pet Foods Product Detail', 'varietypetfoods' ),
     'labels' => $labels,
     'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'page-attributes'),
-    'taxonomies' => array('category'),
+    'taxonomies' => array('products_tax'),
     'hierarchical' => true,
     'public' => true,
     'show_ui' => true,
@@ -84,6 +93,7 @@ function cpt_products_detail() {
     'has_archive' => true,
     'exclude_from_search' => false,
     'publicly_queryable' => true,
+    'rewrite' => $rewrite,
     'capability_type' => 'post',
     'query_var' => true
   );
