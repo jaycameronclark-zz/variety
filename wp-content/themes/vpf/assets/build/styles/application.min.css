@@ -493,6 +493,13 @@ input[type="submit"]:hover {
   src: url("../../fonts/p22frankcas-rom-webfont.eot");
   src: url("../../fonts/p22frankcas-rom-webfont.eot?#iefix") format("embedded-opentype"), url("../../fonts/p22frankcas-rom-webfont.woff") format("woff"), url("../../fonts/p22frankcas-rom-webfont.ttf") format("truetype"), url("../../fonts/p22frankcas-rom-webfont.svg#p22") format("svg");
 }
+@font-face {
+  font-family: jd;
+  font-weight: normal;
+  font-style: normal;
+  src: url("../../fonts/j.d-webfont.eot");
+  src: url("../../fonts/j.d-webfont.eot?#iefix") format("embedded-opentype"), url("../../fonts/j.d-webfont.woff") format("woff"), url("../../fonts/j.d-webfont.ttf") format("truetype"), url("../../fonts/j.d-webfont.svg#jd") format("svg");
+}
 body {
   -webkit-font-smoothing: antialiased;
   background-color: #f8f1eb;
@@ -1756,7 +1763,7 @@ section.story .content--story h3, section.story .content--story h4, section.stor
 }
 section.story .content--story h3.orange, section.story .content--story h4.orange, section.story .content--story h5.orange {
   color: #b7451c;
-  font-family: "p22", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "jd", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-weight: normal;
 }
 section.story .page-bottom {
