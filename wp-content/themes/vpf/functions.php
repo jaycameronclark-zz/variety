@@ -172,9 +172,9 @@ function get_vpf_slideshow() {
     ];
     $group_images[] = $temp_group;
   }
-  
-  $slideshows['static_images'] = $static_images;
-  $slideshows['group_images'] = $group_images;
+
+  $slideshows['static_images'] = !empty($static_images) ? $static_images : [];
+  $slideshows['group_images'] = !empty($group_images) ? $group_images : [];
 
   return $slideshows;
 }

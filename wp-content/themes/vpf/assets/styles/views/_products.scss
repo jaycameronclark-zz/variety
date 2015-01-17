@@ -4,5 +4,96 @@
 
 section.products--slider{
 	@include span-columns(12);
-	min-height: 200px
+	margin-top: $gutter;
+	margin-bottom: $gutter;
+	min-height: 200px;
+	height: 344px;
+	position: relative;
+	background-position: top center;
+	background-repeat: no-repeat;
+
+	.image-group{
+		position: absolute;
+		width: 470px;
+		height: 340px;
+		img{
+			display: none;
+			&:first-child{
+				display: block;
+			}
+		}
+	}
+	.static-image{
+		position: absolute;
+		width: 460px;
+		height: 320px;
+	}
+}
+
+section.product{
+	@include span-columns(12);
+
+	.product--intro{
+		article{
+			@include span-columns(8 of 12);
+			
+			color: $color-brown;
+			p{
+				font-size: em(18);
+				padding-right: $gutter;
+				&.available-size{
+					font-size: em(12);
+					font-family: $sans-serif;
+				}
+			}
+		}
+
+		.sticky{
+			@include span-columns(4 of 12);
+			@include omega();
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: 100 100;
+
+			.usa-flag{
+				float: left;
+				display: block;
+				width: 100%;
+				margin-left: 20px;
+				margin-top: 16px;
+				padding-left: 52px;
+				color: $color-brown;
+				font-family: $georgia;
+				background: url(#{$img-path}/usa-flag.png) center left no-repeat;
+			}
+		}
+			
+		h1,h2,h3,h4,h5,h6{
+			font-family: $georgia;
+			font-weight: normal;
+			line-height: 100%;
+		}
+		h1{
+			font-size: em(25);
+			i.tagline{
+				font-size: em(10);
+				font-style: italic;
+				color: $color-brown;
+			}
+		}
+
+		.main--title{
+			margin-bottom: $base-line-height / 2;
+			word-spacing: 2px;
+		}
+
+		&.blue{
+			
+			h1,h2,h3{
+				color: $color-blue;
+			}
+
+		}
+	}
+
 }

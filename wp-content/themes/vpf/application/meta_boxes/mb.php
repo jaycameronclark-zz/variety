@@ -14,7 +14,7 @@ function application_metaboxes( array $meta_boxes ) {
   $meta_boxes['vpf_slider_images'] = array(
     'id'         => 'slider_images_metabox',
     'title'      => __( 'Slider Image Settings', 'cmb' ),
-    'pages'      => array( 'page' ),
+    'pages'      => array( 'page', 'cpt_products' ),
     'context'    => 'normal',
     'priority'   => 'high',
     'show_names' => true,
@@ -148,6 +148,36 @@ function application_metaboxes( array $meta_boxes ) {
     'cmb_styles' => true,
     'fields'   => array(
       array(
+        'name' => __( 'Page Title', 'cmb' ),
+        'desc' => __( 'Overrides default title', 'cmb' ),
+        'id'   => $prefix . 'product_page_title',
+        'type' => 'text_medium'
+      ),
+      array(
+        'name' => __( 'Product Title Tagline Text', 'cmb' ),
+        'desc' => __( 'Italisized text next to heading', 'cmb' ),
+        'id'   => $prefix . 'title_tagline_text',
+        'type' => 'text_medium'
+      ),
+      array(
+        'name' => __( 'Product available size text', 'cmb' ),
+        'desc' => __( 'Text below main paragraph', 'cmb' ),
+        'id'   => $prefix . 'product_available_size_text',
+        'type' => 'text_medium'
+      ),
+      array(
+        'name' => __( 'Stick Note Image', 'cmb' ),
+        'desc' => __( 'Custom sticky note image', 'cmb' ),
+        'id'   => $prefix . 'sticky_note',
+        'type' => 'file'
+      ),
+      array(
+        'name' => __( 'USA Flag Text', 'cmb' ),
+        'desc' => __( 'Text next to USA flag', 'cmb' ),
+        'id'   => $prefix . 'usa_flag_text',
+        'type' => 'text_medium'
+      ),
+      array(
         'name' => __( 'Color Scheme', 'cmb' ),
         'desc' => __( 'Orange or Blue Color Scheme', 'cmb' ),
         'id'   => $prefix . 'product_color_scheme',
@@ -179,36 +209,6 @@ function application_metaboxes( array $meta_boxes ) {
         'desc' => __( 'Background for sidebar content', 'cmb' ),
         'id'   => $prefix . 'sidebar_background',
         'type' => 'file'
-      ),
-      array(
-        'name' => __( 'Product Title Text', 'cmb' ),
-        'desc' => __( 'Heading (colored text)', 'cmb' ),
-        'id'   => $prefix . 'product_title_text',
-        'type' => 'text_medium'
-      ),
-      array(
-        'name' => __( 'Product Title Tagline Text', 'cmb' ),
-        'desc' => __( 'Italisized text next to heading', 'cmb' ),
-        'id'   => $prefix . 'title_tagline_text',
-        'type' => 'text_medium'
-      ),
-      array(
-        'name' => __( 'Product available size text', 'cmb' ),
-        'desc' => __( 'Text below main paragraph', 'cmb' ),
-        'id'   => $prefix . 'product_available_size_text',
-        'type' => 'text_medium'
-      ),
-      array(
-        'name' => __( 'Stick Note Image', 'cmb' ),
-        'desc' => __( 'Custom sticky note image', 'cmb' ),
-        'id'   => $prefix . 'sticky_note',
-        'type' => 'file'
-      ),
-      array(
-        'name' => __( 'USA Flag Text', 'cmb' ),
-        'desc' => __( 'Text next to USA flag', 'cmb' ),
-        'id'   => $prefix . 'usa_flag_text',
-        'type' => 'text_medium'
       ),
       array(
         'name' => __( 'Product Description', 'cmb' ),

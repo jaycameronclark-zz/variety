@@ -79,12 +79,25 @@ nav{
                   padding: 0;
                   display: block;
                 }
+                &.current-menu-item,
+                &.current_menu_item{
+                  a{
+                    color: $color-orange;
+                    background: none;
+                  }
+                }
               }
             }
             &:hover{
               ul.sub-menu{
                 opacity: 1;
                 display: block;
+              }
+            }
+            &.current-menu-item,
+            &.current_menu_item{
+              a{
+                color: $color-orange;
               }
             }
           }
