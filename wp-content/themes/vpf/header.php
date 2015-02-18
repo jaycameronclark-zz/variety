@@ -4,6 +4,7 @@
   <meta charset="<?php bloginfo('charset'); ?>">
   <meta http-equiv="Content-Language" content="en">
   <title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?> <?php bloginfo('name'); ?></title>
+  
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <script src="<?= get_template_directory_uri(); ?>/assets/js/jquery-1.11.1.min.js"></script>

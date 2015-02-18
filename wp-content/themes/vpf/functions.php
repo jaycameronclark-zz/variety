@@ -178,3 +178,55 @@ function get_vpf_slideshow() {
 
   return $slideshows;
 }
+
+function vpf_meta ($post_id) {
+  $meta = get_post_meta($post_id);
+  if (!empty($meta)) {
+      foreach ($meta as $key => $value) {
+          $meta[ $key ] = ( isset( $value[0] ) && count( $value ) == 1 ) ? $value[0] : $value;
+      }
+  } else {
+      $meta = [];
+  }
+  return $meta;
+}
+
+function get_product_details() {
+  global $post;
+
+  $normalized = [];
+
+  $post_meta = vpf_meta($post->ID);
+
+  $cat_id = @unserialize($post_meta['_cmb_product_detail_category']);
+
+  $args = [
+    'posts_per_page' => -1,
+    'post_type' => 'cpt_products_detail',
+    'orderby' => 'menu_order',
+    'order' => 'ASC',
+    'category' => [$cat_id]
+  ];
+
+  $products = query_posts($args);
+
+  foreach($products as $product) {
+    $products_meta = vpf_meta($product->ID);
+    $temp = [
+      'title' => !empty($product_meta['_cmb_product_detail_title']) ? $product_meta['_cmb_product_detail_title'] : $product->post_title,
+      'sub_title' => !empty($product_meta['_cmb_product_subtitle']) ? $product_meta['_cmb_product_subtitle'] : '',
+      'color_scheme' => !empty($product_meta['_cmb_product_detail_color_scheme']) ? $product_meta['_cmb_product_detail_color_scheme'] : '',
+      'small_description' => !empty($product_meta['_cmb_product_small_description']) ? $product_meta['_cmb_product_small_description'] : '',
+      'main_description' => !empty($product_meta['_cmb_product_main_description']) ? $product_meta['_cmb_product_main_description'] : '',
+      'natural_text' => !empty($product_meta['_cmb_product_natural_text']) ? $product_meta['_cmb_product_natural_text'] : '',
+      'featured_image' => !empty($product_meta['_cmb_product_featured_image']) ? $product_meta['_cmb_product_featured_image'] : '',
+      'ingredients' => !empty($product_meta['_cmb_product_ingredients']) ? $product_meta['_cmb_product_ingredients'] : '',
+    ];
+
+    $normalized[] = $temp;
+
+  }
+var_dump($normalized);die;
+  return $normalized;
+
+}

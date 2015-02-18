@@ -138,9 +138,9 @@ function application_metaboxes( array $meta_boxes ) {
     )
   );
 
-  $meta_boxes['vpf_product_details'] = array(
-    'id'         => 'vpf_product_details',
-    'title'      => __( 'Product Details', 'cmb' ),
+  $meta_boxes['vpf_product_page_details'] = array(
+    'id'         => 'vpf_product_page_details',
+    'title'      => __( 'Product Page Details', 'cmb' ),
     'pages'      => array( 'cpt_products' ),
     'context'    => 'normal',
     'priority'   => 'high',
@@ -199,7 +199,7 @@ function application_metaboxes( array $meta_boxes ) {
       ),
       array(
         'name' => 'Product Detail Category',
-        'desc' => 'Select product detail category for popups',
+        'desc' => 'Associated Product Detail Category',
         'id' => $prefix . 'product_detail_category',
         'taxonomy' => 'products_tax', //Enter Taxonomy Slug
         'type' => 'taxonomy_select',    
@@ -214,6 +214,94 @@ function application_metaboxes( array $meta_boxes ) {
         'name' => __( 'Product Description', 'cmb' ),
         'desc' => __( '', 'cmb' ),
         'id'   => $prefix . 'product_description',
+        'type' => 'textarea'
+      )
+    )
+  );
+
+  $meta_boxes['vpf_product_details'] = array(
+    'id'         => 'vpf_product_details',
+    'title'      => __( 'Product Details', 'cmb' ),
+    'pages'      => array( 'cpt_products_detail' ),
+    'context'    => 'normal',
+    'priority'   => 'high',
+    'show_names' => true,
+    'cmb_styles' => true,
+    'fields'   => array(
+      array(
+        'name' => __( 'Product Title', 'cmb' ),
+        'desc' => __( 'Large, Main Title', 'cmb' ),
+        'id'   => $prefix . 'product_detail_title',
+        'type' => 'text_medium'
+      ),
+      array(
+        'name' => __( 'Product Sub-Title', 'cmb' ),
+        'desc' => __( 'Italisized title under main title', 'cmb' ),
+        'id'   => $prefix . 'product_subtitle',
+        'type' => 'text_medium'
+      ),
+      array(
+        'name' => __( 'Color Scheme', 'cmb' ),
+        'desc' => __( 'Orange or Blue Color Scheme', 'cmb' ),
+        'id'   => $prefix . 'product_detail_color_scheme',
+        'type' => 'select',
+        'options' => array(
+          'orange' => __( 'Orange', 'cmb' ),
+          'blue'   => __( 'Blue', 'cmb' )
+        )
+      ),
+      array(
+        'name' => __( 'Product Small Description', 'cmb' ),
+        'desc' => __( 'Text below heading', 'cmb' ),
+        'id'   => $prefix . 'product_small_description',
+        'type' => 'textarea'
+      ),
+      array(
+        'name' => __( 'Product Main Description', 'cmb' ),
+        'desc' => __( 'Main, Italisized description', 'cmb' ),
+        'id'   => $prefix . 'product_main_description',
+        'type' => 'textarea'
+      ),
+      array(
+        'name' => __( 'Natural Text', 'cmb' ),
+        'desc' => __( 'Green Text', 'cmb' ),
+        'id'   => $prefix . 'product_natural_text',
+        'type' => 'text_medium'
+      ),
+      array(
+        'name' => __( 'Featured Image', 'cmb' ),
+        'desc' => __( 'Primary Product Image', 'cmb' ),
+        'id'   => $prefix . 'product_featured_image',
+        'type' => 'file'
+      ),
+      array(
+        'name' => __( 'Product Ingredients', 'cmb' ),
+        'desc' => __( '', 'cmb' ),
+        'id'   => $prefix . 'product_ingredients',
+        'type' => 'textarea'
+      ),
+      array(
+        'name' => __( 'Feeding Guide', 'cmb' ),
+        'desc' => __( '', 'cmb' ),
+        'id'   => $prefix . 'product_feeding_guide',
+        'type' => 'textarea'
+      ),
+      array(
+        'name' => __( 'Guaranteed Analysis:', 'cmb' ),
+        'desc' => __( '', 'cmb' ),
+        'id'   => $prefix . 'product_guaranteed_analysis',
+        'type' => 'textarea'
+      ),
+      array(
+        'name' => __( 'Calorie Content:', 'cmb' ),
+        'desc' => __( 'Medium to Large', 'cmb' ),
+        'id'   => $prefix . 'product_calorie_content_one',
+        'type' => 'textarea'
+      ),
+      array(
+        'name' => __( 'Calorie Content:', 'cmb' ),
+        'desc' => __( 'Small to medium', 'cmb' ),
+        'id'   => $prefix . 'product_calorie_content_two',
         'type' => 'textarea'
       )
     )

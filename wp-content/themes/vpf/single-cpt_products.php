@@ -83,4 +83,14 @@ $(document).ready(function() {
 	<?php endif; ?>
 </section>
 
+<section class="products--list">
+	<?php 
+		$products = get_product_details();
+		if ( !empty($products) ) :
+		foreach($products as $product) :
+	?>
+	<?= $product['title']; ?>
+	<?php endforeach; endif; ?>
+</section>
+
 <?php get_footer(); ?>
