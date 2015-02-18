@@ -1106,6 +1106,15 @@ body {
   clear: both;
 }
 
+a.post-edit-link {
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  color: #b7451c;
+  font-size: 0.75em;
+}
+a.post-edit-link:hover {
+  color: #8b3415;
+}
+
 header {
   float: left;
   display: block;
@@ -1234,8 +1243,6 @@ footer.footer--primary {
   background: url(../../images/border_footer.gif) top center no-repeat;
   height: 80px;
   padding-top: 0.75em;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 footer.footer--primary:last-child {
   margin-right: 0;
@@ -1824,8 +1831,22 @@ section.product {
   display: block;
   margin-right: 0.8%;
   width: 100%;
+  padding-bottom: 1.5em;
 }
 section.product:last-child {
+  margin-right: 0;
+}
+section.product .outer-container {
+  background: url(../../images/dbl-hor-border.png) bottom left repeat-x;
+}
+section.product .product--intro {
+  float: left;
+  display: block;
+  margin-right: 0.8%;
+  width: 100%;
+  padding-bottom: 20px;
+}
+section.product .product--intro:last-child {
   margin-right: 0;
 }
 section.product .product--intro article {

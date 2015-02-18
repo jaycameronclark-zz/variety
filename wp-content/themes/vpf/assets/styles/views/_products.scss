@@ -32,8 +32,14 @@ section.products--slider{
 
 section.product{
 	@include span-columns(12);
-
+	padding-bottom: $base-line-height;
+	
+	.outer-container{
+		background: url(#{$img-path}/dbl-hor-border.png) bottom left repeat-x;	
+	}
 	.product--intro{
+		@include span-columns(12 of 12);
+		padding-bottom: $gutter;
 		article{
 			@include span-columns(8 of 12);
 			
