@@ -83,14 +83,25 @@ $(document).ready(function() {
 	<?php endif; ?>
 </section>
 
-<section class="products--list">
+<section class="products--list <?= $view['layout_type']; ?>">
+	<div class="outer-container">
 	<?php 
 		$products = get_product_details();
 		if ( !empty($products) ) :
 		foreach($products as $product) :
 	?>
+
+	<div class="list--featured-image">
+		<!-- need to get alt for images -->
+		<img src="<?= $product['featured_image']; ?>" alt="">
+	</div>
+	
 	<?= $product['title']; ?>
+	<?= $product['sub_title']; ?>
+	<?= $product['small_description']; ?>
+
 	<?php endforeach; endif; ?>
+	</div>
 </section>
 
 <?php get_footer(); ?>

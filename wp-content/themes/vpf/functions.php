@@ -194,7 +194,7 @@ function vpf_meta ($post_id) {
 function get_product_details() {
   global $post;
 
-  $normalized = [];
+  $finalized = [];
 
   $post_meta = vpf_meta($post->ID);
 
@@ -211,7 +211,9 @@ function get_product_details() {
   $products = query_posts($args);
 
   foreach($products as $product) {
-    $products_meta = vpf_meta($product->ID);
+    $product_meta = vpf_meta($product->ID);
+    $image = wp_get_attachment_image( get_post_meta( $product->ID, '_cmb_product_featured_image', 1 ), '' );
+    var_dump($image);die;
     $temp = [
       'title' => !empty($product_meta['_cmb_product_detail_title']) ? $product_meta['_cmb_product_detail_title'] : $product->post_title,
       'sub_title' => !empty($product_meta['_cmb_product_subtitle']) ? $product_meta['_cmb_product_subtitle'] : '',
@@ -223,10 +225,10 @@ function get_product_details() {
       'ingredients' => !empty($product_meta['_cmb_product_ingredients']) ? $product_meta['_cmb_product_ingredients'] : '',
     ];
 
-    $normalized[] = $temp;
+    $finalized[] = $temp;
 
   }
-var_dump($normalized);die;
-  return $normalized;
+
+  return $finalized;
 
 }
