@@ -17,6 +17,9 @@
     wp_register_style('application', get_template_directory_uri() . '/assets/build/styles/application.min.css', array(), '1.0', 'all');
     wp_enqueue_style('application');
 
+    wp_register_style('vendor', get_template_directory_uri() . '/assets/build/styles/vendor.min.css', array(), '1.0', 'all');
+    wp_enqueue_style('vendor');
+
     wp_register_style('varietypetfoods', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
     wp_enqueue_style('varietypetfoods');
   }
@@ -213,22 +216,56 @@ function get_product_details() {
   foreach($products as $product) {
     $product_meta = vpf_meta($product->ID);
     $image = wp_get_attachment_image( get_post_meta( $product->ID, '_cmb_product_featured_image', 1 ), '' );
-    var_dump($image);die;
+    $small_image = wp_get_attachment_image( get_post_meta( $product->ID, '_cmb_product_small_description_image', 1 ), '' );
+    
     $temp = [
       'title' => !empty($product_meta['_cmb_product_detail_title']) ? $product_meta['_cmb_product_detail_title'] : $product->post_title,
       'sub_title' => !empty($product_meta['_cmb_product_subtitle']) ? $product_meta['_cmb_product_subtitle'] : '',
       'color_scheme' => !empty($product_meta['_cmb_product_detail_color_scheme']) ? $product_meta['_cmb_product_detail_color_scheme'] : '',
       'small_description' => !empty($product_meta['_cmb_product_small_description']) ? $product_meta['_cmb_product_small_description'] : '',
+      'small_description_image' => !empty($product_meta['_cmb_product_small_description_image']) ? $product_meta['_cmb_product_small_description_image'] : '',
       'main_description' => !empty($product_meta['_cmb_product_main_description']) ? $product_meta['_cmb_product_main_description'] : '',
       'natural_text' => !empty($product_meta['_cmb_product_natural_text']) ? $product_meta['_cmb_product_natural_text'] : '',
       'featured_image' => !empty($product_meta['_cmb_product_featured_image']) ? $product_meta['_cmb_product_featured_image'] : '',
       'ingredients' => !empty($product_meta['_cmb_product_ingredients']) ? $product_meta['_cmb_product_ingredients'] : '',
+      'link' => get_permalink($product->ID),
+      'id' => $product->ID
     ];
 
     $finalized[] = $temp;
-
+  
   }
 
+  return $finalized;
+
+}
+
+function get_single_product_details($requested) {
+
+  $finalized = [];
+  $product_meta = vpf_meta($requested);
+  $product = get_post($requested);
+
+  $image = wp_get_attachment_image( get_post_meta( $product->ID, '_cmb_product_featured_image', 1 ), '' );
+  
+  $temp = [
+    'title' => !empty($product_meta['_cmb_product_detail_title']) ? $product_meta['_cmb_product_detail_title'] : $product->post_title,
+    'sub_title' => !empty($product_meta['_cmb_product_subtitle']) ? $product_meta['_cmb_product_subtitle'] : '',
+    'color_scheme' => !empty($product_meta['_cmb_product_detail_color_scheme']) ? $product_meta['_cmb_product_detail_color_scheme'] : '',
+    'small_description' => !empty($product_meta['_cmb_product_small_description']) ? $product_meta['_cmb_product_small_description'] : '',
+    'main_description' => !empty($product_meta['_cmb_product_main_description']) ? $product_meta['_cmb_product_main_description'] : '',
+    'natural_text' => !empty($product_meta['_cmb_product_natural_text']) ? $product_meta['_cmb_product_natural_text'] : '',
+    'featured_image' => !empty($product_meta['_cmb_product_featured_image']) ? $product_meta['_cmb_product_featured_image'] : '',
+    'ingredients' => !empty($product_meta['_cmb_product_ingredients']) ? $product_meta['_cmb_product_ingredients'] : '',
+    'feeding_guide' => !empty($product_meta['_cmb_product_feeding_guide']) ? $product_meta['_cmb_product_feeding_guide'] : '',
+    'product_guaranteed_analysis' => !empty($product_meta['_cmb_product_guaranteed_analysis']) ? $product_meta['_cmb_product_guaranteed_analysis'] : '',
+    'product_calorie_content_one' => !empty($product_meta['_cmb_product_calorie_content_one']) ? $product_meta['_cmb_product_calorie_content_one'] : '',
+    'product_calorie_content_two' => !empty($product_meta['_cmb_product_calorie_content_two']) ? $product_meta['_cmb_product_calorie_content_two'] : '',
+    'link' => get_permalink($product->ID)
+  ];
+
+  $finalized[] = $temp;
+ 
   return $finalized;
 
 }

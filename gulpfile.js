@@ -52,6 +52,8 @@ gulp.task('plugins', function() {
   return gulp.src([
     THEMEPATH + 'js/source/plugins.js',
     THEMEPATH + 'js/vendor/cycle.js',
+    THEMEPATH + 'js/vendor/jquery.fancybox.js',
+    THEMEPATH + 'js/vendor/jquery.fancybox-media.js',
     ])
   .pipe(plugins.concat('plugins.js'))
   .pipe(plugins.rename({ suffix: '.min' }))

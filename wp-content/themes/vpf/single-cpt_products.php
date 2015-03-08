@@ -6,6 +6,7 @@ $meta = get_post_meta(get_the_ID());
 
 $view['color_class'] = $meta['_cmb_product_color_scheme'][0];
 $view['layout_type'] = $meta['_cmb_product_layout'][0];
+$view['sidebar_background'] = !empty($meta['_cmb_sidebar_background'][0]) ? $meta['_cmb_sidebar_background'][0] : '';
 $view['product_category'] = $meta['_cmb_product_detail_category'][0];
 $view['page_title'] = !empty($meta['_cmb_product_page_title'][0]) ? $meta['_cmb_product_page_title'][0] : get_the_title(get_the_ID());
 $view['tagline'] = !empty($meta['_cmb_title_tagline_text'][0]) ? $meta['_cmb_title_tagline_text'][0] : '';
@@ -83,24 +84,43 @@ $(document).ready(function() {
 	<?php endif; ?>
 </section>
 
-<section class="products--list <?= $view['layout_type']; ?>">
+<section class="products--list">
 	<div class="outer-container">
-	<?php 
-		$products = get_product_details();
-		if ( !empty($products) ) :
-		foreach($products as $product) :
-	?>
 
-	<div class="list--featured-image">
-		<!-- need to get alt for images -->
-		<img src="<?= $product['featured_image']; ?>" alt="">
-	</div>
-	
-	<?= $product['title']; ?>
-	<?= $product['sub_title']; ?>
-	<?= $product['small_description']; ?>
+		<div class="<?= $view['layout_type']; ?>">
+			<div class="products">
+				<?php 
+					$products = get_product_details();
+					if ( !empty($products) ) :
+					foreach($products as $product) :
+				?>
+				
+				<div class="product <?= $view['color_class']; ?>">
+					<div class="list--featured-image">
+						<a class="various fancybox.ajax" href="<?= get_template_directory_uri(); ?>/includes/product-detail.php?id=<?= $product['id']; ?>">
+							<img src="<?= $product['featured_image']; ?>" alt="">
+						</a>
+					</div>
+					<h4><a class="various fancybox.ajax" href="<?= get_template_directory_uri(); ?>/includes/product-detail.php?id=<?= $product['id']; ?>"><?= $product['title']; ?></a></h4>
+					<a class="various fancybox.ajax" href="<?= get_template_directory_uri(); ?>/includes/product-detail.php?id=<?= $product['id']; ?>"><span class="sub-title"><?= $product['sub_title']; ?></span></a>
+					<p>
+						<?= $product['small_description']; ?> 
+						<?php if (!empty($product['small_description_image'])) : ?>
+						<img class="small-image" src="<?= $product['small_description_image']; ?>">
+						<?php endif; ?>
+					</p>
+				</div>
 
-	<?php endforeach; endif; ?>
+				<?php endforeach; endif; ?>
+			</div>
+
+			<?php if ($view['layout_type'] == 'single_column_sidebar') : ?>
+				<aside>
+					<img src="<?= $view['sidebar_background']; ?>">
+				</aside>
+			<?php endif; ?>
+		</div>
+
 	</div>
 </section>
 

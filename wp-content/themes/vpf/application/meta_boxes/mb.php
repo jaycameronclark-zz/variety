@@ -257,6 +257,12 @@ function application_metaboxes( array $meta_boxes ) {
         'type' => 'textarea'
       ),
       array(
+        'name' => __( 'Product Small Description Image', 'cmb' ),
+        'desc' => __( 'Image below small heading', 'cmb' ),
+        'id'   => $prefix . 'product_small_description_image',
+        'type' => 'file'
+      ),
+      array(
         'name' => __( 'Product Main Description', 'cmb' ),
         'desc' => __( 'Main, Italisized description', 'cmb' ),
         'id'   => $prefix . 'product_main_description',
