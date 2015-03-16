@@ -126,7 +126,7 @@ function cpt_where_to_buy() {
     'menu_icon' => 'dashicons-cart',
     'description' => __( 'Variety Pet Foods WTB Pages', 'varietypetfoods' ),
     'labels' => $labels,
-    'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'page-attributes'),
+    'supports' => array( 'title', 'editor', 'thumbnail', 'revisions'),
     'hierarchical' => true,
     'public' => true,
     'show_ui' => true,

@@ -351,5 +351,59 @@ function application_metaboxes( array $meta_boxes ) {
     )
   );
 
+  $meta_boxes['vpf_where_to_buy'] = array(
+    'id'         => 'vpf_where_to_buy_details',
+    'title'      => __('Where To Buy Details', 'cmb'),
+    'pages'      => array('cpt_where_to_buy'),
+    'context'    => 'normal',
+    'priority'   => 'high',
+    'show_names' => true,
+    'cmb_styles' => true,
+
+    'fields' => array(
+      array(
+        'name' => __( 'Color Scheme', 'cmb' ),
+        'desc' => __( 'Orange or Blue Color Scheme', 'cmb' ),
+        'id'   => $prefix . 'wtb_color_scheme',
+        'type' => 'select',
+        'options' => array(
+          'orange' => __( 'Orange', 'cmb' ),
+          'blue'   => __( 'Blue', 'cmb' )
+        )
+      ),
+      array(
+        'name' => __( 'Sub Text', 'cmb' ),
+        'desc' => __( 'Text below main paragraph', 'cmb' ),
+        'id'   => $prefix . 'wtb_sub_text',
+        'type' => 'text'
+      ),
+      array(
+        'id'          => $prefix . 'where_to_buy_links',
+        'type'        => 'group',
+        'description' => __( 'Where To Buy Links', 'cmb' ),
+        'options'     => array(
+          'group_title'   => __( 'Link Group: {#}', 'cmb' ),
+          'add_button'    => __( 'Add Another Link Group', 'cmb' ),
+          'remove_button' => __( 'Remove Link Group', 'cmb' ),
+          'sortable'      => true
+        ),
+        'fields' => array(
+          array(
+            'name' => 'Group Name',
+            'id'   => 'wtb_link_group_name',
+            'type' => 'text_medium',
+            'description' => 'Examples: retail, online, distributors'
+          ),
+          array(
+              'name' => 'List of Links (HTML)',
+              'desc' => 'Example: &lt;li&gt;&lt;a href="http://google.com"&gt;Some Link Text&lt;/a&gt;&lt;/li&gt;',
+              'id' => $prefix . 'where_to_buy_links_list',
+              'type' => 'textarea'
+          ),
+        )
+      )
+    )
+  );
+
   return $meta_boxes;
 }

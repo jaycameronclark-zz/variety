@@ -1,0 +1,121 @@
+/*------------------------------------*\
+    Where To Buy
+\*------------------------------------*/
+
+section.where-to-buy{
+	@include span-columns(12);
+	@include omega();
+
+	.featured--image{
+		@include span-columns(4 of 12);
+		padding-top: $gutter / 2;
+		img{
+			float: left;
+			display: block;
+		}
+	}
+
+	.where-to-buy-content{
+		@include span-columns(8 of 12);
+		padding-left: $gutter;
+
+		&.blue{
+			h1,h2,h3{
+				color: $color-blue;
+			}
+		}
+
+		&.orange{
+			h1,h2,h3{
+				color: $color-orange;
+			}
+		}
+
+		h1,h2,h3{
+			font-size: em(30);
+			font-family: $p22;
+			font-weight: normal;
+			margin-bottom: 12px;
+		}
+
+		p{
+			font-family: $p22;
+			font-size: em(20);
+			&.sub-text{
+				font-size: em(12);
+				font-family: $sans-serif;
+			}
+		}
+	}
+}
+
+section.where-to-buy-links{
+	@include span-columns(12);
+	margin-top: $gutter;
+
+	.outer-container{
+		padding-top: $gutter * 2;
+		padding-bottom: $gutter * 2;
+		background: url(#{$img-path}/dbl-hor-border.png) top left repeat-x;	
+	}
+	
+
+	.link-group{
+		@include span-columns(4 of 12);
+		.link-group-heading{
+			width: 100%;
+			background: url(#{$img-path}/wtb-links-header.png) top left no-repeat;
+			background-attachment: cover;
+			min-height: 60px;
+			padding: $gutter;
+		}
+
+		&.blue{
+			h4{
+				color: $color-blue;
+			}
+			a{
+				&:hover{
+					color: $color-blue;
+				}
+			}
+		}
+		&.orange{
+			h4{
+				color: $color-orange;
+			}
+			a{
+				&:hover{
+					color: $color-orange;
+				}
+			}
+		}
+
+		h4{
+			font-size: em(18);
+			font-family: $jd;
+			font-weight: normal;
+		}
+		li{
+			list-style-type: none;
+		}
+		ul{
+			margin-left: 18px;
+			margin-top: $gutter;
+			padding: 0;
+			a{
+				color: $base-font-color;
+				&.blue{
+					&:hover{
+						color: $color-blue;
+					}
+				}
+				&.orange{
+					&:hover{
+						color: $color-blue;
+					}
+				}
+			}
+		}
+	}
+}

@@ -96,6 +96,14 @@ function new_excerpt_more( $more ) {
 }
 add_filter( 'excerpt_more', 'new_excerpt_more' );
 
+//Remove hard coded w/h
+add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10, 3 );
+
+function remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {
+    $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
+    return $html;
+}
+
 /*-------------------------------------------------------------------------------------------*/
 /* SHORTCODES */
 /*-------------------------------------------------------------------------------------------*/
@@ -180,6 +188,24 @@ function get_vpf_slideshow() {
   $slideshows['group_images'] = !empty($group_images) ? $group_images : [];
 
   return $slideshows;
+}
+
+function get_vpf_wheretobuy_links() {
+  global $post;
+  $view = $post;
+  
+  $group = get_post_meta( $view->ID, '_cmb_where_to_buy_links', true );
+  $link_groups = [];
+
+  foreach ($group as $item){
+    $temp_group = [
+      'group_title' => isset($item['wtb_link_group_name']) ? $item['wtb_link_group_name'] : 'No Title',
+      'group_links' => !empty($item['_cmb_where_to_buy_links_list']) ? $item['_cmb_where_to_buy_links_list'] : ''
+    ];
+    $link_groups[] = $temp_group;
+  }
+
+  return $link_groups;
 }
 
 function vpf_meta ($post_id) {
