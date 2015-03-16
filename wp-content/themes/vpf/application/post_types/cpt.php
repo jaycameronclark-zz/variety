@@ -80,7 +80,7 @@ function cpt_products_detail() {
     'menu_icon' => 'dashicons-products',
     'description' => __( 'Variety Pet Foods Product Detail', 'varietypetfoods' ),
     'labels' => $labels,
-    'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'page-attributes'),
+    'supports' => array( 'title'),
     'taxonomies' => array('products_tax'),
     'hierarchical' => true,
     'public' => true,
