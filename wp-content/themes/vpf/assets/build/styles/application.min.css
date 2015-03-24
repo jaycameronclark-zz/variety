@@ -1635,6 +1635,9 @@ article.front-page--intro h1 {
   width: 270px;
   height: 192px;
 }
+.front-page--slider .slide-4 {
+  display: none;
+}
 
 section.featured {
   float: left;
@@ -2354,6 +2357,26 @@ section.page-default .content--main h2 {
     width: 130px;
   }
 
+  section.main {
+    min-height: inherit;
+  }
+
+  .front-page--slider {
+    background-image: none !important;
+    min-height: inherit;
+  }
+  .front-page--slider .static-image,
+  .front-page--slider .slide-1,
+  .front-page--slider .slide-2,
+  .front-page--slider .slide-3 {
+    display: none;
+  }
+  .front-page--slider .slide-4 {
+    display: block;
+    position: relative;
+    margin: 20px auto;
+  }
+
   .outer-container {
     float: left;
     display: block;
@@ -2469,7 +2492,7 @@ section.page-default .content--main h2 {
 
   .outer-container section.featured .feature .content {
     padding-top: 20px;
-    padding-right: 10px;
+    padding-right: 5px;
   }
   .outer-container article.front-page--intro h1 {
     font-size: 1.275em;

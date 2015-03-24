@@ -18,6 +18,24 @@
       width: 130px;
     }
   }
+  section.main{
+    min-height: inherit;
+  }
+  .front-page--slider{
+    background-image: none!important;
+    min-height: inherit;
+    .static-image,
+    .slide-1,
+    .slide-2,
+    .slide-3{
+      display: none;
+    }
+    .slide-4{
+      display: block;
+      position: relative;
+      margin: 20px auto;
+    }
+  }
   .outer-container{
     @include span-columns(12);
     @include omega();
@@ -143,7 +161,7 @@
       .feature{
         .content{
           padding-top: 20px;
-          padding-right: 10px;
+          padding-right: 5px;
         }
       }
     }
