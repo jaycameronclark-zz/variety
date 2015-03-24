@@ -19,11 +19,12 @@
   <header class="header--masthead">
   	<div class="outer-container">
 
-    <button type="button" class="js-menu-trigger sliding-menu-button">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+<!--    <button type="button" class="js-menu-trigger sliding-menu-button">-->
+<!--        <span></span>-->
+<!--        <span></span>-->
+<!--        <span></span>-->
+<!--        <span></span>-->
+<!--    </button>-->
 
     <nav class="js-menu sliding-menu-content">
       <?php wp_nav_menu( array('theme_location' => 'header_primary_nav') ); ?>
@@ -32,6 +33,12 @@
     <div class="js-menu-screen menu-screen"></div>
 
   		<div class="social--connect">
+            <button type="button" class="js-menu-trigger sliding-menu-button">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
   			<ul class="social-icons">
   				<li><a href="<?= cmb_get_option('application_options', 'facebookurl'); ?>"><i class="sprite sprite--facebook"></i></a></li>
   				<li><a href="<?= cmb_get_option('application_options', 'youtubeurl'); ?>"><i class="sprite sprite--youtube"></i></a></li>

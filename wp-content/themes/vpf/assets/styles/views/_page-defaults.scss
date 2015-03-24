@@ -1,0 +1,15 @@
+/*------------------------------------*\
+    PAGE-DEFAULTS
+\*------------------------------------*/
+
+section.page-default{
+  .content--main{
+    h2{
+      font-family: $p22;
+      color: $color-brown;
+      font-size: em(26);
+      line-height: 1.2;
+      font-weight: normal;
+    }
+  }
+}

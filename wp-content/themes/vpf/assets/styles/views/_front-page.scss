@@ -68,11 +68,11 @@ section.featured{
 		min-height: 180px;
 
 		.content{
-			@include span-columns(4 of 6);
+//			@include span-columns(4 of 6);
 			color: $color-brown;
-			margin-left: 130px;
-			margin-top: 38px;
-			padding-right: 30px;
+			padding-left: 130px;
+			padding-top: 38px;
+			padding-right: 35px;
 			h4{
 				font-family: $georgia;
 				font-size: 1em;

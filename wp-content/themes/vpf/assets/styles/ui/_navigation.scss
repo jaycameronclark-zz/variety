@@ -131,17 +131,16 @@ $sliding-menu-border: 1px solid $sliding-menu-border-color;
 $sliding-menu-background-hover: $base-accent-color;
 $sliding-menu-color-hover: #fff;
 
-.sliding-menu-button {
-	border-radius: 0;
-	background-color: rgba(96, 56, 19, 0.4);
+.sliding-menu-button {  
+  border-radius: 0;
+  background-color: rgba(96, 56, 19, 0.4);
   cursor: pointer;
-  width: 30px;
-  height: 30px;
-  position: absolute;
+  width: 40px;
+  height: 38px;
+  margin: 20px 0 0 15px;
   padding: 8px 8px;
-  right: $gutter;
-  top: $gutter;
   outline: none;
+  float: right;
   span{
   	width: 100%;
   	margin-bottom: 3px;

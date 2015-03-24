@@ -1,0 +1,169 @@
+/*------------------------------------*\
+    RESPONSIVE STRUCTURE
+\*------------------------------------*/
+@media all and (max-width: 900px){
+  header{
+    margin: 0 0 20px 0;
+    .social--connect{
+      @include span-columns(12);
+      float: right;
+      ul.social-icons{
+        float: right;
+        margin-top: 25px;
+      }
+    }
+    .logo{
+      position: absolute;
+      top: 5px;
+      width: 130px;
+    }
+  }
+  .outer-container{
+    @include span-columns(12);
+    @include omega();
+    padding: 0 5%;
+    float: none;
+    .nav--primary{
+      display: none;
+    }
+    section.featured{
+      .feature{
+        width: 100%;
+        max-width: 430px;
+        float: none;
+        margin: 0 auto;
+      }
+    }
+    section.quality .two-thirds,
+    section.quality aside.page-sidebar{
+      float: none;
+      width: 80%;
+      margin: 0 auto;
+    }
+    section.quality aside.page-sidebar{
+      background-image: none!important;
+      margin-top: 30px;
+      padding: 0;
+    }
+    section.quality .content--main .quality-p-one{
+      width: 47%;
+      margin-left: 0;
+    }
+    section.quality .content--main .quality-p-two{
+      margin-left: 0;
+    }
+  }
+  article.front-page--intro{
+    h1{
+      font-size: 1.875em;
+      text-align: center;
+    }
+  }
+  section.story .content--story span.headline{
+    font-size: 1.875em;
+  }
+  section.page-default .content--main h2{
+    font-size: 1.375em;
+  }
+}
+@media all and (max-width: 780px){
+  article.front-page--intro{
+    h1{
+      font-size: 1.375em;
+    }
+  }
+  section.story .content--story span.headline{
+    font-size: 1.375em;
+  }
+  section.page-default .content--main h2{
+    font-size: 1.175em;
+  }
+  .outer-container{
+    section.quality .two-thirds,
+    section.quality aside.page-sidebar{
+      float: none;
+      width: 90%;
+    }
+  }
+}
+@media all and (max-width: 680px) {
+  section.story .content--story img.alignright{
+    float: none;
+  }
+  section.story .content--story p:first-of-type{
+    text-align: center;
+  }
+  .page-default{
+    .contact-info{
+      padding: 80px 0 0 50px;
+    }
+  }
+}
+@media all and (max-width: 580px){
+  header{
+    a.join{
+      display: none;
+      visibility: hidden;
+      padding: 0;
+    }
+  }
+  .outer-container{
+    section.quality .two-thirds,
+    section.quality aside.page-sidebar{
+      float: none;
+      width: 100%;
+    }
+    section.quality{
+      .content--main{
+        .quality-p-one,
+        .quality-p-two{
+          margin-top: 0;
+          margin-left: 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+  .page-default{
+    .contact-info{
+      padding: 80px 0 0 30px;
+    }
+  }
+
+}
+
+@media all and (max-width: 480px){
+  header{
+    .logo{
+      width: 100px;
+    }
+  }
+  .outer-container{
+    section.featured{
+      .feature{
+        .content{
+          padding-top: 20px;
+          padding-right: 10px;
+        }
+      }
+    }
+    article.front-page--intro{
+      h1{
+        font-size: 1.275em;
+      }
+    }
+    section.story .content--story span.headline{
+      font-size: 1.275em;
+    }
+  }
+  .page-default{
+    .contact-info{
+      padding: 0;
+    }
+    .col-half{
+      @include span-columns(12);
+      @include omega();
+      float: none;
+    }
+  }
+}
