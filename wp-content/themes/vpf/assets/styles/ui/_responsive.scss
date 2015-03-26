@@ -2,87 +2,123 @@
     RESPONSIVE STRUCTURE
 \*------------------------------------*/
 @media all and (max-width: 900px){
-  header{
-    margin: 0 0 20px 0;
-    .social--connect{
-      @include span-columns(12);
-      float: right;
-      ul.social-icons{
-        float: right;
-        margin-top: 25px;
-      }
-    }
-    .logo{
-      position: absolute;
-      top: 5px;
-      width: 130px;
-    }
-  }
-  section.main{
-    min-height: inherit;
-  }
-  .front-page--slider{
-    background-image: none!important;
-    min-height: inherit;
-    .static-image,
-    .slide-1,
-    .slide-2,
-    .slide-3{
-      display: none;
-    }
-    .slide-4{
-      display: block;
-      position: relative;
-      margin: 20px auto;
-    }
-  }
-  .outer-container{
-    @include span-columns(12);
-    @include omega();
-    padding: 0 5%;
-    float: none;
-    .nav--primary{
-      display: none;
-    }
-    section.featured{
-      .feature{
-        width: 100%;
-        max-width: 430px;
-        float: none;
-        margin: 0 auto;
-      }
-    }
-    section.quality .two-thirds,
-    section.quality aside.page-sidebar{
-      float: none;
-      width: 80%;
-      margin: 0 auto;
-    }
-    section.quality aside.page-sidebar{
-      background-image: none!important;
-      margin-top: 30px;
-      padding: 0;
-    }
-    section.quality .content--main .quality-p-one{
-      width: 47%;
-      margin-left: 0;
-    }
-    section.quality .content--main .quality-p-two{
-      margin-left: 0;
-    }
-  }
-  article.front-page--intro{
-    h1{
-      font-size: 1.875em;
-      text-align: center;
-    }
-  }
-  section.story .content--story span.headline{
-    font-size: 1.875em;
-  }
-  section.page-default .content--main h2{
-    font-size: 1.375em;
-  }
+	header{
+		margin: 0 0 20px 0;
+		.social--connect{
+		  @include span-columns(12);
+		  float: right;
+		  ul.social-icons{
+			float: right;
+			margin-top: 25px;
+		  }
+		}
+		.logo{
+		  position: absolute;
+		  top: 5px;
+		  width: 130px;
+		}
+	}
+	section.main{
+		min-height: inherit;
+	}
+	.front-page--slider{
+		background-image: none!important;
+		min-height: inherit;
+		.static-image,
+		.slide-1,
+		.slide-2,
+		.slide-3{
+		  display: none;
+		}
+		.slide-4{
+		  display: block;
+		  position: relative;
+		  margin: 20px auto;
+		}
+	}
+	.outer-container{
+		@include span-columns(12);
+		@include omega();
+		padding: 0 5%;
+		float: none;
+		.nav--primary{
+		  display: none;
+		}
+		section.featured{
+			.feature{
+				width: 100%;
+				max-width: 430px;
+				float: none;
+				margin: 0 auto;
+			}
+	}
+	section.quality .two-thirds,
+	section.quality aside.page-sidebar{
+	  float: none;
+	  width: 80%;
+	  margin: 0 auto;
+	}
+	section.quality aside.page-sidebar{
+	  background-image: none!important;
+	  margin-top: 30px;
+	  padding: 0;
+	}
+	section.quality .content--main .quality-p-one{
+	  width: 47%;
+	  margin-left: 0;
+	}
+	section.quality .content--main .quality-p-two{
+	  margin-left: 0;
+	}
+	}
+	article.front-page--intro{
+	h1{
+	  font-size: 1.875em;
+	  text-align: center;
+	}
+	}
+	section.story .content--story span.headline{
+	font-size: 1.875em;
+	}
+	section.page-default .content--main h2{
+	font-size: 1.375em;
+	}
+	section.products--slider{
+		height: auto;
+		background: none!important;
+	}
+	section.products--slider .static-image{
+		display: none;
+	}
+	section.products--slider .image-group{
+		position: relative;
+		width: 100%;
+		max-width: 470px;
+		height: auto;
+		margin: 0 auto;
+	}
+	.prod-w-sidebar{
+		width: 45%;
+		margin: 0 5% 0 0;
+		float: left;
+	}
+	.sidebar-right{
+		width: 50%;
+		padding: 0 0 0 5%;
+	}
+	section.products--list .product,
+	section.products--list .product p{
+		padding: 0;
+	}
+	section.products--list .product .list--featured-image{
+		width: 35%;
+		max-width: none;
+		margin-right: 5%;
+	}
+
+	section.products--list .product .list--featured-info{
+		width: 60%;
+	}
 }
 @media all and (max-width: 780px){
   article.front-page--intro{
@@ -103,6 +139,12 @@
       width: 90%;
     }
   }
+	section.product .product--intro article{
+		width: 49.2%;
+	}
+	section.product .product--intro .sticky{
+		width: 50%;
+	}
 }
 @media all and (max-width: 680px) {
   section.story .content--story img.alignright{
@@ -116,6 +158,14 @@
       padding: 80px 0 0 50px;
     }
   }
+	section.product .product--intro article{
+		width: 100%;
+		margin: 0;
+	}
+	section.product .product--intro .sticky{
+		width: 100%;
+		margin: 0;
+	}
 }
 @media all and (max-width: 580px){
   header{
@@ -147,7 +197,29 @@
       padding: 80px 0 0 30px;
     }
   }
+	.prod-w-sidebar{
+		width: 100%;
+		margin: 0;
+		float: none;
+	}
+	.sidebar-right {
+		width: 100%;
+		padding: 0;
+		float: none;
+		background: none;
+	}
+	section.products--list .product .list--featured-image{
+		width: 40%;
+		max-width: 94px;
+		margin-right: 5%;
+	}
 
+	section.products--list .product .list--featured-info{
+		width: 70%;
+	}
+	section.product .product--intro .sticky .usa-flag{
+		margin: 0;
+	}
 }
 
 @media all and (max-width: 480px){
@@ -184,4 +256,13 @@
       float: none;
     }
   }
+	section.products--list .product .list--featured-image{
+		width: 35%;
+		max-width: none;
+		margin-right: 5%;
+	}
+
+	section.products--list .product .list--featured-info{
+		width: 60%;
+	}
 }

@@ -141,10 +141,11 @@ function application_metaboxes( array $meta_boxes ) {
   $meta_boxes['vpf_product_page_details'] = array(
     'id'         => 'vpf_product_page_details',
     'title'      => __( 'Product Page Details', 'cmb' ),
-    'pages'      => array( 'cpt_products' ),
+    'pages'      => array( 'cpt_products','page' ),
     'context'    => 'normal',
     'priority'   => 'high',
     'show_names' => true,
+    'show_on'    => array( 'key' => 'id', 'value' => array( 2571, ), ), // Specific post IDs to display this metabox
     'cmb_styles' => true,
     'fields'   => array(
       array(
@@ -187,7 +188,7 @@ function application_metaboxes( array $meta_boxes ) {
           'blue'   => __( 'Blue', 'cmb' )
         )
       ),
-      array(
+/*      array(
         'name' => __( 'Layout Type', 'cmb' ),
         'desc' => __( 'Single Column w/Sidebar or Two Columns', 'cmb' ),
         'id'   => $prefix . 'product_layout',
@@ -196,25 +197,13 @@ function application_metaboxes( array $meta_boxes ) {
             'single_column_sidebar' => __( 'Single Column w/Sidebar', 'cmb2' ),
             'two_column_grid'   => __( 'Two Column', 'cmb2' )
           )
-      ),
+      ),*/
       array(
         'name' => 'Product Detail Category',
         'desc' => 'Associated Product Detail Category',
         'id' => $prefix . 'product_detail_category',
         'taxonomy' => 'products_tax', //Enter Taxonomy Slug
-        'type' => 'taxonomy_select',    
-      ),
-      array(
-        'name' => __( 'Sidebar Image', 'cmb' ),
-        'desc' => __( 'Background for sidebar content', 'cmb' ),
-        'id'   => $prefix . 'sidebar_background',
-        'type' => 'file'
-      ),
-      array(
-        'name' => __( 'Product Description', 'cmb' ),
-        'desc' => __( '', 'cmb' ),
-        'id'   => $prefix . 'product_description',
-        'type' => 'textarea'
+        'type' => 'taxonomy_select',
       )
     )
   );
@@ -317,6 +306,8 @@ function application_metaboxes( array $meta_boxes ) {
     'id'         => 'vpf_page_sidebar_details',
     'title'      => __( 'Sidebar Content', 'cmb' ),
     'pages'      => array( 'page' ),
+    'show_names' => true,
+    'show_on'    => array( 'key' => 'id', 'value' => array( 786, ), ), // Specific post IDs to display this metabox
     'context'    => 'normal',
     'priority'   => 'high',
     'show_names' => true,
@@ -345,7 +336,7 @@ function application_metaboxes( array $meta_boxes ) {
           'teeny' => true, // output the minimal editor config used in Press This
           'dfw' => false, // replace the default fullscreen with DFW (needs specific css)
           'tinymce' => true, // load TinyMCE, can be used to pass settings directly to TinyMCE using an array()
-          'quicktags' => true // load Quicktags, can be used to pass settings directly to Quicktags using an array()  
+          'quicktags' => true // load Quicktags, can be used to pass settings directly to Quicktags using an array()
         ),
       )
     )

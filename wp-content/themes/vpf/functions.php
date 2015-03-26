@@ -295,3 +295,70 @@ function get_single_product_details($requested) {
   return $finalized;
 
 }
+
+function get_ingredients() {
+    global $post;
+
+    $finalized = [];
+
+    $post_meta = vpf_meta($post->ID);
+
+    $cat_id = @unserialize($post_meta['_cmb_product_detail_category']);
+
+    $args = [
+        'posts_per_page' => -1,
+        'post_type' => 'cpt_ingredients',
+        'orderby' => 'menu_order',
+        'order' => 'ASC',
+        'category' => [$cat_id]
+    ];
+
+    $ingredients = query_posts($args);
+
+    foreach($ingredients as $ingredient) {
+        $product_meta = vpf_meta($ingredient->ID);
+        $image = wp_get_attachment_image( get_post_meta( $ingredient->ID, '_cmb_product_featured_image', 1 ), '' );
+        $small_image = wp_get_attachment_image( get_post_meta( $ingredient->ID, '_cmb_product_small_description_image', 1 ), '' );
+
+        $temp = [
+            'link' => get_permalink($ingredient->ID),
+            'id' => $ingredient->ID
+        ];
+
+        $finalized[] = $temp;
+
+    }
+
+    return $finalized;
+
+}
+
+/*function be_metabox_show_on_child_of( $display, $meta_box ) {
+    if ( 'child_of' !== $meta_box['show_on']['key'] )
+        return $display;
+
+    // If we're showing it based on ID, get the current ID
+    if( isset( $_GET['post'] ) ) $post_id = $_GET['post'];
+    elseif( isset( $_POST['post_ID'] ) ) $post_id = $_POST['post_ID'];
+    if( !isset( $post_id ) )
+        return $display;
+
+    // If current page id is in the included array, do not display the metabox
+    $meta_box['show_on']['value'] = !is_array( $meta_box['show_on']['value'] ) ? array( $meta_box['show_on']['value'] ) : $meta_box['show_on']['value'];
+    $pageids = array();
+    foreach ($meta_box['show_on']['value'] as $parent_id) {
+        $pages = get_pages(array(
+            'child_of' => $parent_id,
+            'post_status' => 'publish,draft,pending'
+        ));
+        foreach($pages as $page){
+            $pageids[] = $page->ID;
+        }
+    }
+    $pageids_unique = array_unique($pageids);
+    if ( in_array( $post_id, $pageids_unique ) )
+        return true;
+    else
+        return false;
+}
+add_filter( 'vpf_product_page_details', 'be_metabox_show_on_child_of', 10, 2 );*/

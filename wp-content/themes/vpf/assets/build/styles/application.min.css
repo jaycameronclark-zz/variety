@@ -2078,11 +2078,18 @@ section.products--list .product p .small-image {
 }
 section.products--list .product .list--featured-image {
   float: left;
-  width: 94px;
-  margin-right: 20px;
+  width: 40%;
+  max-width: 94px;
+  margin-right: 5%;
 }
 section.products--list .product .list--featured-image img {
   display: block;
+}
+section.products--list .product .list--featured-info {
+  position: relative;
+  display: inline-block;
+  float: left;
+  width: 70%;
 }
 
 section.product--details {
@@ -2331,6 +2338,91 @@ section.page-default .content--main h2 {
 }
 
 /*------------------------------------*\
+    RIGHT PAPER SIDEBAR
+\*------------------------------------*/
+/*    PRODUCTS
+\*------------------------------------*/
+.prod-w-sidebar {
+  width: 55%;
+  margin: 0 5% 0 0;
+  float: left;
+}
+
+/*    INGREDIENTS
+\*------------------------------------*/
+.sidebar-right {
+  width: 40%;
+  padding: 0 0 0 5%;
+  float: left;
+  display: inline-block;
+  color: #603813;
+  background-image: url("/wp-content/themes/vpf/assets/images/divider_sidebar.gif");
+  background-repeat: no-repeat;
+  background-position: top left;
+}
+.sidebar-right .sidebar-ingreds--whole {
+  width: 100%;
+  margin: 0 auto;
+  padding: 15px 0 0 0;
+  text-align: center;
+  background: #fff;
+}
+.sidebar-right .sidebar-ingreds--whole img {
+  width: 100%;
+  max-width: 273px;
+  padding: 0 10px;
+}
+.sidebar-right .sidebar-ingreds--intro {
+  width: 100%;
+  padding: 10px 30px;
+  float: left;
+  font-family: georgia, times, times new roman, serif;
+  font-size: 12px;
+  line-height: 1.5em;
+  background: #fff;
+}
+.sidebar-right ul.sidebar-ingreds--area {
+  width: 100%;
+  margin: 0;
+  padding: 10px 30px;
+  float: left;
+  display: inline-block;
+  background: #fff;
+}
+.sidebar-right ul.sidebar-ingreds--area li.sidebar-ingreds {
+  padding: 2% 0;
+  float: left;
+  border-top: 1px solid #999;
+  list-style: none;
+  display: inline-block;
+}
+.sidebar-right ul.sidebar-ingreds--area li.sidebar-ingreds .sidebar-ingreds--image {
+  width: 38%;
+  margin: 0 2% 0 0;
+  float: left;
+}
+.sidebar-right ul.sidebar-ingreds--area li.sidebar-ingreds .sidebar-ingreds--content {
+  width: 60%;
+  float: left;
+}
+.sidebar-right ul.sidebar-ingreds--area li.sidebar-ingreds .sidebar-ingreds--content h5 {
+  line-height: 1.5em;
+  font-size: 14px;
+  padding-top: 10px;
+  font-family: georgia, times, times new roman, serif;
+}
+.sidebar-right ul.sidebar-ingreds--area li.sidebar-ingreds .sidebar-ingreds--content p {
+  font-size: 12px;
+  font-family: arial, helvetica, sans-serif;
+}
+.sidebar-right .sidebar-ingreds--torn {
+  width: 100%;
+}
+.sidebar-right .sidebar-ingreds--torn img {
+  width: 100%;
+}
+
+/*------------------------------------*\
     RESPONSIVE STRUCTURE
 \*------------------------------------*/
 @media all and (max-width: 900px) {
@@ -2429,6 +2521,49 @@ section.page-default .content--main h2 {
   section.page-default .content--main h2 {
     font-size: 1.375em;
   }
+
+  section.products--slider {
+    height: auto;
+    background: none !important;
+  }
+
+  section.products--slider .static-image {
+    display: none;
+  }
+
+  section.products--slider .image-group {
+    position: relative;
+    width: 100%;
+    max-width: 470px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .prod-w-sidebar {
+    width: 45%;
+    margin: 0 5% 0 0;
+    float: left;
+  }
+
+  .sidebar-right {
+    width: 50%;
+    padding: 0 0 0 5%;
+  }
+
+  section.products--list .product,
+  section.products--list .product p {
+    padding: 0;
+  }
+
+  section.products--list .product .list--featured-image {
+    width: 35%;
+    max-width: none;
+    margin-right: 5%;
+  }
+
+  section.products--list .product .list--featured-info {
+    width: 60%;
+  }
 }
 @media all and (max-width: 780px) {
   article.front-page--intro h1 {
@@ -2448,6 +2583,14 @@ section.page-default .content--main h2 {
     float: none;
     width: 90%;
   }
+
+  section.product .product--intro article {
+    width: 49.2%;
+  }
+
+  section.product .product--intro .sticky {
+    width: 50%;
+  }
 }
 @media all and (max-width: 680px) {
   section.story .content--story img.alignright {
@@ -2460,6 +2603,16 @@ section.page-default .content--main h2 {
 
   .page-default .contact-info {
     padding: 80px 0 0 50px;
+  }
+
+  section.product .product--intro article {
+    width: 100%;
+    margin: 0;
+  }
+
+  section.product .product--intro .sticky {
+    width: 100%;
+    margin: 0;
   }
 }
 @media all and (max-width: 580px) {
@@ -2483,6 +2636,33 @@ section.page-default .content--main h2 {
 
   .page-default .contact-info {
     padding: 80px 0 0 30px;
+  }
+
+  .prod-w-sidebar {
+    width: 100%;
+    margin: 0;
+    float: none;
+  }
+
+  .sidebar-right {
+    width: 100%;
+    padding: 0;
+    float: none;
+    background: none;
+  }
+
+  section.products--list .product .list--featured-image {
+    width: 40%;
+    max-width: 94px;
+    margin-right: 5%;
+  }
+
+  section.products--list .product .list--featured-info {
+    width: 70%;
+  }
+
+  section.product .product--intro .sticky .usa-flag {
+    margin: 0;
   }
 }
 @media all and (max-width: 480px) {
@@ -2514,5 +2694,15 @@ section.page-default .content--main h2 {
   }
   .page-default .col-half:last-child {
     margin-right: 0;
+  }
+
+  section.products--list .product .list--featured-image {
+    width: 35%;
+    max-width: none;
+    margin-right: 5%;
+  }
+
+  section.products--list .product .list--featured-info {
+    width: 60%;
   }
 }

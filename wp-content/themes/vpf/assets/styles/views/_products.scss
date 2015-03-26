@@ -215,11 +215,19 @@ section.products--list{
 
 		.list--featured-image{
 			float: left;
-			width: 94px;
-			margin-right: $gutter;
+			width: 40%;
+			max-width: 94px;
+			margin-right: 5%;
 			img{
 				display: block;
 			}
+		}
+
+		.list--featured-info{
+			position: relative;
+			display: inline-block;
+			float: left;
+			width: 70%;
 		}
 
 	}

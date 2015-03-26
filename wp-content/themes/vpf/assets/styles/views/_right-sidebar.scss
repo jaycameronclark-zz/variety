@@ -1,0 +1,88 @@
+/*------------------------------------*\
+    RIGHT PAPER SIDEBAR
+\*------------------------------------*/
+
+/*    PRODUCTS
+\*------------------------------------*/
+.prod-w-sidebar{
+	width: 55%;
+	margin: 0 5% 0 0;
+	float: left;
+}
+
+
+
+/*    INGREDIENTS
+\*------------------------------------*/
+
+.sidebar-right {
+	width: 40%;
+	padding: 0 0 0 5%;
+	float: left;
+	display: inline-block;
+	color: #603813;
+	background-image: url("/wp-content/themes/vpf/assets/images/divider_sidebar.gif");
+	background-repeat: no-repeat;
+	background-position: top left;
+	.sidebar-ingreds--whole{
+		width: 100%;
+		margin: 0 auto;
+		padding: 15px 0 0 0;
+		text-align: center;
+		background: #fff;
+		img{
+			width: 100%;
+			max-width: 273px;
+			padding: 0 10px;
+		}
+	}
+	.sidebar-ingreds--intro{
+		width: 100%;
+		padding: 10px 30px;
+		float: left;
+		font-family: georgia, times, times new roman, serif;
+		font-size: 12px;
+		line-height: 1.5em;
+		background: #fff;
+	}
+	ul.sidebar-ingreds--area {
+		width: 100%;
+		margin: 0;
+		padding: 10px 30px;
+		float: left;
+		display: inline-block;
+		background: #fff;
+		li.sidebar-ingreds{
+			padding: 2% 0;
+			float: left;
+			border-top: 1px solid #999;
+			list-style: none;
+			display: inline-block;
+			.sidebar-ingreds--image{
+				width: 38%;
+				margin: 0 2% 0 0;
+				float: left;
+			}
+			.sidebar-ingreds--content{
+				width: 60%;
+				float: left;
+				h5{
+					line-height: 1.5em;
+					font-size: 14px;
+					padding-top: 10px;
+					font-family: georgia, times, times new roman, serif;
+				}
+				p{
+					font-size: 12px;
+					font-family: arial, helvetica, sans-serif;
+				}
+			}
+		}
+	}
+	.sidebar-ingreds--torn {
+		width: 100%;
+		img {
+			width: 100%;
+		}
+	}
+}

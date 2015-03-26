@@ -100,6 +100,51 @@ function cpt_products_detail() {
   register_post_type( 'cpt_products_detail', $args );
 }
 
+function cpt_ingredients() {
+    $labels = array(
+        'name' => _x( 'Sidebar Ingredients', 'Post Type General Name', 'varietypetfoods' ),
+        'singular_name' => _x( 'Sidebar Ingredient', 'Post Type Singular Name', 'varietypetfoods' ),
+        'menu_name' => __( 'Sidebar Ingredients', 'varietypetfoods' ),
+        'parent_item_colon'   => __( 'Parent Item:', 'varietypetfoods' ),
+        'all_items' => __( 'All Ingredients', 'varietypetfoods' ),
+        'view_item' => __( 'View Ingredient', 'varietypetfoods' ),
+        'add_new_item'        => __( 'Add New Ingredient', 'varietypetfoods' ),
+        'add_new'  => __( 'Add New', 'varietypetfoods' ),
+        'edit_item' => __( 'Edit Item', 'varietypetfoods' ),
+        'update_item' => __( 'Update Item', 'varietypetfoods' ),
+        'search_items'=> __( 'Search Item', 'varietypetfoods' ),
+        'not_found' => __( 'Not found', 'varietypetfoods' ),
+        'not_found_in_trash'  => __( 'Not found in Trash', 'varietypetfoods' ),
+    );
+
+    $rewrite = array(
+        'slug' => 'pet-food-product-ingredients', 'with_front' => 'false'
+    );
+
+    $args = array(
+        'label' => __( 'Ingredients', 'varietypetfoods' ),
+        'menu_icon' => 'dashicons-products',
+        'description' => __( 'Variety Pet Foods Product Ingredients', 'varietypetfoods' ),
+        'labels' => $labels,
+        'supports' => array( 'title', 'editor', 'thumbnail', 'revisions', 'page-attributes'),
+        'taxonomies' => array('products_tax'),
+        'hierarchical' => true,
+        'public' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'show_in_nav_menus' => true,
+        'show_in_admin_bar' => false,
+        'menu_position' => 25,
+        'can_export' => true,
+        'has_archive' => true,
+        'exclude_from_search' => false,
+        'publicly_queryable' => true,
+        'rewrite' => $rewrite,
+        'capability_type' => 'post',
+        'query_var' => true
+    );
+    register_post_type( 'cpt_ingredients', $args );
+}
 
 /* WTB Pages */
 function cpt_where_to_buy() {
@@ -147,4 +192,5 @@ function cpt_where_to_buy() {
 /* Register Custom Post Types */
 add_action( 'init', 'cpt_products', 0);
 add_action( 'init', 'cpt_products_detail', 0);
+add_action( 'init', 'cpt_ingredients', 0);
 add_action( 'init', 'cpt_where_to_buy', 0);
