@@ -362,3 +362,20 @@ function get_ingredients() {
         return false;
 }
 add_filter( 'vpf_product_page_details', 'be_metabox_show_on_child_of', 10, 2 );*/
+
+
+/* begin widget areas */
+function ap_widgets_area_init() {
+	register_sidebar(
+		array(
+			'id' => 'sidebar-1',
+			'name' => 'Blog Sidebar',
+			'before_widget' => '',
+			'after_widget' => '',
+			'before_title' => '',
+			'after_title' => ''
+		)
+	);
+}
+
+add_action( 'widgets_init', 'ap_widgets_area_init' );
