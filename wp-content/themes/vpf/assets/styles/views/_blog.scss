@@ -4,6 +4,7 @@
 .blog {
 	h1{
 		font-size: 2.375em;
+		margin: 20px 0 0 0;
 		color: #603813;
 		font-family: "p22", Arial, "Helvetica Neue", Helvetica, sans-serif;
 		font-weight: lighter;
@@ -11,7 +12,7 @@
 		word-spacing: 3px;
 	}
 	.blog--content {
-		width: 55%;
+		width: 65%;
 		margin: 45px 5% 45px 0;
 		float: left;
 		h1{
@@ -61,75 +62,46 @@
 	/*    INGREDIENTS
 	\*------------------------------------*/
 
-/*	.sidebar-right {
-		width: 40%;
+	.blog--sidebar {
+		position: relative;
+		width: 30%;
 		padding: 0 0 0 5%;
+		margin: 45px 0 0 0;
 		float: left;
 		display: inline-block;
 		color: #603813;
-		background-image: url("/wp-content/themes/vpf/assets/images/divider_sidebar.gif");
-		background-repeat: no-repeat;
-		background-position: top left;
-		.sidebar-ingreds--whole {
-			width: 100%;
-			margin: 0 auto;
-			padding: 15px 0 0 0;
-			text-align: center;
-			background: #fff;
-			img {
-				width: 100%;
-				max-width: 273px;
-				padding: 0 10px;
-			}
+		.blog--sidebar-image{
+			position: absolute;
+			left: 0;
 		}
-		.sidebar-ingreds--intro {
-			width: 100%;
-			padding: 10px 30px;
-			float: left;
+		h3{
+			margin: 15px 0 0 0;
 			font-family: georgia, times, times new roman, serif;
-			font-size: 12px;
-			line-height: 1.5em;
-			background: #fff;
+			background-image: url("/wp-content/themes/vpf/assets/images/border_note.gif");
+			background-repeat: no-repeat;
+			font-weight: normal;
+			font-size: 18px;
+			background-position: 0 23px;
+			padding-bottom: 20px;
+			padding-left: 13px;
+			color: #603813;
 		}
-		ul.sidebar-ingreds--area {
-			width: 100%;
-			margin: 0;
-			padding: 10px 30px;
-			float: left;
-			display: inline-block;
-			background: #fff;
-			li.sidebar-ingreds {
-				padding: 2% 0;
-				float: left;
-				border-top: 1px solid #999;
-				list-style: none;
-				display: inline-block;
-				.sidebar-ingreds--image {
-					width: 38%;
-					margin: 0 2% 0 0;
-					float: left;
+		ul{
+			margin: 0 20px;
+			padding: 0;
+			list-style: none;
+			li{
+				padding-bottom: 15px;
+				font-size: 12px;
+				padding: 0 0 15px 12px;
+				line-height: 1.4em;
+				a{
+					color: #556a8a;
 				}
-				.sidebar-ingreds--content {
-					width: 60%;
-					float: left;
-					h5 {
-						line-height: 1.5em;
-						font-size: 14px;
-						padding-top: 10px;
-						font-family: georgia, times, times new roman, serif;
-					}
-					p {
-						font-size: 12px;
-						font-family: arial, helvetica, sans-serif;
-					}
+				a:hover{
+					color: #213c63;
 				}
 			}
 		}
-		.sidebar-ingreds--torn {
-			width: 100%;
-			img {
-				width: 100%;
-			}
-		}
-	}*/
+	}
 }

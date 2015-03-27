@@ -141,11 +141,9 @@ function application_metaboxes( array $meta_boxes ) {
   $meta_boxes['vpf_product_page_details'] = array(
     'id'         => 'vpf_product_page_details',
     'title'      => __( 'Product Page Details', 'cmb' ),
-    'pages'      => array( 'cpt_products','page' ),
+    'pages'      => array( 'cpt_products' ),
     'context'    => 'normal',
     'priority'   => 'high',
-    'show_names' => true,
-    'show_on'    => array( 'key' => 'id', 'value' => array( 2571, ), ), // Specific post IDs to display this metabox
     'cmb_styles' => true,
     'fields'   => array(
       array(
@@ -188,7 +186,7 @@ function application_metaboxes( array $meta_boxes ) {
           'blue'   => __( 'Blue', 'cmb' )
         )
       ),
-/*      array(
+      array(
         'name' => __( 'Layout Type', 'cmb' ),
         'desc' => __( 'Single Column w/Sidebar or Two Columns', 'cmb' ),
         'id'   => $prefix . 'product_layout',
@@ -197,7 +195,7 @@ function application_metaboxes( array $meta_boxes ) {
             'single_column_sidebar' => __( 'Single Column w/Sidebar', 'cmb2' ),
             'two_column_grid'   => __( 'Two Column', 'cmb2' )
           )
-      ),*/
+      ),
       array(
         'name' => 'Product Detail Category',
         'desc' => 'Associated Product Detail Category',
@@ -310,7 +308,6 @@ function application_metaboxes( array $meta_boxes ) {
     'show_on'    => array( 'key' => 'id', 'value' => array( 786, ), ), // Specific post IDs to display this metabox
     'context'    => 'normal',
     'priority'   => 'high',
-    'show_names' => true,
     'cmb_styles' => true,
 
     'fields' => array(
@@ -395,6 +392,24 @@ function application_metaboxes( array $meta_boxes ) {
       )
     )
   );
+
+	$meta_boxes['vpf_sidebar_details'] = array(
+		'id'         => 'vpf_sidebar_details',
+		'title'      => __( 'Sidebar Details', 'cmb' ),
+		'pages'      => array( 'cpt_ingredients' ),
+		'context'    => 'normal',
+		'priority'   => 'high',
+		'show_names' => true,
+		'cmb_styles' => true,
+		'fields'   => array(
+			array(
+				'name' => __( 'Content Title', 'cmb' ),
+				'desc' => __( 'Main Title', 'cmb' ),
+				'id'   => $prefix . 'sidebar_content_title',
+				'type' => 'text_medium'
+			)
+		)
+	);
 
   return $meta_boxes;
 }

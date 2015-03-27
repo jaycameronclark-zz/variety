@@ -117,9 +117,9 @@ section.products--list{
 		@include span-columns(12);
 
 		.products{
-			@include span-columns(7 of 12);
-			padding-right: $gutter;
-			padding-top: $gutter * 2;
+//			@include span-columns(7 of 12);
+//			padding-right: $gutter;
+//			padding-top: $gutter * 2;
 		}
 
 		aside{
@@ -140,10 +140,7 @@ section.products--list{
 			@include omega(2n);
 			padding-right: $gutter;
 			padding-top: $gutter;
-			background: url(#{$img-path}/border_row.gif) bottom left no-repeat,url(#{$img-path}/border_row.gif) top left no-repeat;
-			&:last-child{
-				background: url(#{$img-path}/border_row.gif) top left no-repeat;
-			}
+			background: url(#{$img-path}/border_row.gif) top center no-repeat;
 
 			.list--featured-image{
 				float: left;
@@ -168,9 +165,9 @@ section.products--list{
 		margin-bottom: $gutter;
 		background: url(#{$img-path}/border_footer.gif) bottom right repeat-x;
 
-		&:last-child{
-			background: none;
-		}
+//		&:last-child{
+//			background: none;
+//		}
 
 		&.blue{
 			h1,h2,h3,h4,h5,h6,a,span{

@@ -88,19 +88,19 @@ $(document).ready(function() {
 	<div class="outer-container">
 
 		<div class="<?= $view['layout_type']; ?>">
-			<div class="products">
+			<div class="products products--area">
 				<?php 
 					$products = get_product_details();
 					if ( !empty($products) ) :
 					foreach($products as $product) :
 				?>
-				
 				<div class="product <?= $view['color_class']; ?>">
 					<div class="list--featured-image">
 						<a class="various fancybox.ajax" href="<?= get_template_directory_uri(); ?>/includes/product-detail.php?id=<?= $product['id']; ?>">
 							<img src="<?= $product['featured_image']; ?>" alt="">
 						</a>
 					</div>
+					<div class="list--featured-info">
 					<h4><a class="various fancybox.ajax" href="<?= get_template_directory_uri(); ?>/includes/product-detail.php?id=<?= $product['id']; ?>"><?= $product['title']; ?></a></h4>
 					<a class="various fancybox.ajax" href="<?= get_template_directory_uri(); ?>/includes/product-detail.php?id=<?= $product['id']; ?>"><span class="sub-title"><?= $product['sub_title']; ?></span></a>
 					<p>
@@ -109,18 +109,106 @@ $(document).ready(function() {
 						<img class="small-image" src="<?= $product['small_description_image']; ?>">
 						<?php endif; ?>
 					</p>
+					</div>
 				</div>
 
 				<?php endforeach; endif; ?>
 			</div>
 
 			<?php if ($view['layout_type'] == 'single_column_sidebar') : ?>
-				<aside>
-					<img src="<?= $view['sidebar_background']; ?>">
-				</aside>
-			<?php endif; ?>
-		</div>
+<!--				<aside>
+					<img src="<?/*= $view['sidebar_background']; */?>">
+				</aside>-->
+			<div class="sidebar-right">
+				<div class="sidebar-ingreds--whole">
+					<img src="/wp-content/themes/vpf/assets/images/wholesome.png" />
+				</div>
+				<div class="sidebar-ingreds--intro">
+					<p>
+						Here's just a few of the ingredients in our delicious, All Natural biscuits.
+					</p>
+				</div>
+				<ul class="sidebar-ingreds--area">
+					<li class="sidebar-ingreds">
+						<div class="sidebar-ingreds--image">
+							<img src="/wp-content/themes/vpf/assets/images/wheat_thumb.png" />
+						</div>
+						<div class="sidebar-ingreds--content">
+							<h5>Whole Wheat</h5>
+							<p>
+								Rich in Fiber plus a natural source of Protein &amp; Carbohydrates for energy.
+							</p>
+						</div>
+					</li>
 
+					<li class="sidebar-ingreds">
+						<div class="sidebar-ingreds--image">
+							<img src="/wp-content/themes/vpf/assets/images/wheat_thumb.png" />
+						</div>
+						<div class="sidebar-ingreds--content">
+							<h5>Whole Wheat</h5>
+							<p>
+								Rich in Fiber plus a natural source of Protein &amp; Carbohydrates for energy.
+							</p>
+						</div>
+					</li>
+
+					<li class="sidebar-ingreds">
+						<div class="sidebar-ingreds--image">
+							<img src="/wp-content/themes/vpf/assets/images/wheat_thumb.png" />
+						</div>
+						<div class="sidebar-ingreds--content">
+							<h5>Whole Wheat</h5>
+							<p>
+								Rich in Fiber plus a natural source of Protein &amp; Carbohydrates for energy.
+							</p>
+						</div>
+					</li>
+
+					<li class="sidebar-ingreds">
+						<div class="sidebar-ingreds--image">
+							<img src="/wp-content/themes/vpf/assets/images/wheat_thumb.png" />
+						</div>
+						<div class="sidebar-ingreds--content">
+							<h5>Whole Wheat</h5>
+							<p>
+								Rich in Fiber plus a natural source of Protein &amp; Carbohydrates for energy.
+							</p>
+						</div>
+					</li>
+
+					<li class="sidebar-ingreds">
+						<div class="sidebar-ingreds--image">
+							<img src="/wp-content/themes/vpf/assets/images/wheat_thumb.png" />
+						</div>
+						<div class="sidebar-ingreds--content">
+							<h5>Whole Wheat</h5>
+							<p>
+								Rich in Fiber plus a natural source of Protein &amp; Carbohydrates for energy.
+							</p>
+						</div>
+					</li>
+				</ul>
+				<div class="sidebar-ingreds--torn">
+					<img src="/wp-content/themes/vpf/assets/images/torn-page-nav.png" />
+				</div>
+			</div>
+			<?php endif; ?>
+			<div class="variety-packs">
+				<div class="outer-container">
+
+				</div>
+			</div>
+			<div class="mixables">
+				<div class="outer-container">
+
+				</div>
+			</div>
+			<div class="mixables-info">
+				<div class="outer-container">
+
+				</div>
+			</div>
 	</div>
 </section>
 

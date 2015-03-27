@@ -102,13 +102,13 @@ function cpt_products_detail() {
 
 function cpt_ingredients() {
     $labels = array(
-        'name' => _x( 'Sidebar Ingredients', 'Post Type General Name', 'varietypetfoods' ),
-        'singular_name' => _x( 'Sidebar Ingredient', 'Post Type Singular Name', 'varietypetfoods' ),
-        'menu_name' => __( 'Sidebar Ingredients', 'varietypetfoods' ),
+        'name' => _x( 'Sidebar Info/Ingredients', 'Post Type General Name', 'varietypetfoods' ),
+        'singular_name' => _x( 'Sidebar Info/Ingredient', 'Post Type Singular Name', 'varietypetfoods' ),
+        'menu_name' => __( 'Sidebar Info/Ingredients', 'varietypetfoods' ),
         'parent_item_colon'   => __( 'Parent Item:', 'varietypetfoods' ),
-        'all_items' => __( 'All Ingredients', 'varietypetfoods' ),
-        'view_item' => __( 'View Ingredient', 'varietypetfoods' ),
-        'add_new_item'        => __( 'Add New Ingredient', 'varietypetfoods' ),
+        'all_items' => __( 'All Info/Ingredients', 'varietypetfoods' ),
+        'view_item' => __( 'View Info/Ingredient', 'varietypetfoods' ),
+        'add_new_item'        => __( 'Add New Info/Ingredient', 'varietypetfoods' ),
         'add_new'  => __( 'Add New', 'varietypetfoods' ),
         'edit_item' => __( 'Edit Item', 'varietypetfoods' ),
         'update_item' => __( 'Update Item', 'varietypetfoods' ),
@@ -122,9 +122,9 @@ function cpt_ingredients() {
     );
 
     $args = array(
-        'label' => __( 'Ingredients', 'varietypetfoods' ),
+        'label' => __( 'Info/Ingredients', 'varietypetfoods' ),
         'menu_icon' => 'dashicons-products',
-        'description' => __( 'Variety Pet Foods Product Ingredients', 'varietypetfoods' ),
+        'description' => __( 'Variety Pet Foods Product Info/Ingredients', 'varietypetfoods' ),
         'labels' => $labels,
         'supports' => array( 'title', 'editor', 'thumbnail', 'revisions', 'page-attributes'),
         'taxonomies' => array('products_tax'),

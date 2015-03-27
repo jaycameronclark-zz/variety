@@ -372,8 +372,8 @@ function ap_widgets_area_init() {
 			'name' => 'Blog Sidebar',
 			'before_widget' => '',
 			'after_widget' => '',
-			'before_title' => '',
-			'after_title' => ''
+			'before_title' => '<h3>',
+			'after_title' => '</h3>'
 		)
 	);
 }

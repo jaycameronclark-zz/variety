@@ -1966,17 +1966,6 @@ section.products--list .single_column_sidebar {
 section.products--list .single_column_sidebar:last-child {
   margin-right: 0;
 }
-section.products--list .single_column_sidebar .products {
-  float: left;
-  display: block;
-  margin-right: 0.8%;
-  width: 58.0%;
-  padding-right: 20px;
-  padding-top: 40px;
-}
-section.products--list .single_column_sidebar .products:last-child {
-  margin-right: 0;
-}
 section.products--list .single_column_sidebar aside {
   float: left;
   display: block;
@@ -2006,7 +1995,7 @@ section.products--list .two_column_grid .product {
   width: 49.6%;
   padding-right: 20px;
   padding-top: 20px;
-  background: url(../../images/border_row.gif) bottom left no-repeat, url(../../images/border_row.gif) top left no-repeat;
+  background: url(../../images/border_row.gif) top center no-repeat;
 }
 section.products--list .two_column_grid .product:last-child {
   margin-right: 0;
@@ -2016,9 +2005,6 @@ section.products--list .two_column_grid .product:nth-child(2n) {
 }
 section.products--list .two_column_grid .product:nth-child(2n+1) {
   clear: left;
-}
-section.products--list .two_column_grid .product:last-child {
-  background: url(../../images/border_row.gif) top left no-repeat;
 }
 section.products--list .two_column_grid .product .list--featured-image {
   float: left;
@@ -2037,9 +2023,6 @@ section.products--list .product {
   padding-right: 20px;
   margin-bottom: 20px;
   background: url(../../images/border_footer.gif) bottom right repeat-x;
-}
-section.products--list .product:last-child {
-  background: none;
 }
 section.products--list .product.blue h1, section.products--list .product.blue h2, section.products--list .product.blue h3, section.products--list .product.blue h4, section.products--list .product.blue h5, section.products--list .product.blue h6, section.products--list .product.blue a, section.products--list .product.blue span {
   color: #556A89;
@@ -2342,15 +2325,21 @@ section.page-default .content--main h2 {
 \*------------------------------------*/
 /*    PRODUCTS
 \*------------------------------------*/
-.prod-w-sidebar {
+.products--area {
+  display: inline-block;
+}
+
+.single_column_sidebar {
+  /*    SIDEBAR INFO/INGREDIENTS
+  \*------------------------------------*/
+}
+.single_column_sidebar .products--area {
   width: 55%;
   margin: 0 5% 0 0;
   float: left;
+  display: inline-block;
 }
-
-/*    INGREDIENTS
-\*------------------------------------*/
-.sidebar-right {
+.single_column_sidebar .sidebar-right {
   width: 40%;
   padding: 0 0 0 5%;
   float: left;
@@ -2360,19 +2349,19 @@ section.page-default .content--main h2 {
   background-repeat: no-repeat;
   background-position: top left;
 }
-.sidebar-right .sidebar-ingreds--whole {
+.single_column_sidebar .sidebar-right .sidebar-ingreds--whole {
   width: 100%;
   margin: 0 auto;
   padding: 15px 0 0 0;
   text-align: center;
   background: #fff;
 }
-.sidebar-right .sidebar-ingreds--whole img {
+.single_column_sidebar .sidebar-right .sidebar-ingreds--whole img {
   width: 100%;
   max-width: 273px;
   padding: 0 10px;
 }
-.sidebar-right .sidebar-ingreds--intro {
+.single_column_sidebar .sidebar-right .sidebar-ingreds--intro {
   width: 100%;
   padding: 10px 30px;
   float: left;
@@ -2381,7 +2370,7 @@ section.page-default .content--main h2 {
   line-height: 1.5em;
   background: #fff;
 }
-.sidebar-right ul.sidebar-ingreds--area {
+.single_column_sidebar .sidebar-right ul.sidebar-ingreds--area {
   width: 100%;
   margin: 0;
   padding: 10px 30px;
@@ -2389,36 +2378,36 @@ section.page-default .content--main h2 {
   display: inline-block;
   background: #fff;
 }
-.sidebar-right ul.sidebar-ingreds--area li.sidebar-ingreds {
+.single_column_sidebar .sidebar-right ul.sidebar-ingreds--area li.sidebar-ingreds {
   padding: 2% 0;
   float: left;
   border-top: 1px solid #999;
   list-style: none;
   display: inline-block;
 }
-.sidebar-right ul.sidebar-ingreds--area li.sidebar-ingreds .sidebar-ingreds--image {
+.single_column_sidebar .sidebar-right ul.sidebar-ingreds--area li.sidebar-ingreds .sidebar-ingreds--image {
   width: 38%;
   margin: 0 2% 0 0;
   float: left;
 }
-.sidebar-right ul.sidebar-ingreds--area li.sidebar-ingreds .sidebar-ingreds--content {
+.single_column_sidebar .sidebar-right ul.sidebar-ingreds--area li.sidebar-ingreds .sidebar-ingreds--content {
   width: 60%;
   float: left;
 }
-.sidebar-right ul.sidebar-ingreds--area li.sidebar-ingreds .sidebar-ingreds--content h5 {
+.single_column_sidebar .sidebar-right ul.sidebar-ingreds--area li.sidebar-ingreds .sidebar-ingreds--content h5 {
   line-height: 1.5em;
   font-size: 14px;
   padding-top: 10px;
   font-family: georgia, times, times new roman, serif;
 }
-.sidebar-right ul.sidebar-ingreds--area li.sidebar-ingreds .sidebar-ingreds--content p {
+.single_column_sidebar .sidebar-right ul.sidebar-ingreds--area li.sidebar-ingreds .sidebar-ingreds--content p {
   font-size: 12px;
   font-family: arial, helvetica, sans-serif;
 }
-.sidebar-right .sidebar-ingreds--torn {
+.single_column_sidebar .sidebar-right .sidebar-ingreds--torn {
   width: 100%;
 }
-.sidebar-right .sidebar-ingreds--torn img {
+.single_column_sidebar .sidebar-right .sidebar-ingreds--torn img {
   width: 100%;
 }
 
@@ -2428,80 +2417,10 @@ section.page-default .content--main h2 {
 .blog {
   /*    INGREDIENTS
   \*------------------------------------*/
-  /*	.sidebar-right {
-  		width: 40%;
-  		padding: 0 0 0 5%;
-  		float: left;
-  		display: inline-block;
-  		color: #603813;
-  		background-image: url("/wp-content/themes/vpf/assets/images/divider_sidebar.gif");
-  		background-repeat: no-repeat;
-  		background-position: top left;
-  		.sidebar-ingreds--whole {
-  			width: 100%;
-  			margin: 0 auto;
-  			padding: 15px 0 0 0;
-  			text-align: center;
-  			background: #fff;
-  			img {
-  				width: 100%;
-  				max-width: 273px;
-  				padding: 0 10px;
-  			}
-  		}
-  		.sidebar-ingreds--intro {
-  			width: 100%;
-  			padding: 10px 30px;
-  			float: left;
-  			font-family: georgia, times, times new roman, serif;
-  			font-size: 12px;
-  			line-height: 1.5em;
-  			background: #fff;
-  		}
-  		ul.sidebar-ingreds--area {
-  			width: 100%;
-  			margin: 0;
-  			padding: 10px 30px;
-  			float: left;
-  			display: inline-block;
-  			background: #fff;
-  			li.sidebar-ingreds {
-  				padding: 2% 0;
-  				float: left;
-  				border-top: 1px solid #999;
-  				list-style: none;
-  				display: inline-block;
-  				.sidebar-ingreds--image {
-  					width: 38%;
-  					margin: 0 2% 0 0;
-  					float: left;
-  				}
-  				.sidebar-ingreds--content {
-  					width: 60%;
-  					float: left;
-  					h5 {
-  						line-height: 1.5em;
-  						font-size: 14px;
-  						padding-top: 10px;
-  						font-family: georgia, times, times new roman, serif;
-  					}
-  					p {
-  						font-size: 12px;
-  						font-family: arial, helvetica, sans-serif;
-  					}
-  				}
-  			}
-  		}
-  		.sidebar-ingreds--torn {
-  			width: 100%;
-  			img {
-  				width: 100%;
-  			}
-  		}
-  	}*/
 }
 .blog h1 {
   font-size: 2.375em;
+  margin: 20px 0 0 0;
   color: #603813;
   font-family: "p22", Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-weight: lighter;
@@ -2509,7 +2428,7 @@ section.page-default .content--main h2 {
   word-spacing: 3px;
 }
 .blog .blog--content {
-  width: 55%;
+  width: 65%;
   margin: 45px 5% 45px 0;
   float: left;
 }
@@ -2552,6 +2471,58 @@ section.page-default .content--main h2 {
 }
 .blog .blog--content .blog--divider img {
   width: 100%;
+}
+.blog .blog--sidebar {
+  position: relative;
+  width: 30%;
+  padding: 0 0 0 5%;
+  margin: 45px 0 0 0;
+  float: left;
+  display: inline-block;
+  color: #603813;
+}
+.blog .blog--sidebar .blog--sidebar-image {
+  position: absolute;
+  left: 0;
+}
+.blog .blog--sidebar h3 {
+  margin: 15px 0 0 0;
+  font-family: georgia, times, times new roman, serif;
+  background-image: url("/wp-content/themes/vpf/assets/images/border_note.gif");
+  background-repeat: no-repeat;
+  font-weight: normal;
+  font-size: 18px;
+  background-position: 0 23px;
+  padding-bottom: 20px;
+  padding-left: 13px;
+  color: #603813;
+}
+.blog .blog--sidebar ul {
+  margin: 0 20px;
+  padding: 0;
+  list-style: none;
+}
+.blog .blog--sidebar ul li {
+  padding-bottom: 15px;
+  font-size: 12px;
+  padding: 0 0 15px 12px;
+  line-height: 1.4em;
+}
+.blog .blog--sidebar ul li a {
+  color: #556a8a;
+}
+.blog .blog--sidebar ul li a:hover {
+  color: #213c63;
+}
+
+/*------------------------------------*\
+    VARIETY PACKS & MIXES
+\*------------------------------------*/
+.variety-packs,
+.mixables,
+.mixables-info {
+  width: 100%;
+  background: url(../../images/dbl-hor-border.png) bottom left repeat-x;
 }
 
 /*------------------------------------*\
@@ -2616,6 +2587,9 @@ section.page-default .content--main h2 {
   .outer-container .nav--primary {
     display: none;
   }
+  .outer-container .nav--primary .menu-main-menu-container {
+    display: none;
+  }
   .outer-container section.featured .feature {
     width: 100%;
     max-width: 430px;
@@ -2641,7 +2615,8 @@ section.page-default .content--main h2 {
     margin-left: 0;
   }
 
-  article.front-page--intro h1 {
+  article.front-page--intro h1,
+  .blog h1 {
     font-size: 1.875em;
     text-align: center;
   }
@@ -2671,14 +2646,24 @@ section.page-default .content--main h2 {
     margin: 0 auto;
   }
 
-  .prod-w-sidebar {
+  .single_column_sidebar .products--area {
     width: 45%;
     margin: 0 5% 0 0;
     float: left;
   }
-
-  .sidebar-right {
+  .single_column_sidebar .sidebar-right {
     width: 50%;
+    padding: 0 0 0 5%;
+  }
+
+  .blog .blog--content {
+    width: 55%;
+  }
+  .blog .blog--content h1 {
+    text-align: left;
+  }
+  .blog .blog--sidebar {
+    width: 40%;
     padding: 0 0 0 5%;
   }
 
@@ -2696,9 +2681,20 @@ section.page-default .content--main h2 {
   section.products--list .product .list--featured-info {
     width: 60%;
   }
+
+  section.products--list .two_column_grid .product {
+    width: 45%;
+    margin-right: 5%;
+    padding-right: 0;
+  }
+
+  section.products--list .two_column_grid .product:nth-child(2n) {
+    margin-left: 5%;
+  }
 }
 @media all and (max-width: 780px) {
-  article.front-page--intro h1 {
+  article.front-page--intro h1,
+  .blog h1 {
     font-size: 1.375em;
   }
 
@@ -2753,7 +2749,31 @@ section.page-default .content--main h2 {
     visibility: hidden;
     padding: 0;
   }
+  header .logo {
+    position: relative;
+    top: auto;
+    float: left;
+    display: block;
+    margin-right: 2.43902%;
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+  }
+  header .social--connect ul.social-icons {
+    float: left;
+    margin-top: 20px;
+    margin-left: 0;
+    padding: 0;
+    display: inline-block;
+  }
 
+  .outer-container .nav--primary {
+    float: left;
+    display: block;
+    margin-right: 0;
+    width: 100%;
+    height: 10px;
+  }
   .outer-container section.quality .two-thirds,
   .outer-container section.quality aside.page-sidebar {
     float: none;
@@ -2770,13 +2790,12 @@ section.page-default .content--main h2 {
     padding: 80px 0 0 30px;
   }
 
-  .prod-w-sidebar {
+  .single_column_sidebar .products--area {
     width: 100%;
     margin: 0;
     float: none;
   }
-
-  .sidebar-right {
+  .single_column_sidebar .sidebar-right {
     width: 100%;
     padding: 0;
     float: none;
@@ -2796,17 +2815,37 @@ section.page-default .content--main h2 {
   section.product .product--intro .sticky .usa-flag {
     margin: 0;
   }
-}
-@media all and (max-width: 480px) {
-  header .logo {
-    width: 100px;
+
+  .blog .blog--content {
+    width: 100%;
+    margin: 45px auto 0 auto;
+  }
+  .blog .blog--sidebar {
+    width: 100%;
+    padding: 0;
+    margin: 0 auto 45px auto;
+  }
+  .blog .blog--sidebar .blog--sidebar-image {
+    display: none;
   }
 
+  section.products--list .two_column_grid .product {
+    width: 100%;
+    margin-right: 0;
+    padding-right: 0;
+  }
+
+  section.products--list .two_column_grid .product:nth-child(2n) {
+    margin-left: 0;
+  }
+}
+@media all and (max-width: 480px) {
   .outer-container section.featured .feature .content {
     padding-top: 20px;
     padding-right: 5px;
   }
-  .outer-container article.front-page--intro h1 {
+  .outer-container article.front-page--intro h1,
+  .outer-container .blog h1 {
     font-size: 1.275em;
   }
   .outer-container section.story .content--story span.headline {

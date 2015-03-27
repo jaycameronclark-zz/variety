@@ -13,9 +13,9 @@
 		  }
 		}
 		.logo{
-		  position: absolute;
-		  top: 5px;
-		  width: 130px;
+			position: absolute;
+			top: 5px;
+			width: 130px;
 		}
 	}
 	section.main{
@@ -43,6 +43,9 @@
 		float: none;
 		.nav--primary{
 		  display: none;
+		  .menu-main-menu-container{
+				display: none;
+		  }
 		}
 		section.featured{
 			.feature{
@@ -71,11 +74,12 @@
 	  margin-left: 0;
 	}
 	}
-	article.front-page--intro{
-	h1{
-	  font-size: 1.875em;
-	  text-align: center;
-	}
+	article.front-page--intro,
+	.blog{
+		h1{
+		  font-size: 1.875em;
+		  text-align: center;
+		}
 	}
 	section.story .content--story span.headline{
 	font-size: 1.875em;
@@ -97,14 +101,28 @@
 		height: auto;
 		margin: 0 auto;
 	}
-	.prod-w-sidebar{
-		width: 45%;
-		margin: 0 5% 0 0;
-		float: left;
+	.single_column_sidebar {
+		.products--area {
+			width: 45%;
+			margin: 0 5% 0 0;
+			float: left;
+		}
+		.sidebar-right {
+			width: 50%;
+			padding: 0 0 0 5%;
+		}
 	}
-	.sidebar-right{
-		width: 50%;
-		padding: 0 0 0 5%;
+	.blog {
+		.blog--content {
+			width: 55%;
+			h1{
+				text-align: left;
+			}
+		}
+		.blog--sidebar {
+			width: 40%;
+			padding: 0 0 0 5%;
+		}
 	}
 	section.products--list .product,
 	section.products--list .product p{
@@ -119,9 +137,19 @@
 	section.products--list .product .list--featured-info{
 		width: 60%;
 	}
+	section.products--list .two_column_grid .product{
+		width: 45%;
+		margin-right: 5%;
+		padding-right: 0;
+	}
+	section.products--list .two_column_grid .product:nth-child(2n){
+		margin-left: 5%;
+	}
+
 }
 @media all and (max-width: 780px){
-  article.front-page--intro{
+  article.front-page--intro,
+  .blog{
     h1{
       font-size: 1.375em;
     }
@@ -174,8 +202,34 @@
       visibility: hidden;
       padding: 0;
     }
+    .logo{
+		position: relative;
+		top: auto;
+		float: left;
+		display: block;
+		margin-right: 2.43902%;
+		width: 100%;
+		margin-top: 20px;
+		text-align: center;
+    }
+	.social--connect{
+		ul.social-icons{
+			float: left;
+			margin-top: 20px;
+			margin-left: 0;
+			padding: 0;
+			display: inline-block;
+		}
+	}
   }
   .outer-container{
+	  .nav--primary {
+		  float: left;
+		  display: block;
+		  margin-right: 0;
+		  width: 100%;
+		  height: 10px;
+	  }
     section.quality .two-thirds,
     section.quality aside.page-sidebar{
       float: none;
@@ -197,16 +251,18 @@
       padding: 80px 0 0 30px;
     }
   }
-	.prod-w-sidebar{
-		width: 100%;
-		margin: 0;
-		float: none;
-	}
-	.sidebar-right {
-		width: 100%;
-		padding: 0;
-		float: none;
-		background: none;
+	.single_column_sidebar {
+		.products--area {
+			width: 100%;
+			margin: 0;
+			float: none;
+		}
+		.sidebar-right {
+			width: 100%;
+			padding: 0;
+			float: none;
+			background: none;
+		}
 	}
 	section.products--list .product .list--featured-image{
 		width: 40%;
@@ -220,49 +276,67 @@
 	section.product .product--intro .sticky .usa-flag{
 		margin: 0;
 	}
+	.blog {
+		.blog--content {
+			width: 100%;
+			margin: 45px auto 0 auto;
+		}
+		.blog--sidebar {
+			width:100%;
+			padding: 0;
+			margin: 0 auto 45px auto;
+			.blog--sidebar-image{
+				display: none;
+			}
+		}
+	}
+	section.products--list .two_column_grid .product{
+		width: 100%;
+		margin-right: 0;
+		padding-right: 0;
+	}
+	section.products--list .two_column_grid .product:nth-child(2n){
+		margin-left: 0;
+	}
 }
 
 @media all and (max-width: 480px){
-  header{
-    .logo{
-      width: 100px;
-    }
-  }
-  .outer-container{
-    section.featured{
-      .feature{
-        .content{
-          padding-top: 20px;
-          padding-right: 5px;
-        }
-      }
-    }
-    article.front-page--intro{
-      h1{
-        font-size: 1.275em;
-      }
-    }
-    section.story .content--story span.headline{
-      font-size: 1.275em;
-    }
-  }
-  .page-default{
-    .contact-info{
-      padding: 0;
-    }
-    .col-half{
-      @include span-columns(12);
-      @include omega();
-      float: none;
-    }
-  }
-	section.products--list .product .list--featured-image{
-		width: 35%;
-		max-width: none;
-		margin-right: 5%;
+.outer-container{
+section.featured{
+  .feature{
+	.content{
+	  padding-top: 20px;
+	  padding-right: 5px;
 	}
+  }
+}
+article.front-page--intro,
+.blog{
+  h1{
+	font-size: 1.275em;
+  }
+}
+section.story .content--story span.headline{
+  font-size: 1.275em;
+}
+}
+.page-default{
+.contact-info{
+  padding: 0;
+}
+.col-half{
+  @include span-columns(12);
+  @include omega();
+  float: none;
+}
+}
+section.products--list .product .list--featured-image{
+	width: 35%;
+	max-width: none;
+	margin-right: 5%;
+}
 
-	section.products--list .product .list--featured-info{
-		width: 60%;
-	}
+section.products--list .product .list--featured-info{
+	width: 60%;
+}
 }
