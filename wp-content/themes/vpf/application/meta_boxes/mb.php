@@ -273,6 +273,18 @@ function application_metaboxes( array $meta_boxes ) {
         'id'   => $prefix . 'product_ingredients',
         'type' => 'textarea'
       ),
+		array(
+			'name' => __( 'Vitamins', 'cmb' ),
+			'desc' => __( '', 'cmb' ),
+			'id'   => $prefix . 'product_vitamins',
+			'type' => 'textarea'
+		),
+		array(
+			'name' => __( 'Minerals', 'cmb' ),
+			'desc' => __( '', 'cmb' ),
+			'id'   => $prefix . 'product_minerals',
+			'type' => 'textarea'
+		),
       array(
         'name' => __( 'Feeding Guide', 'cmb' ),
         'desc' => __( '', 'cmb' ),

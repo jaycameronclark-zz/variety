@@ -194,21 +194,25 @@ $(document).ready(function() {
 				</div>
 			</div>
 			<?php endif; ?>
-			<div class="variety-packs">
+<!--	AREA FOR VARIETY PACKS/MIXABLES/MIXABLE CONTENT		-->
+			<!--<div class="variety-packs">
 				<div class="outer-container">
+					<img src="/wp-content/themes/vpf/assets/images/full-width-border.gif" class="vmm--divider"/>
 
 				</div>
 			</div>
 			<div class="mixables">
 				<div class="outer-container">
+					<img src="/wp-content/themes/vpf/assets/images/full-width-border.gif" class="vmm--divider"/>
 
 				</div>
 			</div>
 			<div class="mixables-info">
 				<div class="outer-container">
+					<img src="/wp-content/themes/vpf/assets/images/full-width-border.gif" class="vmm--divider"/>
 
 				</div>
-			</div>
+			</div>-->
 	</div>
 </section>
 

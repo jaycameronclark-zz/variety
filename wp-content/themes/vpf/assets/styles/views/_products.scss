@@ -146,6 +146,7 @@ section.products--list{
 				float: left;
 				width: 72px;
 				margin-right: $gutter;
+				padding: 15px 0 0 0;
 				img{
 					display: block;
 				}
@@ -215,6 +216,7 @@ section.products--list{
 			width: 40%;
 			max-width: 94px;
 			margin-right: 5%;
+			padding: 10px 0 0 0;
 			img{
 				display: block;
 			}
@@ -225,6 +227,7 @@ section.products--list{
 			display: inline-block;
 			float: left;
 			width: 70%;
+			margin: 0 0 10px 0;
 		}
 
 	}
@@ -243,6 +246,11 @@ section.product--details{
 			font-size: em(11);
 			font-family: $sans-serif;
 			line-height: 1.4;
+		}
+		.details--info {
+			font-size: em(11);
+			font-family: $sans-serif;
+			line-height: 1.4;
 			&:last-child{
 				margin: 0;
 				background: url(#{$img-path}/border_note.gif) bottom center no-repeat;
@@ -250,14 +258,14 @@ section.product--details{
 			}
 		}
 		&.blue{
-			p{
+			.details--info{
 				strong{
 					color: $color-blue;
 				}
 			}
 		}
 		&.orange{
-			p{
+			.details--info{
 				strong{
 					color: $color-orange;
 				}
@@ -270,12 +278,12 @@ section.product--details{
 		padding-left: $gutter;
 		padding-right: $gutter;
 		&.blue{
-			h1,h2,h3,h4,h5,h6,a,span{
+			h1,h2,h3,h4,h5,h6,a,span,div{
 				color: $color-blue;
 			}
 		}
 		&.orange{
-			h1,h2,h3,h4,h5,h6,a,span{
+			h1,h2,h3,h4,h5,h6,a,span,div{
 				color: $color-orange;
 			}
 		}
@@ -295,40 +303,53 @@ section.product--details{
 		p{
 			padding-top: 1em;
 			color: $color-brown;
-			
-			&.primary-description{
-				font-style: italic;
-				margin: 0;
-				padding: 1em 0 1em;
-				font-size: em(14);
-				line-height: 1.5;
-				&.blue{
-					color: $color-blue;
-				}
-				&.orange{
-					color: $color-orange;
-				}
+		}
+		.primary-description{
+			font-style: italic;
+			margin: 0;
+			padding: 1em 0 1em;
+			font-size: em(14);
+			line-height: 1.5;
+			&.blue{
+				color: $color-blue;
 			}
-			&.natural-text{
-				color: $color-green;
-				font-style: italic;
-				padding: 1em 0 1em;
-				margin: 0;
+			&.orange{
+				color: $color-orange;
 			}
-			&.ingredients{
-				margin: 0 0 1em;
-				font-size: em(12);
-				padding: 0;
-				font-family: $sans-serif;
-				line-height: 1.4;
-			}
-			&.feeding-guide{
-				margin: 0 0 1em;
-				font-size: em(12);
-				padding: 0;
-				font-family: $sans-serif;
-				line-height: 1.4;
-			}
+		}
+		.natural-text{
+			color: $color-green!important;
+			font-style: italic;
+			padding: 1em 0 1em;
+			margin: 0;
+		}
+		.ingredients{
+			margin: 0 0 1em;
+			font-size: em(12);
+			padding: 0;
+			font-family: $sans-serif;
+			line-height: 1.4;
+		}
+		.vitamins{
+			margin: 0 0 1em;
+			font-size: em(12);
+			padding: 0;
+			font-family: $sans-serif;
+			line-height: 1.4;
+		}
+		.minerals{
+			margin: 0 0 1em;
+			font-size: em(12);
+			padding: 0;
+			font-family: $sans-serif;
+			line-height: 1.4;
+		}
+		.feeding-guide{
+			margin: 0 0 1em;
+			font-size: em(12);
+			padding: 0;
+			font-family: $sans-serif;
+			line-height: 1.4;
 		}
 		hr.detail-border{
 			width: 100%;

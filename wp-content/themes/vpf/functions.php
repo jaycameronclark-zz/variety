@@ -283,6 +283,8 @@ function get_single_product_details($requested) {
     'natural_text' => !empty($product_meta['_cmb_product_natural_text']) ? $product_meta['_cmb_product_natural_text'] : '',
     'featured_image' => !empty($product_meta['_cmb_product_featured_image']) ? $product_meta['_cmb_product_featured_image'] : '',
     'ingredients' => !empty($product_meta['_cmb_product_ingredients']) ? $product_meta['_cmb_product_ingredients'] : '',
+	'vitamins' => !empty($product_meta['_cmb_product_vitamins']) ? $product_meta['_cmb_product_vitamins'] : '',
+	'minerals' => !empty($product_meta['_cmb_product_minerals']) ? $product_meta['_cmb_product_minerals'] : '',
     'feeding_guide' => !empty($product_meta['_cmb_product_feeding_guide']) ? $product_meta['_cmb_product_feeding_guide'] : '',
     'product_guaranteed_analysis' => !empty($product_meta['_cmb_product_guaranteed_analysis']) ? $product_meta['_cmb_product_guaranteed_analysis'] : '',
     'product_calorie_content_one' => !empty($product_meta['_cmb_product_calorie_content_one']) ? $product_meta['_cmb_product_calorie_content_one'] : '',
@@ -333,36 +335,6 @@ function get_ingredients() {
 
 }
 
-/*function be_metabox_show_on_child_of( $display, $meta_box ) {
-    if ( 'child_of' !== $meta_box['show_on']['key'] )
-        return $display;
-
-    // If we're showing it based on ID, get the current ID
-    if( isset( $_GET['post'] ) ) $post_id = $_GET['post'];
-    elseif( isset( $_POST['post_ID'] ) ) $post_id = $_POST['post_ID'];
-    if( !isset( $post_id ) )
-        return $display;
-
-    // If current page id is in the included array, do not display the metabox
-    $meta_box['show_on']['value'] = !is_array( $meta_box['show_on']['value'] ) ? array( $meta_box['show_on']['value'] ) : $meta_box['show_on']['value'];
-    $pageids = array();
-    foreach ($meta_box['show_on']['value'] as $parent_id) {
-        $pages = get_pages(array(
-            'child_of' => $parent_id,
-            'post_status' => 'publish,draft,pending'
-        ));
-        foreach($pages as $page){
-            $pageids[] = $page->ID;
-        }
-    }
-    $pageids_unique = array_unique($pageids);
-    if ( in_array( $post_id, $pageids_unique ) )
-        return true;
-    else
-        return false;
-}
-add_filter( 'vpf_product_page_details', 'be_metabox_show_on_child_of', 10, 2 );*/
-
 
 /* begin widget areas */
 function ap_widgets_area_init() {
@@ -379,3 +351,5 @@ function ap_widgets_area_init() {
 }
 
 add_action( 'widgets_init', 'ap_widgets_area_init' );
+
+add_theme_support('post-formats');

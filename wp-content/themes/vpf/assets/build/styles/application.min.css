@@ -1420,7 +1420,7 @@ nav.nav--primary ul li ul.sub-menu li ul.sub-menu {
   display: none;
   opacity: 0;
   position: absolute;
-  left: 180px;
+  left: 100px;
   top: 0;
 }
 nav.nav--primary ul li ul.sub-menu li ul.sub-menu li a {
@@ -2010,6 +2010,7 @@ section.products--list .two_column_grid .product .list--featured-image {
   float: left;
   width: 72px;
   margin-right: 20px;
+  padding: 15px 0 0 0;
 }
 section.products--list .two_column_grid .product .list--featured-image img {
   display: block;
@@ -2064,6 +2065,7 @@ section.products--list .product .list--featured-image {
   width: 40%;
   max-width: 94px;
   margin-right: 5%;
+  padding: 10px 0 0 0;
 }
 section.products--list .product .list--featured-image img {
   display: block;
@@ -2073,6 +2075,7 @@ section.products--list .product .list--featured-info {
   display: inline-block;
   float: left;
   width: 70%;
+  margin: 0 0 10px 0;
 }
 
 section.product--details {
@@ -2101,15 +2104,20 @@ section.product--details .details--left p {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   line-height: 1.4;
 }
-section.product--details .details--left p:last-child {
+section.product--details .details--left .details--info {
+  font-size: 0.6875em;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  line-height: 1.4;
+}
+section.product--details .details--left .details--info:last-child {
   margin: 0;
   background: url(../../images/border_note.gif) bottom center no-repeat;
   padding-bottom: 20px;
 }
-section.product--details .details--left.blue p strong {
+section.product--details .details--left.blue .details--info strong {
   color: #556A89;
 }
-section.product--details .details--left.orange p strong {
+section.product--details .details--left.orange .details--info strong {
   color: #b7451c;
 }
 section.product--details .details--right {
@@ -2123,10 +2131,10 @@ section.product--details .details--right {
 section.product--details .details--right:last-child {
   margin-right: 0;
 }
-section.product--details .details--right.blue h1, section.product--details .details--right.blue h2, section.product--details .details--right.blue h3, section.product--details .details--right.blue h4, section.product--details .details--right.blue h5, section.product--details .details--right.blue h6, section.product--details .details--right.blue a, section.product--details .details--right.blue span {
+section.product--details .details--right.blue h1, section.product--details .details--right.blue h2, section.product--details .details--right.blue h3, section.product--details .details--right.blue h4, section.product--details .details--right.blue h5, section.product--details .details--right.blue h6, section.product--details .details--right.blue a, section.product--details .details--right.blue span, section.product--details .details--right.blue div {
   color: #556A89;
 }
-section.product--details .details--right.orange h1, section.product--details .details--right.orange h2, section.product--details .details--right.orange h3, section.product--details .details--right.orange h4, section.product--details .details--right.orange h5, section.product--details .details--right.orange h6, section.product--details .details--right.orange a, section.product--details .details--right.orange span {
+section.product--details .details--right.orange h1, section.product--details .details--right.orange h2, section.product--details .details--right.orange h3, section.product--details .details--right.orange h4, section.product--details .details--right.orange h5, section.product--details .details--right.orange h6, section.product--details .details--right.orange a, section.product--details .details--right.orange span, section.product--details .details--right.orange div {
   color: #b7451c;
 }
 section.product--details .details--right h2 {
@@ -2144,33 +2152,47 @@ section.product--details .details--right p {
   padding-top: 1em;
   color: #603813;
 }
-section.product--details .details--right p.primary-description {
+section.product--details .details--right .primary-description {
   font-style: italic;
   margin: 0;
   padding: 1em 0 1em;
   font-size: 0.875em;
   line-height: 1.5;
 }
-section.product--details .details--right p.primary-description.blue {
+section.product--details .details--right .primary-description.blue {
   color: #556A89;
 }
-section.product--details .details--right p.primary-description.orange {
+section.product--details .details--right .primary-description.orange {
   color: #b7451c;
 }
-section.product--details .details--right p.natural-text {
-  color: #737c36;
+section.product--details .details--right .natural-text {
+  color: #737c36 !important;
   font-style: italic;
   padding: 1em 0 1em;
   margin: 0;
 }
-section.product--details .details--right p.ingredients {
+section.product--details .details--right .ingredients {
   margin: 0 0 1em;
   font-size: 0.75em;
   padding: 0;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   line-height: 1.4;
 }
-section.product--details .details--right p.feeding-guide {
+section.product--details .details--right .vitamins {
+  margin: 0 0 1em;
+  font-size: 0.75em;
+  padding: 0;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  line-height: 1.4;
+}
+section.product--details .details--right .minerals {
+  margin: 0 0 1em;
+  font-size: 0.75em;
+  padding: 0;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  line-height: 1.4;
+}
+section.product--details .details--right .feeding-guide {
   margin: 0 0 1em;
   font-size: 0.75em;
   padding: 0;
@@ -2522,7 +2544,12 @@ section.page-default .content--main h2 {
 .mixables,
 .mixables-info {
   width: 100%;
-  background: url(../../images/dbl-hor-border.png) bottom left repeat-x;
+}
+.variety-packs img.vmm--divider,
+.mixables img.vmm--divider,
+.mixables-info img.vmm--divider {
+  width: 100%;
+  padding-bottom: 1.5em;
 }
 
 /*------------------------------------*\
@@ -2632,6 +2659,7 @@ section.page-default .content--main h2 {
   section.products--slider {
     height: auto;
     background: none !important;
+    margin-top: 0;
   }
 
   section.products--slider .static-image {
@@ -2719,6 +2747,22 @@ section.page-default .content--main h2 {
   section.product .product--intro .sticky {
     width: 50%;
   }
+
+  section.where-to-buy .featured--image {
+    float: none;
+    width: 100%;
+    text-align: center;
+  }
+  section.where-to-buy .featured--image img {
+    float: none;
+    display: inline-block;
+    text-align: center;
+  }
+
+  section.where-to-buy .where-to-buy-content {
+    width: 100%;
+    padding: 0;
+  }
 }
 @media all and (max-width: 680px) {
   section.story .content--story img.alignright {
@@ -2742,6 +2786,39 @@ section.page-default .content--main h2 {
     width: 100%;
     margin: 0;
   }
+
+  section.product--details .details--left {
+    float: none;
+    width: 100%;
+    margin: 0;
+    padding-right: 20px;
+    padding-left: 20px;
+    text-align: center;
+  }
+  section.product--details .details--left img {
+    width: 100%;
+    max-width: 150px;
+  }
+  section.product--details .details--left .details--info {
+    text-align: left;
+  }
+
+  section.product--details .details--right {
+    float: none;
+    margin: 0;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  section.product--details .details--right h2 {
+    font-size: 1.5em;
+  }
+
+  section.where-to-buy-links .link-group {
+    float: left;
+    margin: 0;
+    width: 50%;
+  }
 }
 @media all and (max-width: 580px) {
   header a.join {
@@ -2756,7 +2833,6 @@ section.page-default .content--main h2 {
     display: block;
     margin-right: 2.43902%;
     width: 100%;
-    margin-top: 20px;
     text-align: center;
   }
   header .social--connect ul.social-icons {
@@ -2838,6 +2914,12 @@ section.page-default .content--main h2 {
   section.products--list .two_column_grid .product:nth-child(2n) {
     margin-left: 0;
   }
+
+  section.where-to-buy-links .link-group {
+    float: none;
+    margin: 0;
+    width: 100%;
+  }
 }
 @media all and (max-width: 480px) {
   .outer-container section.featured .feature .content {
@@ -2875,5 +2957,11 @@ section.page-default .content--main h2 {
 
   section.products--list .product .list--featured-info {
     width: 60%;
+  }
+
+  section.product--details .details--left,
+  section.product--details .details--right {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
