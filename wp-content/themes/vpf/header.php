@@ -44,7 +44,7 @@
   				<li><a href="<?= cmb_get_option('application_options', 'youtubeurl'); ?>"><i class="sprite sprite--youtube"></i></a></li>
   				<li><a href="<?= cmb_get_option('application_options', 'twitterurl'); ?>"><i class="sprite sprite--twitter"></i></a></li>
   			</ul>
-  			<a href="#" class="join">
+  			<a class="join various fancybox.ajax" href="<?= get_template_directory_uri(); ?>/includes/join.php">
   				<span class="join-yellow">Join the Variety Club</span>
   				<span class="join-white">Get exclusive offers and more</span>
   			</a>

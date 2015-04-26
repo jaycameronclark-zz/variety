@@ -9,7 +9,7 @@ get_header();
 <?php if (have_posts()): while (have_posts()) : the_post(); ?>
 <?php 
 	$sidebar_content = get_post_meta( get_the_ID(), '_cmb_page_sidebar_content', true );
-	$sidebar_background = !empty(get_post_meta( get_the_ID(), '_cmb_page_sidebar_background', true) ) ? get_post_meta( get_the_ID(), '_cmb_page_sidebar_background', true) : '';
+	$sidebar_background = get_post_meta( get_the_ID(), '_cmb_page_sidebar_background', true);
 	$columns;
 	if (!empty($sidebar_content)){
 		$columns = 'two-thirds';

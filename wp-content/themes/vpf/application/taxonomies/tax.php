@@ -35,7 +35,7 @@ function custom_products_taxonomy() {
     'show_admin_column' => true,
     'query_var' => true,
   );
-  register_taxonomy( 'products_tax', array( 'cpt_products' ), $args );
+  register_taxonomy( 'products_tax', array( 'cpt_products_detail' ), $args );
 }
 
 add_action( 'init', 'custom_products_taxonomy', 0 );

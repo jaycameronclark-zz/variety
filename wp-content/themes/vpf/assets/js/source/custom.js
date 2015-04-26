@@ -52,10 +52,10 @@ var App = (function(){
   	  });
   	  $(".various").fancybox({
   	  	maxWidth	: 800,
-  	  	maxHeight	: 600,
+  	  	maxHeight	: 800,
   	  	fitToView	: false,
-  	  	width		: '70%',
-  	  	height		: '70%',
+  	  	width		: '80%',
+  	  	height		: '80%',
   	  	autoSize	: false,
   	  	closeClick	: false,
   	  	openEffect	: 'none',

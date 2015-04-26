@@ -82,7 +82,7 @@ section.product{
 		h1{
 			font-size: em(25);
 			i.tagline{
-				font-size: em(10);
+				font-size: 13px;
 				font-style: italic;
 				color: $color-brown;
 			}
@@ -110,16 +110,31 @@ section.product{
 
 section.products--list{
 	@include span-columns(12);
-	padding-top: $gutter / 2;
-	padding-bottom: $gutter;
+	padding-bottom: 45px;
+
+	.page--footer{
+		@include span-columns(12);
+		padding-top: 20px;
+		background: url(#{$img-path}/dbl-hor-border.png) top left repeat-x;
+		min-height: 300px;
+		text-align: center
+
+		img{
+			margin-left: auto;
+			margin-right: auto;
+		}
+		@include media($mobile){
+			display: none;
+		}
+	}
 
 	.single_column_sidebar{
 		@include span-columns(12);
 
 		.products{
-//			@include span-columns(7 of 12);
-//			padding-right: $gutter;
-//			padding-top: $gutter * 2;
+			@include span-columns(7 of 12);
+			padding-right: $gutter;
+			padding-top: $gutter * 2;
 		}
 
 		aside{
@@ -140,7 +155,11 @@ section.products--list{
 			@include omega(2n);
 			padding-right: $gutter;
 			padding-top: $gutter;
-			background: url(#{$img-path}/border_row.gif) top center no-repeat;
+			background: url(#{$img-path}/border_row.gif) bottom center no-repeat;
+
+			// &:last-child{
+			// 	background: none;
+			// }
 
 			.list--featured-image{
 				float: left;
@@ -192,6 +211,9 @@ section.products--list{
 			font-size: em(17);
 			line-height: 1.4;
 			margin-top: 1em;
+			&.standard{
+				color: $color-brown!important;
+			}
 		}
 		span.sub-title{
 			display: block;
@@ -217,6 +239,7 @@ section.products--list{
 			max-width: 94px;
 			margin-right: 5%;
 			padding: 10px 0 0 0;
+			margin-bottom: 10px;
 			img{
 				display: block;
 			}
@@ -228,6 +251,18 @@ section.products--list{
 			float: left;
 			width: 70%;
 			margin: 0 0 10px 0;
+
+			.image--align{
+				&.right{
+					img{
+						float: right;	
+					}
+					p{
+						float: left;
+						width: 64%;
+					}
+				}
+			}
 		}
 
 	}
@@ -301,7 +336,6 @@ section.product--details{
 			line-height: 1;
 		}
 		p{
-			padding-top: 1em;
 			color: $color-brown;
 		}
 		.primary-description{

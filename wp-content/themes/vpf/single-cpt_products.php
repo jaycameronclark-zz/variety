@@ -6,7 +6,8 @@ $meta = get_post_meta(get_the_ID());
 
 $view['color_class'] = $meta['_cmb_product_color_scheme'][0];
 $view['layout_type'] = $meta['_cmb_product_layout'][0];
-$view['sidebar_background'] = !empty($meta['_cmb_sidebar_background'][0]) ? $meta['_cmb_sidebar_background'][0] : '';
+$view['sidebar_background'] = !empty($meta['_cmb_page_sidebar_background'][0]) ? $meta['_cmb_page_sidebar_background'][0] : '';
+$view['footer_background'] = !empty($meta['_cmb_page_footer_image'][0]) ? $meta['_cmb_page_footer_image'][0] : '';
 $view['product_category'] = $meta['_cmb_product_detail_category'][0];
 $view['page_title'] = !empty($meta['_cmb_product_page_title'][0]) ? $meta['_cmb_product_page_title'][0] : get_the_title(get_the_ID());
 $view['tagline'] = !empty($meta['_cmb_title_tagline_text'][0]) ? $meta['_cmb_title_tagline_text'][0] : '';
@@ -100,119 +101,38 @@ $(document).ready(function() {
 							<img src="<?= $product['featured_image']; ?>" alt="">
 						</a>
 					</div>
+
 					<div class="list--featured-info">
-					<h4><a class="various fancybox.ajax" href="<?= get_template_directory_uri(); ?>/includes/product-detail.php?id=<?= $product['id']; ?>"><?= $product['title']; ?></a></h4>
-					<a class="various fancybox.ajax" href="<?= get_template_directory_uri(); ?>/includes/product-detail.php?id=<?= $product['id']; ?>"><span class="sub-title"><?= $product['sub_title']; ?></span></a>
-					<p>
-						<?= $product['small_description']; ?> 
+					<?php if($product['lightbox'] == 'true'): ?>
+						<h4><a class="various fancybox.ajax" href="<?= get_template_directory_uri(); ?>/includes/product-detail.php?id=<?= $product['id']; ?>"><?= $product['title']; ?></a></h4>
+					<?php else : ?>
+						<h4 class="standard"><?= $product['title']; ?></h4>
+					<?php endif; ?>
+						<a class="various fancybox.ajax" href="<?= get_template_directory_uri(); ?>/includes/product-detail.php?id=<?= $product['id']; ?>"><span class="sub-title"><?= $product['sub_title']; ?></span></a>
 						<?php if (!empty($product['small_description_image'])) : ?>
-						<img class="small-image" src="<?= $product['small_description_image']; ?>">
+						<div class="image--align <?= $product['small_image_align']; ?>">
+							<p><?= $product['small_description']; ?></p>
+							<img class="small-image" src="<?= $product['small_description_image']; ?>">
+						</div>
+						<?php else : ?>
+							<p><?= $product['small_description']; ?></p>
 						<?php endif; ?>
-					</p>
 					</div>
 				</div>
-
 				<?php endforeach; endif; ?>
 			</div>
 
 			<?php if ($view['layout_type'] == 'single_column_sidebar') : ?>
-<!--				<aside>
-					<img src="<?/*= $view['sidebar_background']; */?>">
-				</aside>-->
-			<div class="sidebar-right">
-				<div class="sidebar-ingreds--whole">
-					<img src="/wp-content/themes/vpf/assets/images/wholesome.png" />
-				</div>
-				<div class="sidebar-ingreds--intro">
-					<p>
-						Here's just a few of the ingredients in our delicious, All Natural biscuits.
-					</p>
-				</div>
-				<ul class="sidebar-ingreds--area">
-					<li class="sidebar-ingreds">
-						<div class="sidebar-ingreds--image">
-							<img src="/wp-content/themes/vpf/assets/images/wheat_thumb.png" />
-						</div>
-						<div class="sidebar-ingreds--content">
-							<h5>Whole Wheat</h5>
-							<p>
-								Rich in Fiber plus a natural source of Protein &amp; Carbohydrates for energy.
-							</p>
-						</div>
-					</li>
-
-					<li class="sidebar-ingreds">
-						<div class="sidebar-ingreds--image">
-							<img src="/wp-content/themes/vpf/assets/images/wheat_thumb.png" />
-						</div>
-						<div class="sidebar-ingreds--content">
-							<h5>Whole Wheat</h5>
-							<p>
-								Rich in Fiber plus a natural source of Protein &amp; Carbohydrates for energy.
-							</p>
-						</div>
-					</li>
-
-					<li class="sidebar-ingreds">
-						<div class="sidebar-ingreds--image">
-							<img src="/wp-content/themes/vpf/assets/images/wheat_thumb.png" />
-						</div>
-						<div class="sidebar-ingreds--content">
-							<h5>Whole Wheat</h5>
-							<p>
-								Rich in Fiber plus a natural source of Protein &amp; Carbohydrates for energy.
-							</p>
-						</div>
-					</li>
-
-					<li class="sidebar-ingreds">
-						<div class="sidebar-ingreds--image">
-							<img src="/wp-content/themes/vpf/assets/images/wheat_thumb.png" />
-						</div>
-						<div class="sidebar-ingreds--content">
-							<h5>Whole Wheat</h5>
-							<p>
-								Rich in Fiber plus a natural source of Protein &amp; Carbohydrates for energy.
-							</p>
-						</div>
-					</li>
-
-					<li class="sidebar-ingreds">
-						<div class="sidebar-ingreds--image">
-							<img src="/wp-content/themes/vpf/assets/images/wheat_thumb.png" />
-						</div>
-						<div class="sidebar-ingreds--content">
-							<h5>Whole Wheat</h5>
-							<p>
-								Rich in Fiber plus a natural source of Protein &amp; Carbohydrates for energy.
-							</p>
-						</div>
-					</li>
-				</ul>
-				<div class="sidebar-ingreds--torn">
-					<img src="/wp-content/themes/vpf/assets/images/torn-page-nav.png" />
-				</div>
-			</div>
+				<aside>
+					<img src="<?= $view['sidebar_background']; ?>">
+				</aside>
 			<?php endif; ?>
-<!--	AREA FOR VARIETY PACKS/MIXABLES/MIXABLE CONTENT		-->
-			<!--<div class="variety-packs">
-				<div class="outer-container">
-					<img src="/wp-content/themes/vpf/assets/images/full-width-border.gif" class="vmm--divider"/>
-
-				</div>
-			</div>
-			<div class="mixables">
-				<div class="outer-container">
-					<img src="/wp-content/themes/vpf/assets/images/full-width-border.gif" class="vmm--divider"/>
-
-				</div>
-			</div>
-			<div class="mixables-info">
-				<div class="outer-container">
-					<img src="/wp-content/themes/vpf/assets/images/full-width-border.gif" class="vmm--divider"/>
-
-				</div>
-			</div>-->
+	</div>
+	<?php if(!empty($view['footer_background'])) : ?>
+		<div class="page--footer">
+			<img src="<?= $view['footer_background']; ?>">
+		</div>
+	<?php endif; ?>
 	</div>
 </section>
 

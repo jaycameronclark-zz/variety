@@ -559,7 +559,7 @@ a:active, a:focus {
 }
 
 hr {
-  border-bottom: 1px solid #DDD;
+  border-bottom: 1px solid #dddddd;
   border-left: none;
   border-right: none;
   border-top: none;
@@ -574,7 +574,7 @@ img {
 }
 
 blockquote {
-  border-left: 2px solid #DDD;
+  border-left: 2px solid #dddddd;
   color: #a05d20;
   margin: 1.5em 0;
   padding-left: 0.75em;
@@ -597,7 +597,7 @@ ul li {
 
 fieldset {
   background: #f7f7f7;
-  border: 1px solid #DDD;
+  border: 1px solid #dddddd;
   margin: 0 0 0.75em 0;
   padding: 1.5em;
 }
@@ -631,7 +631,7 @@ select[multiple=multiple] {
   transition: border-color;
   background-color: white;
   border-radius: 0.1875em;
-  border: 1px solid #DDD;
+  border: 1px solid #dddddd;
   -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -698,7 +698,7 @@ th {
 }
 
 td {
-  border-bottom: 1px solid #DDD;
+  border-bottom: 1px solid #dddddd;
   padding: 0.75em 0;
 }
 
@@ -1023,7 +1023,7 @@ A bunch of helper classes from Inuit.css
  *
  */
 .go:after {
-  content: " " "»" !important;
+  content: "\00A0" "\00BB" !important;
 }
 
 /**
@@ -1034,7 +1034,7 @@ A bunch of helper classes from Inuit.css
 }
 
 .rule {
-  color: #DDD;
+  color: #dddddd;
   border: none;
   border-bottom-width: 2px;
   border-bottom-style: solid;
@@ -1049,6 +1049,7 @@ A bunch of helper classes from Inuit.css
     -webkit-transform: scale(0);
     opacity: 0;
   }
+
   to {
     -webkit-transform: scale(1);
     opacity: 1;
@@ -1061,6 +1062,7 @@ A bunch of helper classes from Inuit.css
     transform: scale(0);
     opacity: 0;
   }
+
   to {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
@@ -1072,6 +1074,7 @@ A bunch of helper classes from Inuit.css
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -1080,6 +1083,7 @@ A bunch of helper classes from Inuit.css
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -1097,7 +1101,7 @@ body {
 }
 
 .outer-container {
-  max-width: 860px;
+  max-width: 900px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1612,7 +1616,7 @@ article.front-page--intro h1 {
   -webkit-animation: fadeIn 0.6s ease-in;
   animation: fadeIn 0.6s ease-in;
   min-height: 400px;
-  background-position: 0 0;
+  background-position: center center;
   background-repeat: no-repeat;
   position: relative;
 }
@@ -1931,7 +1935,7 @@ section.product .product--intro h1 {
   font-size: 1.5625em;
 }
 section.product .product--intro h1 i.tagline {
-  font-size: 0.625em;
+  font-size: 13px;
   font-style: italic;
   color: #603813;
 }
@@ -1940,7 +1944,7 @@ section.product .product--intro .main--title {
   word-spacing: 2px;
 }
 section.product .product--intro.blue h1, section.product .product--intro.blue h2, section.product .product--intro.blue h3 {
-  color: #556A89;
+  color: #556a89;
 }
 section.product .product--intro.orange h1, section.product .product--intro.orange h2, section.product .product--intro.orange h3, section.product .product--intro.orange h3, section.product .product--intro.orange h4, section.product .product--intro.orange h5, section.product .product--intro.orange h6 {
   color: #b7451c;
@@ -1951,11 +1955,30 @@ section.products--list {
   display: block;
   margin-right: 0.8%;
   width: 100%;
-  padding-top: 10px;
-  padding-bottom: 20px;
+  padding-bottom: 45px;
 }
 section.products--list:last-child {
   margin-right: 0;
+}
+section.products--list .page--footer {
+  float: left;
+  display: block;
+  margin-right: 0.8%;
+  width: 100%;
+  padding-top: 20px;
+  background: url(../../images/dbl-hor-border.png) top left repeat-x;
+  min-height: 300px;
+  text-align: center img;
+  text-align-margin-left: auto;
+  text-align-margin-right: auto;
+}
+section.products--list .page--footer:last-child {
+  margin-right: 0;
+}
+@media screen and (max-width: 480px) {
+  section.products--list .page--footer {
+    display: none;
+  }
 }
 section.products--list .single_column_sidebar {
   float: left;
@@ -1964,6 +1987,17 @@ section.products--list .single_column_sidebar {
   width: 100%;
 }
 section.products--list .single_column_sidebar:last-child {
+  margin-right: 0;
+}
+section.products--list .single_column_sidebar .products {
+  float: left;
+  display: block;
+  margin-right: 0.8%;
+  width: 58.0%;
+  padding-right: 20px;
+  padding-top: 40px;
+}
+section.products--list .single_column_sidebar .products:last-child {
   margin-right: 0;
 }
 section.products--list .single_column_sidebar aside {
@@ -1995,7 +2029,7 @@ section.products--list .two_column_grid .product {
   width: 49.6%;
   padding-right: 20px;
   padding-top: 20px;
-  background: url(../../images/border_row.gif) top center no-repeat;
+  background: url(../../images/border_row.gif) bottom center no-repeat;
 }
 section.products--list .two_column_grid .product:last-child {
   margin-right: 0;
@@ -2026,7 +2060,7 @@ section.products--list .product {
   background: url(../../images/border_footer.gif) bottom right repeat-x;
 }
 section.products--list .product.blue h1, section.products--list .product.blue h2, section.products--list .product.blue h3, section.products--list .product.blue h4, section.products--list .product.blue h5, section.products--list .product.blue h6, section.products--list .product.blue a, section.products--list .product.blue span {
-  color: #556A89;
+  color: #556a89;
 }
 section.products--list .product.blue h1 a:hover, section.products--list .product.blue h2 a:hover, section.products--list .product.blue h3 a:hover, section.products--list .product.blue h4 a:hover, section.products--list .product.blue h5 a:hover, section.products--list .product.blue h6 a:hover, section.products--list .product.blue a a:hover, section.products--list .product.blue span a:hover {
   color: #603813;
@@ -2043,6 +2077,9 @@ section.products--list .product h4 {
   font-size: 1.0625em;
   line-height: 1.4;
   margin-top: 1em;
+}
+section.products--list .product h4.standard {
+  color: #603813 !important;
 }
 section.products--list .product span.sub-title {
   display: block;
@@ -2066,6 +2103,7 @@ section.products--list .product .list--featured-image {
   max-width: 94px;
   margin-right: 5%;
   padding: 10px 0 0 0;
+  margin-bottom: 10px;
 }
 section.products--list .product .list--featured-image img {
   display: block;
@@ -2076,6 +2114,13 @@ section.products--list .product .list--featured-info {
   float: left;
   width: 70%;
   margin: 0 0 10px 0;
+}
+section.products--list .product .list--featured-info .image--align.right img {
+  float: right;
+}
+section.products--list .product .list--featured-info .image--align.right p {
+  float: left;
+  width: 64%;
 }
 
 section.product--details {
@@ -2115,7 +2160,7 @@ section.product--details .details--left .details--info:last-child {
   padding-bottom: 20px;
 }
 section.product--details .details--left.blue .details--info strong {
-  color: #556A89;
+  color: #556a89;
 }
 section.product--details .details--left.orange .details--info strong {
   color: #b7451c;
@@ -2132,7 +2177,7 @@ section.product--details .details--right:last-child {
   margin-right: 0;
 }
 section.product--details .details--right.blue h1, section.product--details .details--right.blue h2, section.product--details .details--right.blue h3, section.product--details .details--right.blue h4, section.product--details .details--right.blue h5, section.product--details .details--right.blue h6, section.product--details .details--right.blue a, section.product--details .details--right.blue span, section.product--details .details--right.blue div {
-  color: #556A89;
+  color: #556a89;
 }
 section.product--details .details--right.orange h1, section.product--details .details--right.orange h2, section.product--details .details--right.orange h3, section.product--details .details--right.orange h4, section.product--details .details--right.orange h5, section.product--details .details--right.orange h6, section.product--details .details--right.orange a, section.product--details .details--right.orange span, section.product--details .details--right.orange div {
   color: #b7451c;
@@ -2149,7 +2194,6 @@ section.product--details .details--right span.sub-title {
   line-height: 1;
 }
 section.product--details .details--right p {
-  padding-top: 1em;
   color: #603813;
 }
 section.product--details .details--right .primary-description {
@@ -2160,7 +2204,7 @@ section.product--details .details--right .primary-description {
   line-height: 1.5;
 }
 section.product--details .details--right .primary-description.blue {
-  color: #556A89;
+  color: #556a89;
 }
 section.product--details .details--right .primary-description.orange {
   color: #b7451c;
@@ -2245,7 +2289,7 @@ section.where-to-buy .where-to-buy-content:last-child {
   margin-right: 0;
 }
 section.where-to-buy .where-to-buy-content.blue h1, section.where-to-buy .where-to-buy-content.blue h2, section.where-to-buy .where-to-buy-content.blue h3 {
-  color: #556A89;
+  color: #556a89;
 }
 section.where-to-buy .where-to-buy-content.orange h1, section.where-to-buy .where-to-buy-content.orange h2, section.where-to-buy .where-to-buy-content.orange h3 {
   color: #b7451c;
@@ -2297,10 +2341,10 @@ section.where-to-buy-links .link-group .link-group-heading {
   padding: 20px;
 }
 section.where-to-buy-links .link-group.blue h4 {
-  color: #556A89;
+  color: #556a89;
 }
 section.where-to-buy-links .link-group.blue a:hover {
-  color: #556A89;
+  color: #556a89;
 }
 section.where-to-buy-links .link-group.orange h4 {
   color: #b7451c;
@@ -2325,10 +2369,10 @@ section.where-to-buy-links .link-group ul a {
   color: #603813;
 }
 section.where-to-buy-links .link-group ul a.blue:hover {
-  color: #556A89;
+  color: #556a89;
 }
 section.where-to-buy-links .link-group ul a.orange:hover {
-  color: #556A89;
+  color: #556a89;
 }
 
 /*------------------------------------*\
@@ -2340,97 +2384,6 @@ section.page-default .content--main h2 {
   font-size: 1.625em;
   line-height: 1.2;
   font-weight: normal;
-}
-
-/*------------------------------------*\
-    RIGHT PAPER SIDEBAR
-\*------------------------------------*/
-/*    PRODUCTS
-\*------------------------------------*/
-.products--area {
-  display: inline-block;
-}
-
-.single_column_sidebar {
-  /*    SIDEBAR INFO/INGREDIENTS
-  \*------------------------------------*/
-}
-.single_column_sidebar .products--area {
-  width: 55%;
-  margin: 0 5% 0 0;
-  float: left;
-  display: inline-block;
-}
-.single_column_sidebar .sidebar-right {
-  width: 40%;
-  padding: 0 0 0 5%;
-  float: left;
-  display: inline-block;
-  color: #603813;
-  background-image: url("/wp-content/themes/vpf/assets/images/divider_sidebar.gif");
-  background-repeat: no-repeat;
-  background-position: top left;
-}
-.single_column_sidebar .sidebar-right .sidebar-ingreds--whole {
-  width: 100%;
-  margin: 0 auto;
-  padding: 15px 0 0 0;
-  text-align: center;
-  background: #fff;
-}
-.single_column_sidebar .sidebar-right .sidebar-ingreds--whole img {
-  width: 100%;
-  max-width: 273px;
-  padding: 0 10px;
-}
-.single_column_sidebar .sidebar-right .sidebar-ingreds--intro {
-  width: 100%;
-  padding: 10px 30px;
-  float: left;
-  font-family: georgia, times, times new roman, serif;
-  font-size: 12px;
-  line-height: 1.5em;
-  background: #fff;
-}
-.single_column_sidebar .sidebar-right ul.sidebar-ingreds--area {
-  width: 100%;
-  margin: 0;
-  padding: 10px 30px;
-  float: left;
-  display: inline-block;
-  background: #fff;
-}
-.single_column_sidebar .sidebar-right ul.sidebar-ingreds--area li.sidebar-ingreds {
-  padding: 2% 0;
-  float: left;
-  border-top: 1px solid #999;
-  list-style: none;
-  display: inline-block;
-}
-.single_column_sidebar .sidebar-right ul.sidebar-ingreds--area li.sidebar-ingreds .sidebar-ingreds--image {
-  width: 38%;
-  margin: 0 2% 0 0;
-  float: left;
-}
-.single_column_sidebar .sidebar-right ul.sidebar-ingreds--area li.sidebar-ingreds .sidebar-ingreds--content {
-  width: 60%;
-  float: left;
-}
-.single_column_sidebar .sidebar-right ul.sidebar-ingreds--area li.sidebar-ingreds .sidebar-ingreds--content h5 {
-  line-height: 1.5em;
-  font-size: 14px;
-  padding-top: 10px;
-  font-family: georgia, times, times new roman, serif;
-}
-.single_column_sidebar .sidebar-right ul.sidebar-ingreds--area li.sidebar-ingreds .sidebar-ingreds--content p {
-  font-size: 12px;
-  font-family: arial, helvetica, sans-serif;
-}
-.single_column_sidebar .sidebar-right .sidebar-ingreds--torn {
-  width: 100%;
-}
-.single_column_sidebar .sidebar-right .sidebar-ingreds--torn img {
-  width: 100%;
 }
 
 /*------------------------------------*\

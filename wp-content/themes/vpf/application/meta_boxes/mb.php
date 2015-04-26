@@ -197,6 +197,18 @@ function application_metaboxes( array $meta_boxes ) {
           )
       ),
       array(
+        'name' => 'Sidebar Background',
+        'desc' => 'Background for sidebar content',
+        'id'   => $prefix . 'page_sidebar_background',
+        'type' => 'file'
+      ),
+      array(
+        'name' => 'Page Footer Image',
+        'desc' => 'Image below products. i.e. Mixables',
+        'id'   => $prefix . 'page_footer_image',
+        'type' => 'file'
+      ),
+      array(
         'name' => 'Product Detail Category',
         'desc' => 'Associated Product Detail Category',
         'id' => $prefix . 'product_detail_category',
@@ -238,6 +250,16 @@ function application_metaboxes( array $meta_boxes ) {
         )
       ),
       array(
+        'name' => __( 'Lightbox Heading?', 'cmb' ),
+        'desc' => __( 'Open in lightbox or not', 'cmb' ),
+        'id'   => $prefix . 'product_detail_lightbox',
+        'type' => 'select',
+        'options' => array(
+          'true' => __( 'True', 'cmb' ),
+          'false' => __( 'False', 'cmb' )
+        )
+      ),
+      array(
         'name' => __( 'Product Small Description', 'cmb' ),
         'desc' => __( 'Text below heading', 'cmb' ),
         'id'   => $prefix . 'product_small_description',
@@ -248,6 +270,16 @@ function application_metaboxes( array $meta_boxes ) {
         'desc' => __( 'Image below small heading', 'cmb' ),
         'id'   => $prefix . 'product_small_description_image',
         'type' => 'file'
+      ),
+      array(
+        'name' => __( 'Align Small Description Image', 'cmb' ),
+        'desc' => __( 'Alignment of small image', 'cmb' ),
+        'id'   => $prefix . 'product_small_image_align',
+        'type' => 'select',
+        'options' => array(
+          'right' => __( 'Right', 'cmb' ),
+          'bottom' => __( 'Bottom', 'cmb' )
+        )
       ),
       array(
         'name' => __( 'Product Main Description', 'cmb' ),
@@ -312,44 +344,44 @@ function application_metaboxes( array $meta_boxes ) {
     )
   );
 
-  $meta_boxes['vpf_page_sidebars'] = array(
-    'id'         => 'vpf_page_sidebar_details',
-    'title'      => __( 'Sidebar Content', 'cmb' ),
-    'pages'      => array( 'page' ),
-    'show_names' => true,
-    'show_on'    => array( 'key' => 'id', 'value' => array( 786, ), ), // Specific post IDs to display this metabox
-    'context'    => 'normal',
-    'priority'   => 'high',
-    'cmb_styles' => true,
+  // $meta_boxes['vpf_page_sidebars'] = array(
+  //   'id'         => 'vpf_page_sidebar_details',
+  //   'title'      => __( 'Sidebar Content', 'cmb' ),
+  //   'pages'      => array( 'page' ),
+  //   'show_names' => true,
+  //   'show_on'    => array( 'key' => 'id', 'value' => array( 786, ), ), // Specific post IDs to display this metabox
+  //   'context'    => 'normal',
+  //   'priority'   => 'high',
+  //   'cmb_styles' => true,
 
-    'fields' => array(
-      array(
-        'name' => 'Sidebar Background',
-        'desc' => 'Background for sidebar content',
-        'id'   => $prefix . 'page_sidebar_background',
-        'type' => 'file'
-      ),
-      array(
-        'name' => __( 'Sidebar Content', 'cmb' ),
-        'desc' => __( 'Content for sidebar', 'cmb' ),
-        'id'   => $prefix . 'page_sidebar_content',
-        'type' => 'wysiwyg',
-        'options' => array(
-          'wpautop' => true, // use wpautop?
-          'media_buttons' => true, // show insert/upload button(s)
-          'textarea_name' => ['page_sidebar_content_editor'], // set the textarea name to something different, square brackets [] can be used here
-          'textarea_rows' => get_option('default_post_edit_rows', 10), // rows="..."
-          'tabindex' => '',
-          'editor_css' => '', // intended for extra styles for both visual and HTML editors buttons, needs to include the `<style>` tags, can use "scoped".
-          'editor_class' => '', // add extra class(es) to the editor textarea
-          'teeny' => true, // output the minimal editor config used in Press This
-          'dfw' => false, // replace the default fullscreen with DFW (needs specific css)
-          'tinymce' => true, // load TinyMCE, can be used to pass settings directly to TinyMCE using an array()
-          'quicktags' => true // load Quicktags, can be used to pass settings directly to Quicktags using an array()
-        ),
-      )
-    )
-  );
+  //   'fields' => array(
+  //     array(
+  //       'name' => 'Sidebar Background',
+  //       'desc' => 'Background for sidebar content',
+  //       'id'   => $prefix . 'page_sidebar_background',
+  //       'type' => 'file'
+  //     ),
+  //     array(
+  //       'name' => __( 'Sidebar Content', 'cmb' ),
+  //       'desc' => __( 'Content for sidebar', 'cmb' ),
+  //       'id'   => $prefix . 'page_sidebar_content',
+  //       'type' => 'wysiwyg',
+  //       'options' => array(
+  //         'wpautop' => true, // use wpautop?
+  //         'media_buttons' => true, // show insert/upload button(s)
+  //         'textarea_name' => ['page_sidebar_content_editor'], // set the textarea name to something different, square brackets [] can be used here
+  //         'textarea_rows' => get_option('default_post_edit_rows', 10), // rows="..."
+  //         'tabindex' => '',
+  //         'editor_css' => '', // intended for extra styles for both visual and HTML editors buttons, needs to include the `<style>` tags, can use "scoped".
+  //         'editor_class' => '', // add extra class(es) to the editor textarea
+  //         'teeny' => true, // output the minimal editor config used in Press This
+  //         'dfw' => false, // replace the default fullscreen with DFW (needs specific css)
+  //         'tinymce' => true, // load TinyMCE, can be used to pass settings directly to TinyMCE using an array()
+  //         'quicktags' => true // load Quicktags, can be used to pass settings directly to Quicktags using an array()
+  //       ),
+  //     )
+  //   )
+  // );
 
   $meta_boxes['vpf_where_to_buy'] = array(
     'id'         => 'vpf_where_to_buy_details',
@@ -405,23 +437,23 @@ function application_metaboxes( array $meta_boxes ) {
     )
   );
 
-	$meta_boxes['vpf_sidebar_details'] = array(
-		'id'         => 'vpf_sidebar_details',
-		'title'      => __( 'Sidebar Details', 'cmb' ),
-		'pages'      => array( 'cpt_ingredients' ),
-		'context'    => 'normal',
-		'priority'   => 'high',
-		'show_names' => true,
-		'cmb_styles' => true,
-		'fields'   => array(
-			array(
-				'name' => __( 'Content Title', 'cmb' ),
-				'desc' => __( 'Main Title', 'cmb' ),
-				'id'   => $prefix . 'sidebar_content_title',
-				'type' => 'text_medium'
-			)
-		)
-	);
+	// $meta_boxes['vpf_sidebar_details'] = array(
+	// 	'id'         => 'vpf_sidebar_details',
+	// 	'title'      => __( 'Sidebar Details', 'cmb' ),
+	// 	'pages'      => array( 'cpt_ingredients' ),
+	// 	'context'    => 'normal',
+	// 	'priority'   => 'high',
+	// 	'show_names' => true,
+	// 	'cmb_styles' => true,
+	// 	'fields'   => array(
+	// 		array(
+	// 			'name' => __( 'Content Title', 'cmb' ),
+	// 			'desc' => __( 'Main Title', 'cmb' ),
+	// 			'id'   => $prefix . 'sidebar_content_title',
+	// 			'type' => 'text_medium'
+	// 		)
+	// 	)
+	// );
 
   return $meta_boxes;
 }

@@ -12,13 +12,13 @@
 /* WTB Pages */
 function cpt_products() {
   $labels = array(
-    'name' => _x( 'Products', 'Post Type General Name', 'varietypetfoods' ),
-    'singular_name' => _x( 'Product', 'Post Type Singular Name', 'varietypetfoods' ),
-    'menu_name' => __( 'Products', 'varietypetfoods' ),
+    'name' => _x( 'Product Pages', 'Post Type General Name', 'varietypetfoods' ),
+    'singular_name' => _x( 'Product Page', 'Post Type Singular Name', 'varietypetfoods' ),
+    'menu_name' => __( 'Product Pages', 'varietypetfoods' ),
     'parent_item_colon'   => __( 'Parent Item:', 'varietypetfoods' ),
-    'all_items' => __( 'All Products', 'varietypetfoods' ),
-    'view_item' => __( 'View Product', 'varietypetfoods' ),
-    'add_new_item'        => __( 'Add New Product', 'varietypetfoods' ),
+    'all_items' => __( 'All Product Pages', 'varietypetfoods' ),
+    'view_item' => __( 'View Product Page', 'varietypetfoods' ),
+    'add_new_item'        => __( 'Add New Product Page', 'varietypetfoods' ),
     'add_new'  => __( 'Add New', 'varietypetfoods' ),
     'edit_item' => __( 'Edit Item', 'varietypetfoods' ),
     'update_item' => __( 'Update Item', 'varietypetfoods' ),
@@ -28,7 +28,7 @@ function cpt_products() {
   );
 
   $rewrite = array(
-    'slug' => 'pet-food-products', 'with_front' => 'false'
+    'slug' => 'pet-food', 'with_front' => 'false'
   );
 
   $args = array(
@@ -100,52 +100,6 @@ function cpt_products_detail() {
   register_post_type( 'cpt_products_detail', $args );
 }
 
-function cpt_ingredients() {
-    $labels = array(
-        'name' => _x( 'Sidebar Info/Ingredients', 'Post Type General Name', 'varietypetfoods' ),
-        'singular_name' => _x( 'Sidebar Info/Ingredient', 'Post Type Singular Name', 'varietypetfoods' ),
-        'menu_name' => __( 'Sidebar Info/Ingredients', 'varietypetfoods' ),
-        'parent_item_colon'   => __( 'Parent Item:', 'varietypetfoods' ),
-        'all_items' => __( 'All Info/Ingredients', 'varietypetfoods' ),
-        'view_item' => __( 'View Info/Ingredient', 'varietypetfoods' ),
-        'add_new_item'        => __( 'Add New Info/Ingredient', 'varietypetfoods' ),
-        'add_new'  => __( 'Add New', 'varietypetfoods' ),
-        'edit_item' => __( 'Edit Item', 'varietypetfoods' ),
-        'update_item' => __( 'Update Item', 'varietypetfoods' ),
-        'search_items'=> __( 'Search Item', 'varietypetfoods' ),
-        'not_found' => __( 'Not found', 'varietypetfoods' ),
-        'not_found_in_trash'  => __( 'Not found in Trash', 'varietypetfoods' ),
-    );
-
-    $rewrite = array(
-        'slug' => 'pet-food-product-ingredients', 'with_front' => 'false'
-    );
-
-    $args = array(
-        'label' => __( 'Info/Ingredients', 'varietypetfoods' ),
-        'menu_icon' => 'dashicons-products',
-        'description' => __( 'Variety Pet Foods Product Info/Ingredients', 'varietypetfoods' ),
-        'labels' => $labels,
-        'supports' => array( 'title', 'editor', 'thumbnail', 'revisions', 'page-attributes'),
-        'taxonomies' => array('products_tax'),
-        'hierarchical' => true,
-        'public' => true,
-        'show_ui' => true,
-        'show_in_menu' => true,
-        'show_in_nav_menus' => true,
-        'show_in_admin_bar' => false,
-        'menu_position' => 25,
-        'can_export' => true,
-        'has_archive' => true,
-        'exclude_from_search' => false,
-        'publicly_queryable' => true,
-        'rewrite' => $rewrite,
-        'capability_type' => 'post',
-        'query_var' => true
-    );
-    register_post_type( 'cpt_ingredients', $args );
-}
-
 /* WTB Pages */
 function cpt_where_to_buy() {
   $labels = array(
@@ -192,5 +146,4 @@ function cpt_where_to_buy() {
 /* Register Custom Post Types */
 add_action( 'init', 'cpt_products', 0);
 add_action( 'init', 'cpt_products_detail', 0);
-add_action( 'init', 'cpt_ingredients', 0);
 add_action( 'init', 'cpt_where_to_buy', 0);

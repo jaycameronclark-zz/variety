@@ -65,7 +65,7 @@ function wp_login_image() {
   echo "
   <style>
   body.login #login h1 a {
-    background: url('".get_template_directory_uri() . "/assets/images/logo.gif') top center no-repeat transparent;
+    background: url('".get_template_directory_uri() . "/assets/images/login-logo.gif') top center no-repeat transparent;
   }
   </style>
   ";
@@ -234,15 +234,22 @@ function get_product_details() {
     'post_type' => 'cpt_products_detail',
     'orderby' => 'menu_order',
     'order' => 'ASC',
-    'category' => [$cat_id]
+    'tax_query' => [
+      [
+        'taxonomy' => 'products_tax',
+        'field' => 'term_id',
+        'terms' => $cat_id,
+      ]
+    ]
   ];
 
-  $products = query_posts($args);
+  $products = get_posts($args);
 
   foreach($products as $product) {
     $product_meta = vpf_meta($product->ID);
     $image = wp_get_attachment_image( get_post_meta( $product->ID, '_cmb_product_featured_image', 1 ), '' );
     $small_image = wp_get_attachment_image( get_post_meta( $product->ID, '_cmb_product_small_description_image', 1 ), '' );
+    $sidebar_bg = wp_get_attachment_image( get_post_meta( $product->ID, '_page_sidebar_background', 1 ), '' );
     
     $temp = [
       'title' => !empty($product_meta['_cmb_product_detail_title']) ? $product_meta['_cmb_product_detail_title'] : $product->post_title,
@@ -250,10 +257,13 @@ function get_product_details() {
       'color_scheme' => !empty($product_meta['_cmb_product_detail_color_scheme']) ? $product_meta['_cmb_product_detail_color_scheme'] : '',
       'small_description' => !empty($product_meta['_cmb_product_small_description']) ? $product_meta['_cmb_product_small_description'] : '',
       'small_description_image' => !empty($product_meta['_cmb_product_small_description_image']) ? $product_meta['_cmb_product_small_description_image'] : '',
+      'small_image_align' => !empty($product_meta['_cmb_product_small_image_align']) ? $product_meta['_cmb_product_small_image_align'] : '',
       'main_description' => !empty($product_meta['_cmb_product_main_description']) ? $product_meta['_cmb_product_main_description'] : '',
       'natural_text' => !empty($product_meta['_cmb_product_natural_text']) ? $product_meta['_cmb_product_natural_text'] : '',
       'featured_image' => !empty($product_meta['_cmb_product_featured_image']) ? $product_meta['_cmb_product_featured_image'] : '',
+      'sidebar_bg' => !empty($product_meta['_cmb_page_sidebar_background']) ? $product_meta['_cmb_page_sidebar_background'] : '',
       'ingredients' => !empty($product_meta['_cmb_product_ingredients']) ? $product_meta['_cmb_product_ingredients'] : '',
+      'lightbox' => !empty($product_meta['_cmb_product_detail_lightbox']) ? $product_meta['_cmb_product_detail_lightbox'] : 'true',
       'link' => get_permalink($product->ID),
       'id' => $product->ID
     ];
@@ -283,8 +293,8 @@ function get_single_product_details($requested) {
     'natural_text' => !empty($product_meta['_cmb_product_natural_text']) ? $product_meta['_cmb_product_natural_text'] : '',
     'featured_image' => !empty($product_meta['_cmb_product_featured_image']) ? $product_meta['_cmb_product_featured_image'] : '',
     'ingredients' => !empty($product_meta['_cmb_product_ingredients']) ? $product_meta['_cmb_product_ingredients'] : '',
-	'vitamins' => !empty($product_meta['_cmb_product_vitamins']) ? $product_meta['_cmb_product_vitamins'] : '',
-	'minerals' => !empty($product_meta['_cmb_product_minerals']) ? $product_meta['_cmb_product_minerals'] : '',
+  	'vitamins' => !empty($product_meta['_cmb_product_vitamins']) ? $product_meta['_cmb_product_vitamins'] : '',
+  	'minerals' => !empty($product_meta['_cmb_product_minerals']) ? $product_meta['_cmb_product_minerals'] : '',
     'feeding_guide' => !empty($product_meta['_cmb_product_feeding_guide']) ? $product_meta['_cmb_product_feeding_guide'] : '',
     'product_guaranteed_analysis' => !empty($product_meta['_cmb_product_guaranteed_analysis']) ? $product_meta['_cmb_product_guaranteed_analysis'] : '',
     'product_calorie_content_one' => !empty($product_meta['_cmb_product_calorie_content_one']) ? $product_meta['_cmb_product_calorie_content_one'] : '',
