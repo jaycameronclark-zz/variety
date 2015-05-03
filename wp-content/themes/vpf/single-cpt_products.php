@@ -57,7 +57,7 @@ $(document).ready(function() {
 		<div class="outer-container">
 			<div class="product--intro <?= $view['color_class']; ?>">
 				<article>
-					<h1 class="main--title"><?= $view['page_title']; ?> | <i class="tagline"><?= $view['tagline']; ?></i></h1>
+					<h1 class="main--title"><?= $view['page_title']; ?> | <br class="mobile-break"/><i class="tagline"><?= $view['tagline']; ?></i></h1>
 					<?php the_content(); ?>
 					<?php if( !empty($view['available_size']) ) : ?>
 						<p class="available-size">
@@ -69,9 +69,11 @@ $(document).ready(function() {
 
 				<div class="sticky">
 					<img src="<?= $view['sticky_note']; ?>" alt="Sticky Note">
+					<?php if ( !empty($view['flag_text'])){?>
 					<div class="usa-flag">
 						<?= $view['flag_text']; ?>
 					</div>
+					<?php } ?>
 				</div>
 			</div>
 		
@@ -89,6 +91,11 @@ $(document).ready(function() {
 	<div class="outer-container">
 
 		<div class="<?= $view['layout_type']; ?>">
+			<?php if ($view['layout_type'] == 'single_column_sidebar') : ?>
+				<aside>
+					<img src="<?= $view['sidebar_background']; ?>">
+				</aside>
+			<?php endif; ?>
 			<div class="products products--area">
 				<?php 
 					$products = get_product_details();
@@ -121,12 +128,6 @@ $(document).ready(function() {
 				</div>
 				<?php endforeach; endif; ?>
 			</div>
-
-			<?php if ($view['layout_type'] == 'single_column_sidebar') : ?>
-				<aside>
-					<img src="<?= $view['sidebar_background']; ?>">
-				</aside>
-			<?php endif; ?>
 	</div>
 	<?php if(!empty($view['footer_background'])) : ?>
 		<div class="page--footer">

@@ -92,6 +92,9 @@ header{
 		}
 
 	}
+	.mobile-join {
+		display: none;
+	}
 	.logo{
 		@include span-columns(2);
 	}
@@ -112,13 +115,25 @@ header{
 		}
 		a.join{
 			display: none;
-			visibility: hidden;
-			padding: 0;
+		}
+		.mobile-join{
+			position: relative;
+			margin: 16px auto 0 auto;
+			display: inline-block;
+			width: 100%;
+			text-align: center;
+			a.join{
+				display: inline-block;
+				float: none;
+			}
 		}
 	}
 }
 
 aside{}
+.mobile-break{
+	display: none;
+}
 
 footer{
 	&.footer--primary{

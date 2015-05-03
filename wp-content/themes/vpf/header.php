@@ -54,6 +54,12 @@
   		<div class="logo">
   			<a href="<?= bloginfo('url'); ?>"><img alt="Variety Pet Foods" src="<?= get_template_directory_uri(); ?>/assets/images/logo.gif" width="122" height="71" /></a>
   		</div>
+  		<div class="mobile-join">
+			<a class="join various fancybox.ajax" href="<?= get_template_directory_uri(); ?>/includes/join.php">
+				<span class="join-yellow">Join the Variety Club</span>
+				<span class="join-white">Get exclusive offers and more</span>
+			</a>
+		</div>
 	  	<nav class="nav--primary">
 	      <?php wp_nav_menu( array('theme_location' => 'header_primary_nav') ); ?>
 	    </nav>

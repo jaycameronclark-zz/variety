@@ -21,6 +21,7 @@ article{
 			@include omega();
 			padding-left: $gutter;
 			padding-right: $gutter;
+			padding-bottom: $gutter;
 			text-align: center;
 			h1{
 				font-size: em(30);

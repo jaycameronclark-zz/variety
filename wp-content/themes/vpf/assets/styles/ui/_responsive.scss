@@ -18,6 +18,9 @@
 			width: 130px;
 		}
 	}
+	.mobile-break{
+		display: block;
+	}
 	section.main{
 		min-height: inherit;
 	}
@@ -137,6 +140,7 @@
 
 	section.products--list .product .list--featured-info{
 		width: 60%;
+		min-height: 200px;
 	}
 	section.products--list .two_column_grid .product{
 		width: 45%;
@@ -242,10 +246,8 @@
 }
 @media all and (max-width: 580px){
   header{
+  	margin: 0;
     a.join{
-      display: none;
-      visibility: hidden;
-      padding: 0;
     }
     .logo{
 		position: relative;
@@ -265,6 +267,9 @@
 			display: inline-block;
 		}
 	}
+  }
+  article.front-page--intro{
+  	padding-bottom: $gutter;
   }
   .outer-container{
 	  .nav--primary {
@@ -316,6 +321,7 @@
 
 	section.products--list .product .list--featured-info{
 		width: 70%;
+		min-height: initial;
 	}
 	section.product .product--intro .sticky .usa-flag{
 		margin: 0;
@@ -338,6 +344,20 @@
 		width: 100%;
 		margin-right: 0;
 		padding-right: 0;
+	}
+	section.products--list .single_column_sidebar .products{
+		width: 100%;
+	}
+	section.products--list .single_column_sidebar aside{
+		background: none;
+		width: 75%;
+		padding-left: 0;
+		min-height: inherit;
+		float: none;
+		margin: 0 auto;
+	}
+	section.products--list .single_column_sidebar aside:last-child{
+		margin-right: auto;
 	}
 	section.products--list .two_column_grid .product:nth-child(2n){
 		margin-left: 0;

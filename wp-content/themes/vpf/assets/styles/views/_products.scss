@@ -143,6 +143,7 @@ section.products--list{
 			padding-left: $gutter;
 			min-height: 646px;
 			background: url(#{$img-path}/divider_sidebar.gif) left center no-repeat;
+			float: right;
 		}
 
 	}
@@ -227,6 +228,7 @@ section.products--list{
 			font-size: em(13);
 			padding-right: $gutter * 2;
 			margin-top: 1em;
+			min-height: 60px;
 			.small-image{
 				margin-top: 1em;
 					display: block;
