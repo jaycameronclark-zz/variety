@@ -8,6 +8,8 @@ var App = (function(){
   return {
 
   	mobileMenu: function () {
+      var toggleMenu = $("li.menu-item-has-children > a");
+
 		  $('.js-menu-trigger').on('click touchstart', function(e){
 		    $('.js-menu').toggleClass('is-visible');
 		    $('.js-menu-screen').toggleClass('is-visible');
@@ -19,6 +21,11 @@ var App = (function(){
 		    $('.js-menu-screen').toggleClass('is-visible');
 		    e.preventDefault();
 		  });
+
+      $(toggleMenu).on("click touchstart", function(e){
+          $(this).parent().toggleClass("toggle-menu");
+          e.preventDefault();
+      });
   	},
 
   	lightbox: function () {

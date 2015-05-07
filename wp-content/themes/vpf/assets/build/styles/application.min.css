@@ -559,7 +559,7 @@ a:active, a:focus {
 }
 
 hr {
-  border-bottom: 1px solid #DDD;
+  border-bottom: 1px solid #dddddd;
   border-left: none;
   border-right: none;
   border-top: none;
@@ -574,7 +574,7 @@ img {
 }
 
 blockquote {
-  border-left: 2px solid #DDD;
+  border-left: 2px solid #dddddd;
   color: #a05d20;
   margin: 1.5em 0;
   padding-left: 0.75em;
@@ -597,7 +597,7 @@ ul li {
 
 fieldset {
   background: #f7f7f7;
-  border: 1px solid #DDD;
+  border: 1px solid #dddddd;
   margin: 0 0 0.75em 0;
   padding: 1.5em;
 }
@@ -631,7 +631,7 @@ select[multiple=multiple] {
   transition: border-color;
   background-color: white;
   border-radius: 0.1875em;
-  border: 1px solid #DDD;
+  border: 1px solid #dddddd;
   -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -698,7 +698,7 @@ th {
 }
 
 td {
-  border-bottom: 1px solid #DDD;
+  border-bottom: 1px solid #dddddd;
   padding: 0.75em 0;
 }
 
@@ -1023,7 +1023,7 @@ A bunch of helper classes from Inuit.css
  *
  */
 .go:after {
-  content: " " "»" !important;
+  content: "\00A0" "\00BB" !important;
 }
 
 /**
@@ -1034,7 +1034,7 @@ A bunch of helper classes from Inuit.css
 }
 
 .rule {
-  color: #DDD;
+  color: #dddddd;
   border: none;
   border-bottom-width: 2px;
   border-bottom-style: solid;
@@ -1049,6 +1049,7 @@ A bunch of helper classes from Inuit.css
     -webkit-transform: scale(0);
     opacity: 0;
   }
+
   to {
     -webkit-transform: scale(1);
     opacity: 1;
@@ -1061,6 +1062,7 @@ A bunch of helper classes from Inuit.css
     transform: scale(0);
     opacity: 0;
   }
+
   to {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
@@ -1072,6 +1074,7 @@ A bunch of helper classes from Inuit.css
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -1080,6 +1083,7 @@ A bunch of helper classes from Inuit.css
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -1530,8 +1534,38 @@ nav.nav--primary ul li:hover ul.sub-menu {
   margin: 0;
   padding: 0;
 }
+.sliding-menu-content ul.sub-menu {
+  display: none;
+  -webkit-transition: all 0.6s ease-in;
+  transition: all 0.6s ease-in;
+}
+.sliding-menu-content ul.sub-menu li ul.sub-menu {
+  display: block;
+}
 .sliding-menu-content li {
   list-style-type: none;
+}
+.sliding-menu-content li.menu-item-has-children a {
+  position: relative;
+}
+.sliding-menu-content li.menu-item-has-children a:after {
+  content: "\25BC";
+  font-size: 12px;
+  position: absolute;
+  opacity: 0.5;
+  right: 22px;
+}
+.sliding-menu-content li.menu-item-has-children.toggle-menu ul.sub-menu {
+  display: block;
+}
+.sliding-menu-content li.menu-item-has-children.toggle-menu ul.sub-menu li.menu-item-has-children {
+  padding-left: 6px;
+}
+.sliding-menu-content li.menu-item-has-children.toggle-menu ul.sub-menu li.menu-item-has-children a:after {
+  content: "";
+}
+.sliding-menu-content li.menu-item-has-children.toggle-menu ul.sub-menu li.menu-item-has-children ul.sub-menu li {
+  padding-left: 6px;
 }
 .sliding-menu-content li a {
   background: url(../../images/dbl-hor-border.png) bottom left repeat-x;
@@ -1542,7 +1576,6 @@ nav.nav--primary ul li:hover ul.sub-menu {
   padding: 1em;
 }
 .sliding-menu-content li a:hover {
-  background-color: #b56a24;
   color: #b7451c;
 }
 .sliding-menu-content.is-visible {
@@ -1957,7 +1990,7 @@ section.product .product--intro .main--title {
   word-spacing: 2px;
 }
 section.product .product--intro.blue h1, section.product .product--intro.blue h2, section.product .product--intro.blue h3 {
-  color: #556A89;
+  color: #556a89;
 }
 section.product .product--intro.orange h1, section.product .product--intro.orange h2, section.product .product--intro.orange h3, section.product .product--intro.orange h3, section.product .product--intro.orange h4, section.product .product--intro.orange h5, section.product .product--intro.orange h6 {
   color: #b7451c;
@@ -2074,7 +2107,7 @@ section.products--list .product {
   background: url(../../images/border_footer.gif) bottom right repeat-x;
 }
 section.products--list .product.blue h1, section.products--list .product.blue h2, section.products--list .product.blue h3, section.products--list .product.blue h4, section.products--list .product.blue h5, section.products--list .product.blue h6, section.products--list .product.blue a, section.products--list .product.blue span {
-  color: #556A89;
+  color: #556a89;
 }
 section.products--list .product.blue h1 a:hover, section.products--list .product.blue h2 a:hover, section.products--list .product.blue h3 a:hover, section.products--list .product.blue h4 a:hover, section.products--list .product.blue h5 a:hover, section.products--list .product.blue h6 a:hover, section.products--list .product.blue a a:hover, section.products--list .product.blue span a:hover {
   color: #603813;
@@ -2175,7 +2208,7 @@ section.product--details .details--left .details--info:last-child {
   padding-bottom: 20px;
 }
 section.product--details .details--left.blue .details--info strong {
-  color: #556A89;
+  color: #556a89;
 }
 section.product--details .details--left.orange .details--info strong {
   color: #b7451c;
@@ -2192,7 +2225,7 @@ section.product--details .details--right:last-child {
   margin-right: 0;
 }
 section.product--details .details--right.blue h1, section.product--details .details--right.blue h2, section.product--details .details--right.blue h3, section.product--details .details--right.blue h4, section.product--details .details--right.blue h5, section.product--details .details--right.blue h6, section.product--details .details--right.blue a, section.product--details .details--right.blue span, section.product--details .details--right.blue div {
-  color: #556A89;
+  color: #556a89;
 }
 section.product--details .details--right.orange h1, section.product--details .details--right.orange h2, section.product--details .details--right.orange h3, section.product--details .details--right.orange h4, section.product--details .details--right.orange h5, section.product--details .details--right.orange h6, section.product--details .details--right.orange a, section.product--details .details--right.orange span, section.product--details .details--right.orange div {
   color: #b7451c;
@@ -2219,7 +2252,7 @@ section.product--details .details--right .primary-description {
   line-height: 1.5;
 }
 section.product--details .details--right .primary-description.blue {
-  color: #556A89;
+  color: #556a89;
 }
 section.product--details .details--right .primary-description.orange {
   color: #b7451c;
@@ -2304,7 +2337,7 @@ section.where-to-buy .where-to-buy-content:last-child {
   margin-right: 0;
 }
 section.where-to-buy .where-to-buy-content.blue h1, section.where-to-buy .where-to-buy-content.blue h2, section.where-to-buy .where-to-buy-content.blue h3 {
-  color: #556A89;
+  color: #556a89;
 }
 section.where-to-buy .where-to-buy-content.orange h1, section.where-to-buy .where-to-buy-content.orange h2, section.where-to-buy .where-to-buy-content.orange h3 {
   color: #b7451c;
@@ -2356,10 +2389,10 @@ section.where-to-buy-links .link-group .link-group-heading {
   padding: 20px;
 }
 section.where-to-buy-links .link-group.blue h4 {
-  color: #556A89;
+  color: #556a89;
 }
 section.where-to-buy-links .link-group.blue a:hover {
-  color: #556A89;
+  color: #556a89;
 }
 section.where-to-buy-links .link-group.orange h4 {
   color: #b7451c;
@@ -2384,10 +2417,10 @@ section.where-to-buy-links .link-group ul a {
   color: #603813;
 }
 section.where-to-buy-links .link-group ul a.blue:hover {
-  color: #556A89;
+  color: #556a89;
 }
 section.where-to-buy-links .link-group ul a.orange:hover {
-  color: #556A89;
+  color: #556a89;
 }
 
 /*------------------------------------*\
