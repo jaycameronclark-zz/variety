@@ -2459,10 +2459,15 @@ section.page-default .content--main h2 {
 .blog .blog--content h1 a:link,
 .blog .blog--content h1 a:visited {
   color: #603813;
-  font-size: 16px;
+  font-size: 26px;
   line-height: 1.2em;
-  font-family: arial, helvetica, sans-serif;
-  font-weight: bold;
+  font-family: "p22", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: normal;
+}
+.blog .blog--content h1 a:hover,
+.blog .blog--content h1 a:link:hover,
+.blog .blog--content h1 a:visited:hover {
+  color: #556a89;
 }
 .blog .blog--content p {
   -webkit-font-smoothing: antialiased;
@@ -2494,6 +2499,12 @@ section.page-default .content--main h2 {
 }
 .blog .blog--content .blog--divider img {
   width: 100%;
+}
+.blog .blog--content h2.comments-header,
+.blog .blog--content h2#comments-header {
+  font-weight: normal;
+  font-family: Georgia, Times, "Times New Roman", Times, serif;
+  font-size: 1.125em;
 }
 .blog .blog--sidebar {
   position: relative;

@@ -20,10 +20,13 @@
 			a:link,
 			a:visited{
 				color: #603813;
-				font-size: 16px;
+				font-size: 26px;
 				line-height: 1.2em;
-				font-family: arial, helvetica, sans-serif;
-				font-weight: bold;
+				font-family: $p22;
+				font-weight: normal;
+				&:hover{
+					color: $color-blue;
+				}
 			}
 		}
 		p{
@@ -56,6 +59,12 @@
 			img{
 				width: 100%;
 			}
+		}
+		h2.comments-header,
+		h2#comments-header{
+			font-weight: normal;
+			font-family: $serif;
+			font-size: em(18);
 		}
 	}
 

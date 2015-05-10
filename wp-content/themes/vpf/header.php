@@ -3,7 +3,7 @@
 <head>
   <meta charset="<?php bloginfo('charset'); ?>">
   <meta http-equiv="Content-Language" content="en">
-  <title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?> <?php bloginfo('name'); ?></title>
+  <title><?php wp_title(''); ?></title>
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -18,13 +18,6 @@
 
   <header class="header--masthead">
   	<div class="outer-container">
-
-<!--    <button type="button" class="js-menu-trigger sliding-menu-button">-->
-<!--        <span></span>-->
-<!--        <span></span>-->
-<!--        <span></span>-->
-<!--        <span></span>-->
-<!--    </button>-->
 
     <nav class="js-menu sliding-menu-content">
       <?php wp_nav_menu( array('theme_location' => 'header_primary_nav') ); ?>
